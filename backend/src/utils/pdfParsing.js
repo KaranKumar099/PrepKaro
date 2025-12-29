@@ -1,59 +1,87 @@
 import fs from "fs";
-import path from "path";
+// import path from "path";
 import axios from "axios";
-import {pdf} from "pdf-parse";         // for text extraction
-import * as pdfjsLib from "pdfjs-dist"; // for image extraction (with custom logic)
+import {PDFParse} from "pdf-parse";         // for text extraction
+// import * as pdfjsLib from "pdfjs-dist"; // for image extraction (with custom logic)
+
+import dotenv from "dotenv";
+dotenv.config({path: 'backend/.env'});
 
 const TOKEN = process.env.OPENAI_API_KEY;
 const ENDPOINT = "https://models.github.ai/inference";
-const MODEL = "openai/gpt-4.1-mini";
+const MODEL = "openai/gpt-4.1";
 
-// -----------------------
 // Extract text + images
-// -----------------------
-async function extractPdfContent(questionPdfPath, answerPdfPath="", syllabusPdfPath, imageDir = "images") {
-  fs.mkdirSync(imageDir, { recursive: true });
+// async function extractPdfContent(questionPdfPath, answerPdfPath="", syllabusPdfPath) {
+//   // fs.mkdirSync(imageDir, { recursive: true });
 
-  const questionDataBuffer = fs.readFileSync(questionPdfPath);
-  const questionPdfData = await pdf(questionDataBuffer);
-  const questionText = questionPdfData.text;
+//   // const questionDataBuffer = fs.readFileSync(questionPdfPath);
+//   const questionPdfData = new PDFParse(questionPdfPath);
+//   const questionText = await questionPdfData.getText();
+//   questionText = questionText.text;
 
-  let answerText; 
-  if(answerPdfPath != ""){
-    const answerDataBuffer = fs.readFileSync(answerPdfPath);
-    const answerPdfData = await pdf(answerDataBuffer);
-    answerText = answerPdfData.text;
-  }else{
-    answerText = "";
+//   let answerText; 
+//   if(answerPdfPath != ""){
+//     // const answerDataBuffer = fs.readFileSync(answerPdfPath);
+//     const answerPdfData = new PDFParse(answerPdfPath);
+//     answerText = await answerPdfData.getText();
+//     answerText = answerText.text;
+//   }else{
+//     answerText = "";
+//   }
+
+//   // const syllabusDataBuffer = fs.readFileSync(syllabusPdfPath);
+//   const syllabusPdfData = new PDFParse(syllabusPdfPath);
+//   const syllabusText = await syllabusPdfData.getText();
+//   syllabusText = syllabusText.text;
+
+//   // const images = [];
+//   // const pdfDoc = await pdfjsLib.getDocument(questionPdfPath).promise;
+
+//   // for (let i = 1; i <= pdfDoc.numPages; i++) {
+//   //   const page = await pdfDoc.getPage(i);
+//   //   const ops = await page.getOperatorList();
+
+//   //   for (let j = 0; j < ops.fnArray.length; j++) {
+//   //     if (ops.fnArray[j] === pdfjsLib.OPS.paintImageXObject) {
+//   //       const imgName = `page${i}_img${j}.png`;
+//   //       const imgPath = path.join(imageDir, imgName);
+//   //       fs.writeFileSync(imgPath, "");
+//   //       images.push(imgPath);
+//   //     }
+//   //   }
+//   // }
+//   console.log("running")
+//   return { questionText, answerText, syllabusText };
+// }
+
+async function extractPdfContent(questionPdfPath, answerPdfPath = "", syllabusPdfPath) {
+
+  // QUESTION
+  const questionBuffer = await fs.promises.readFile(questionPdfPath);
+  const questionParser = new PDFParse(new Uint8Array(questionBuffer), { verbosity: 0 });
+  const questionResult = await questionParser.getText();
+  const questionText = questionResult.text;
+
+  // ANSWER (optional)
+  let answerText = "";
+  if (answerPdfPath) {
+    const answerBuffer = await fs.promises.readFile(answerPdfPath);
+    const answerParser = new PDFParse(new Uint8Array(answerBuffer), { verbosity: 0 });
+    const answerResult = await answerParser.getText();
+    answerText = answerResult.text;
   }
 
-  const syllabusDataBuffer = fs.readFileSync(syllabusPdfPath);
-  const syllabusPdfData = await pdf(syllabusDataBuffer);
-  const syllabusText = syllabusPdfData.text;
+  // SYLLABUS
+  const syllabusBuffer = await fs.promises.readFile(syllabusPdfPath);
+  const syllabusParser = new PDFParse(new Uint8Array(syllabusBuffer), { verbosity: 0 });
+  const syllabusResult = await syllabusParser.getText();
+  const syllabusText = syllabusResult.text;
 
-  const images = [];
-  const pdfDoc = await pdfjsLib.getDocument(questionPdfPath).promise;
-
-  for (let i = 1; i <= pdfDoc.numPages; i++) {
-    const page = await pdfDoc.getPage(i);
-    const ops = await page.getOperatorList();
-
-    for (let j = 0; j < ops.fnArray.length; j++) {
-      if (ops.fnArray[j] === pdfjsLib.OPS.paintImageXObject) {
-        const imgName = `page${i}_img${j}.png`;
-        const imgPath = path.join(imageDir, imgName);
-        fs.writeFileSync(imgPath, "");
-        images.push(imgPath);
-      }
-    }
-  }
-  
-  return { questionText, images, answerText, syllabusText };
+  return { questionText, answerText, syllabusText };
 }
 
-// -----------------------
 // API Call
-// -----------------------
 async function callAzureInference(prompt) {
   const url = `${ENDPOINT}/chat/completions`;
   const headers = {
@@ -74,9 +102,7 @@ async function callAzureInference(prompt) {
   return response.data;
 }
 
-// -----------------------
 // Chunk text
-// -----------------------
 function chunkText(text, maxChars = 4000) {
   const chunks = [];
   for (let i = 0; i < text.length; i += maxChars) {
@@ -85,15 +111,13 @@ function chunkText(text, maxChars = 4000) {
   return chunks;
 }
 
-// -----------------------
 // Process the PDF
-// -----------------------
 async function processPdf(questionPdfPath, outputJson = "questions.json") {
-  const { questionText, images, answerText, syllabusText } = await extractPdfContent(questionPdfPath,"assets/CS2_Keys.pdf", "assets/CS_2026_Syllabus.pdf");
+  const { questionText, answerText, syllabusText } = await extractPdfContent(questionPdfPath,"assets/CS_ANS_GATE2023.pdf", "assets/CS_2026_Syllabus.pdf");
   const chunks = chunkText(questionText);
   const results = [];
 
-  for (let i = 1; i < chunks.length; i++) {
+  for (let i = 0; i < chunks.length; i++) {
     const chunkId = i + 1;
     const chunk = chunks[i];
 
@@ -113,10 +137,15 @@ async function processPdf(questionPdfPath, outputJson = "questions.json") {
           "questionText": "full text of the question",
           "picture": "filename.png" or null,
           "options": ["A) ...", "B) ...", "C) ...", "D) ..."] or [] if not applicable,
-          "answer": exact answer text or option letter (e.g., 'A,B,D')",
-          "score": "string (e.g., '2')"
+          "answer": ['B'] for MCQ or ['A', 'C', 'D'] for MSQ",
+          "score": number like 1 or 2,
           "questionType": "MCQ | MSQ | NAT",
-          "exam": "...",
+          "exam": {
+            "category": "Gate",
+            "branch": "Computer Science and Information Technology Set 2",
+            "code": "CS2",
+            "year": 2025
+          },
           "chapter": "Chapter name from syllabus",
           "topic": "Topic name from syllabus",
           "difficultyLvl": "Easy/Medium/Hard"
@@ -133,7 +162,6 @@ async function processPdf(questionPdfPath, outputJson = "questions.json") {
         Chunk ${chunkId}:
         ${chunk}
 
-        Images you can reference if relevant: ${JSON.stringify(images)}
         For answer, score and questionType, refer answer table: ${answerText}
         And for chapter and topic, refer syllabus text: ${syllabusText}
     `;
@@ -158,7 +186,34 @@ async function processPdf(questionPdfPath, outputJson = "questions.json") {
   console.log(`✅ Extracted ${results.length} questions saved to ${outputJson}`);
 }
 
-// -----------------------
 // Run
-// -----------------------
-processPdf("assets/CS22025.pdf", "questions6.json");
+processPdf("assets/cs_2023.pdf", "CS-2023.json");
+
+// async function test(){
+//   const url = `${ENDPOINT}/chat/completions`;
+//   const headers = {
+//     "Content-Type": "application/json",
+//     Authorization: `Bearer ${TOKEN}`,
+//   };
+//   console.log(TOKEN, ENDPOINT)
+//   const body = {
+//     model: MODEL,
+//     messages: [
+//       { role: "system", content: "You are an assistant that answer basic questions." },
+//       { role: "user", content: "What is the capital of India?" },
+//     ],
+//     temperature: 0,
+//   };
+
+//   const response = await axios.post(url, body, { headers });
+//   console.log("answer: ", response.data.choices[0].message.content);
+//   return ;
+// }
+
+// (async () => {
+//   try {
+//     await test();
+//   } catch (err) {
+//     console.error(err.response?.data || err);
+//   }
+// })();

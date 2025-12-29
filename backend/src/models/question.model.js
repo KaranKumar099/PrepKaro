@@ -12,7 +12,7 @@ const questionModel = new Schema({
     default: [],
   },
   answer: {
-    type: String,
+    type: [String],
     required: true,
   },
   score: {
@@ -30,6 +30,10 @@ const questionModel = new Schema({
       required: true
     },
     branch: {
+      type: String,
+      required: true
+    },
+    code: {
       type: String,
       required: true
     },
