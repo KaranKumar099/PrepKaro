@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import { Download, Clock, Target, CheckCircle, Sparkles, TrendingUp, RefreshCw} from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Download, Clock, Target, CheckCircle, Sparkles, TrendingUp, RefreshCw, Menu, Bell} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router";
-import { useQuestionStore } from "../store/UseQuestionStore.jsx";
+import { useQuestionStore } from "../store/UseQuestionStore"; 
 import axios from "axios"
+import { useSidebarStore } from "../store/UseSideBarStore";
+import SideBar from "./SideBar";
 
 export default function Tool() {
   const [selectedExam, setSelectedExam] = useState("");
@@ -13,6 +15,12 @@ export default function Tool() {
   const [questionCount, setQuestionCount] = useState(0);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedPaper, setGeneratedPaper] = useState(null);
+
+  const {openSidebar, closeSidebar, isSidebarOpen} = useSidebarStore();
+  const setActiveTab = useSidebarStore((s) => s.setActiveTab);
+  useEffect(() => {
+    setActiveTab("generate");
+  }, []);
 
   const gate_exams = [
     { name: "Aerospace Engineering", code: "AE" },
@@ -104,47 +112,6 @@ export default function Tool() {
     { id: "gate-CS-1", name: "GATE CSE", icon: "💻" },
   ];
 
-  // const customSelectStyles = {
-  //   control: (base, state) => ({
-  //     ...base,
-  //     borderColor: state.isFocused ? "#10b981" : "#d1d5db",
-  //     padding: "0.15rem",
-  //     boxShadow: state.isFocused ? "0 0 0 2px #a7f3d0" : "none",
-  //     "&:hover": { borderColor: "#10b981" },
-  //   }),
-  //   menu: (base) => ({
-  //     ...base,
-  //     zIndex: 50,
-  //     overflow: "hidden",
-  //   }),
-  //   option: (base, state) => ({
-  //     ...base,
-  //     backgroundColor: state.isSelected
-  //       ? "#10b981"
-  //       : state.isFocused
-  //       ? "#d1fae5"
-  //       : "white",
-  //     color: state.isSelected ? "white" : "#1f2937",
-  //     cursor: "pointer",
-  //     padding: "10px 15px",
-  //     transition: "all 0.2s ease",
-  //     "&:active": {
-  //       backgroundColor: "#059669",
-  //     },
-  //   }),
-  //   menuList: (base) => ({
-  //     ...base,
-  //     maxHeight: "250px",
-  //     "&::-webkit-scrollbar": {
-  //       width: "6px",
-  //     },
-  //     "&::-webkit-scrollbar-thumb": {
-  //       backgroundColor: "#10b981",
-  //       borderRadius: "10px",
-  //     },
-  //   }),
-  // };
-
   const handleExamSelect = (examId) => {
     setSelectedExam(examId);
     setGeneratedPaper(null);
@@ -184,6 +151,17 @@ export default function Tool() {
       console.log("duration : ", duration)
       console.log("totalMarks : ", totalMarks)
 
+      const payloadSize = new Blob([JSON.stringify(fetchedQuestions)]).size;
+      console.log('Payload size:', payloadSize, 'bytes');
+      console.log('Payload size:', (payloadSize / 1024 / 1024).toFixed(2), 'MB');
+
+      const testData = { questions: fetchedQuestions };
+      const testRes = await axios.post(
+          'http://localhost:8000/api/test-large',
+          testData
+      );
+      console.log("Test result:", testRes.data);
+
       const res2 = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/exam`,
         {title: examName, questions: fetchedQuestions, difficulty, duration, totalMarks},
@@ -207,7 +185,13 @@ export default function Tool() {
       });
       setIsGenerating(false);
     } catch (err) {
-      console.error(err)
+      console.error("=== ERROR in res2 ===");
+      console.error("Status:", err.response?.status);
+      console.error("Status Text:", err.response?.statusText);
+      console.error("Error data:", err.response?.data);
+      console.error("Request URL:", err.config?.url);
+      console.error("Request data size:", JSON.stringify(err.config?.data).length);
+      setIsGenerating(false);
     }
   };
 
@@ -242,303 +226,268 @@ export default function Tool() {
   const selectedExamData = allExams.find((e) => e.id === selectedExam);
 
   return (
-    <div className="min-h-screen bg-gray-50 max-w-7xl mx-auto px-6 py-12 mt-10">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">
-          Generate Your Exam Paper
-        </h1>
-        <p className="text-gray-600">
-          Customize difficulty, duration, and create practice exam
-        </p>
-      </div>
+    <div className="h-screen flex overflow-hidden bg-gray-50">
+      <SideBar/>
 
-      <div className="grid lg:grid-cols-3 gap-8">
-        {/* Left Panel */}
-        <div className="lg:col-span-2 space-y-6">
-          {/* Exam Selection */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <Target className="w-6 h-6 text-blue-600" />
-              Select Exam
-            </h2>
-
-            <select
-              value={selectedExam}
-              onChange={(e) => {
-                const examId = e.target.value
-                handleExamSelect(examId)
-              }}
-              className="w-full my-5 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white text-gray-800"
-            >
-              <option value="">-- Select an Exam --</option>
-              {allExams.map((exam) => (
-                <option key={exam.id} value={exam.id}>
-                  {exam.name}
-                </option>
-              ))}
-            </select>
-
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Some Popular Exams
-            </h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              {exams.map((exam) => (
-                <button
-                  key={exam.id}
-                  onClick={() => handleExamSelect(exam.id)}
-                  className={`p-4 rounded-xl border-2 transition-all text-left ${
-                    selectedExam === exam.id
-                      ? "border-blue-600 bg-blue-50"
-                      : "border-gray-200 hover:border-gray-300"
-                  }`}
-                >
-                  <div className="text-4xl mb-2">{exam.icon}</div>
-                  <div className="font-bold text-gray-900">{exam.name}</div>
-                </button>
-              ))}
+      <div className="bg-gray-50 w-full">
+        {/* Top Bar */}
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+          <div className="px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <button onClick={() => openSidebar()} className="lg:hidden">
+                <Menu className="w-6 h-6 text-gray-600" />
+              </button>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Generate Your Exam Paper</h1>
+                <p className="text-gray-600 text-xs sm:text-sm hidden sm:block">
+                  Customize difficulty, duration and generate a practice exam
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-4">
+              <button className="relative p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                <Bell className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
             </div>
           </div>
+        </header>
 
-          {/* Difficulty & Settings */}
-          {selectedExam && (
-            <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <TrendingUp className="w-6 h-6 text-blue-600" />
-                Difficulty & Duration
-              </h2>
+        <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-6 m-6">
+            {/* LEFT PANEL */}
+            <div className="md:col-span-3 lg:col-span-2 space-y-6">
 
-              <div className="space-y-6">
-                {/* Difficulty Buttons */}
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Difficulty Level
-                  </label>
-                  <div className="grid grid-cols-3 gap-4">
+            {/* ───── Select Exam ───── */}
+            <div className="bg-white rounded-2xl shadow-sm p-6">
+                <h2 className="text-xl font-semibold flex items-center gap-2">
+                <Target className="w-5 h-5 text-blue-600" /> Select Exam
+                </h2>
+
+                <select
+                value={selectedExam}
+                onChange={(e) => handleExamSelect(e.target.value)}
+                className="w-full mt-4 px-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-400"
+                >
+                <option value="">-- Select an Exam --</option>
+                {allExams.map((exam) => (
+                    <option key={exam.id} value={exam.id}>
+                    {exam.name}
+                    </option>
+                ))}
+                </select>
+
+                <h3 className="text-lg font-semibold mt-6">
+                Popular Exams
+                </h3>
+
+                <div className="flex md:grid md:grid-cols-3 gap-4 mt-3 overflow-x-auto pb-2 no-scrollbar">
+                {exams.map((exam) => (
+                    <button
+                    key={exam.id}
+                    onClick={() => handleExamSelect(exam.id)}
+                    className={`min-w-[150px] p-4 rounded-xl text-left transition-all ${
+                        selectedExam === exam.id
+                        ? "bg-blue-50 border-2 border-blue-600"
+                        : "border border-gray-200 hover:bg-gray-50"
+                    }`}
+                    >
+                    <div className="text-3xl">{exam.icon}</div>
+                    <p className="text-sm font-medium mt-1">{exam.name}</p>
+                    </button>
+                ))}
+                </div>
+            </div>
+
+            {/* ───── Difficulty & Settings ───── */}
+            {selectedExam && (
+                <div className="bg-white rounded-2xl shadow-sm p-6">
+                <h2 className="text-xl font-semibold flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-blue-600" /> Difficulty
+                </h2>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
                     {["easy", "medium", "hard"].map((level) => (
-                      <button
+                    <button
                         key={level}
                         onClick={() => setDifficulty(level)}
                         className={`p-4 rounded-xl border-2 transition-all ${
-                          difficulty === level
-                            ? "border-blue-600 bg-blue-50"
+                        difficulty === level
+                            ? "bg-blue-50 border-blue-600"
                             : "border-gray-200 hover:border-gray-300"
                         }`}
-                      >
-                        <div className="font-bold text-gray-900 capitalize">
-                          {level}
-                        </div>
-                        <div className="text-xs text-gray-600 mt-1">
-                          {level === "easy" && "60% Easy, 30% Medium, 10% Hard"}
-                          {level === "medium" && "30% Easy, 50% Medium, 20% Hard"}
-                          {level === "hard" && "20% Easy, 30% Medium, 50% Hard"}
-                        </div>
-                      </button>
+                    >
+                        <span className="font-semibold capitalize">{level}</span>
+                        <p className="text-xs text-gray-500 mt-1">
+                        {level === "easy" && "60% Easy, 30% Medium, 10% Hard"}
+                        {level === "medium" && "30% Easy, 50% Medium, 20% Hard"}
+                        {level === "hard" && "20% Easy, 30% Medium, 50% Hard"}
+                        </p>
+                    </button>
                     ))}
-                  </div>
+                    {/* Duration & Marks */}
+                    {/* <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Duration (minutes)
+                        </label>
+                        <input
+                          type="number"
+                          value={duration}
+                          onChange={(e) => setDuration(e.target.value)}
+                          disabled={isGenerating}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                          min="30"
+                          max="240"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Total Marks
+                        </label>
+                        <input
+                          type="number"
+                          value={totalMarks}
+                          onChange={(e) => setTotalMarks(e.target.value)}
+                          disabled={isGenerating}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                          min="50"
+                          max="500"
+                        />
+                      </div>
+                    </div> */}
+                </div>
+                </div>
+            )}
+            </div>
+
+            {/* ───── Summary Panel ───── */}
+            <div className="md:col-span-2 lg:col-span-1">
+            {!generatedPaper ? (
+                <div className="bg-white rounded-2xl shadow-sm border p-6 sticky top-24">
+                <h2 className="text-lg font-bold">Paper Summary</h2>
+
+                {selectedExam ? (
+                    <div className="space-y-4 mt-4 text-sm">
+                    {[
+                        { label: "Exam", value: selectedExamData?.name },
+                        { label: "Difficulty", value: difficulty },
+                        { label: "Duration", value: `${duration} min` },
+                        { label: "Total Marks", value: totalMarks },
+                        { label: "Questions", value: questionCount },
+                    ].map((item, index) => (
+                        <div
+                        key={index}
+                        className="flex justify-between border-b pb-2"
+                        >
+                        <span className="text-gray-500">{item.label}</span>
+                        <span className="font-semibold">{item.value}</span>
+                        </div>
+                    ))}
+
+                    <button
+                        onClick={handleGenerate}
+                        disabled={isGenerating}
+                        className={`w-full py-3 rounded-xl mt-4 flex items-center justify-center gap-2 ${
+                        isGenerating
+                            ? "bg-gray-300 cursor-not-allowed"
+                            : "bg-blue-600 hover:bg-blue-700 text-white"
+                        }`}
+                    >
+                        {isGenerating ? (
+                        <>
+                            <RefreshCw className="w-5 h-5 animate-spin" /> Generating...
+                        </>
+                        ) : (
+                        <>
+                            <Sparkles className="w-5 h-5" /> Generate Paper
+                        </>
+                        )}
+                    </button>
+                    </div>
+                ) : (
+                    <p className="text-center text-gray-500 py-6">
+                    📋 Select an exam to begin
+                    </p>
+                )}
+                </div>
+            ) : (
+                <div className="bg-blue-600 text-white rounded-2xl p-6">
+                <div className="flex items-center gap-2">
+                    <CheckCircle className="w-6 h-6" />
+                    <h3 className="text-lg font-semibold">
+                    Paper Generated Successfully!
+                    </h3>
                 </div>
 
-                {/* Duration & Marks */}
-                {/* <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Duration (minutes)
-                    </label>
-                    <input
-                      type="number"
-                      value={duration}
-                      onChange={(e) => setDuration(e.target.value)}
-                      disabled={isGenerating}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                      min="30"
-                      max="240"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Total Marks
-                    </label>
-                    <input
-                      type="number"
-                      value={totalMarks}
-                      onChange={(e) => setTotalMarks(e.target.value)}
-                      disabled={isGenerating}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                      min="50"
-                      max="500"
-                    />
-                  </div>
-                </div> */}
-              </div>
+                <div className="mt-4 space-y-2 text-sm">
+                    {[
+                    { label: "Exam", value: generatedPaper.examName },
+                    { label: "Questions", value: questionCount },
+                    { label: "Marks", value: totalMarks },
+                    { label: "Duration", value: `${duration} min` },
+                    { label: "Generated", value: generatedPaper.dateGenerated },
+                    ].map((i, idx) => (
+                    <div key={idx} className="flex justify-between">
+                        <span className="text-blue-200">{i.label}</span>
+                        <span className="font-semibold">{i.value}</span>
+                    </div>
+                    ))}
+                </div>
+
+                <div className="mt-4 space-y-3">
+                    <button
+                    onClick={handleStartTest}
+                    className="w-full py-3 bg-white text-blue-600 rounded-xl hover:bg-gray-100 flex items-center justify-center gap-2"
+                    >
+                    <Clock className="w-5 h-5" /> Start Online Test
+                    </button>
+                    <button
+                    onClick={handleDownload}
+                    className="w-full py-3 bg-blue-800 rounded-xl hover:bg-blue-900 flex items-center justify-center gap-2"
+                    >
+                    <Download className="w-5 h-5" /> Download PDF
+                    </button>
+                </div>
+                </div>
+            )}
             </div>
-          )}
         </div>
 
-        {/* Summary Panel */}
-        <div className="space-y-6">
-          {!generatedPaper && 
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 sticky top-24">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">
-                Paper Summary
-              </h2>
-
-              {selectedExam ? (
-                <div className="space-y-4">
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Exam</span>
-                    <span className="font-semibold text-gray-900">
-                      {selectedExamData?.name || "Custom Exam"}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Difficulty</span>
-                    <span className="font-semibold text-gray-900 capitalize">
-                      {difficulty}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Duration</span>
-                    <span className="font-semibold text-gray-900">
-                      {duration} min
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Total Marks</span>
-                    <span className="font-semibold text-gray-900">
-                      {totalMarks}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Questions</span>
-                    <span className="font-semibold text-gray-900">
-                      {questionCount}
-                    </span>
-                  </div>
-
-                  <button
-                    onClick={handleGenerate}
-                    disabled={isGenerating}
-                    className={`w-full py-4 rounded-lg font-semibold text-lg transition-all flex items-center justify-center gap-2 ${
-                      isGenerating
-                        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                        : "bg-blue-600 text-white hover:bg-blue-700"
-                    }`}
-                  >
-                    {isGenerating ? (
-                      <>
-                        <RefreshCw className="w-5 h-5 animate-spin" />
-                        Generating...
-                      </>
-                    ) : (
-                      <>
-                        <Sparkles className="w-5 h-5" />
-                        Generate Paper
-                      </>
-                    )}
-                  </button>
+        {/* RESPONSIVE MODAL FIX */}
+        <AnimatePresence>
+            {showAlert && (
+            <motion.div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+                <motion.div className="bg-white rounded-xl p-6 w-full max-w-sm">
+                <h2 className="text-xl font-bold mb-2">Start Mock Exam?</h2>
+                <p className="text-gray-600 text-sm mb-4">
+                    Timer will begin instantly and cannot be paused.
+                </p>
+                <div className="flex gap-3">
+                    <button
+                    onClick={() => setShowAlert(false)}
+                    className="flex-1 py-2 bg-gray-200 rounded-lg hover:bg-gray-300"
+                    >
+                    Cancel
+                    </button>
+                    <button
+                    onClick={handleProceed}
+                    className="flex-1 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600"
+                    >
+                    Proceed
+                    </button>
                 </div>
-              ) : (
-                <div className="text-center py-8 text-gray-500">
-                  📋 Select an exam to begin
-                </div>
-              )}
-            </div>
-          }
-
-          {/* Generated Paper */}
-          {generatedPaper && (
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white">
-              <div className="flex items-center gap-2 mb-4">
-                <CheckCircle className="w-6 h-6" />
-                <h3 className="text-xl font-bold">Paper Generated!</h3>
-              </div>
-
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-blue-100">Exam</span>
-                  <span className="font-semibold">{generatedPaper.examName}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-blue-100">Questions</span>
-                  <span className="font-semibold">{questionCount}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-blue-100">Total Marks</span>
-                  <span className="font-semibold">{totalMarks}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-blue-100">Duration</span>
-                  <span className="font-semibold">{duration} min</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-blue-100">Generated</span>
-                  <span className="font-semibold text-sm">
-                    {generatedPaper.dateGenerated}
-                  </span>
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <button
-                  onClick={handleStartTest}
-                  className="w-full py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-all flex items-center justify-center gap-2"
-                >
-                  <Clock className="w-5 h-5" />
-                  Start Online Test
-                </button>
-                <button
-                  onClick={handleDownload}
-                  className="w-full py-3 bg-blue-800 text-white rounded-lg font-semibold hover:bg-blue-900 transition-all flex items-center justify-center gap-2"
-                >
-                  <Download className="w-5 h-5" />
-                  Download PDF
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
+                </motion.div>
+            </motion.div>
+            )}
+        </AnimatePresence>
       </div>
 
-      <AnimatePresence>
-        {showAlert && (
-          <motion.div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center"
-            >
-              <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                Start Mock Exam?
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Once started, the timer will begin and you won’t be able to pause the test.
-              </p>
-
-              <div className="flex justify-center gap-4">
-                <button
-                  onClick={() => setShowAlert(false)}
-                  className="px-5 py-2 bg-gray-300 hover:bg-gray-400 rounded-lg text-gray-800 font-semibold transition"
-                >
-                  Cancel
-                </button>
-
-                <button
-                  onClick={handleProceed}
-                  className="px-5 py-2 bg-amber-500 hover:bg-amber-600 rounded-lg text-white font-semibold shadow-md transition"
-                >
-                  Proceed
-                </button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => closeSidebar()}
+        ></div>
+      )}
     </div>
   );
 }

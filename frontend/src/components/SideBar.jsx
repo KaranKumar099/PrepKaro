@@ -2,11 +2,14 @@ import {Zap, X, Settings, LogOut, Activity, Plus, FileText, BarChart3, Calendar,
 import { useUserStore } from "../store/UseUserStore"; 
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { useSidebarStore } from "../store/UseSideBarStore";
 
-function SideBar({ sidebarOpen, setSidebarOpen, activeTab, setActiveTab }) {
+function SideBar() {
     const navigate = useNavigate()
     const {user, loading, setUser} = useUserStore()
     if(loading) return null
+
+    const { isSidebarOpen, activeTab, setActiveTab, toggleSidebar, closeSidebar } = useSidebarStore();
 
     const sidebarItems = [
         { id: 'overview', icon: Activity, label: 'Overview' },
@@ -69,7 +72,7 @@ function SideBar({ sidebarOpen, setSidebarOpen, activeTab, setActiveTab }) {
     <>
     {
         loading 
-        ? <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+        ? <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
             <div className="flex flex-col h-full">
                 {/* Logo Skeleton */}
                 <div className="p-6 pb-7 border-b border-gray-200">
@@ -108,7 +111,7 @@ function SideBar({ sidebarOpen, setSidebarOpen, activeTab, setActiveTab }) {
                 </div>
             </div>
         </aside>
-        : <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+        : <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
             <div className="flex flex-col h-full">
             {/* Logo */}
             <div className="p-6 pb-7 border-b border-gray-200">
@@ -119,7 +122,7 @@ function SideBar({ sidebarOpen, setSidebarOpen, activeTab, setActiveTab }) {
                     </div>
                     <span className="text-xl font-bold text-gray-900">PrepKaro</span>
                 </div>
-                <button onClick={() => setSidebarOpen(false)} className="lg:hidden">
+                <button onClick={() => closeSidebar()} className="lg:hidden">
                     <X className="w-6 h-6 text-gray-600" />
                 </button>
                 </div>

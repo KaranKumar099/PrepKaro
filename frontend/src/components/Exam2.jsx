@@ -11,10 +11,10 @@ export default function ExamApp() {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
   const [marked, setMarked] = useState({});
-    const [visited, setVisited] = useState({});
-    const [time, setTime] = useState(60 * 60); // 1 hour
-  
-    const startTimeRef = useRef(Date.now());
+  const [visited, setVisited] = useState({});
+  const [time, setTime] = useState(60 * 60); // 1 hour
+
+  const startTimeRef = useRef(Date.now());
 
   useEffect(() => {
     const t = setInterval(() => setTime(prev => prev - 1), 1000);
