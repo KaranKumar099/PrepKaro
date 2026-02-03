@@ -9,7 +9,7 @@ dotenv.config({
 cloudinary.config({ 
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
   api_key: process.env.CLOUDINARY_API_KEY, 
-  api_secret: process.env.CLOUDINARY_SECRET_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const uploadOnCloudinary = async (localFilePath) => {
@@ -27,19 +27,19 @@ const uploadOnCloudinary = async (localFilePath) => {
 
 export {uploadOnCloudinary}
 
-// const folderPath = "assets";
-// async function uploadAllFiles() {
-//   try {
-//     const files = fs.readdirSync(folderPath);
-//     for (const file of files) {
-//       const fullPath = path.join(folderPath, file);
-//       console.log(`Uploading ${file}...`);
-//       await uploadOnCloudinary(fullPath);
-//     }
-//     console.log("✅ All files uploaded!");
-//   } catch (err) {
-//     console.error("Error reading folder or uploading:", err);
-//   }
-// }
+const folderPath = "assets";
+async function uploadAllFiles() {
+  try {
+    const files = fs.readdirSync(folderPath);
+    for (const file of files) {
+      const fullPath = path.join(folderPath, file);
+      console.log(`Uploading ${file}...`);
+      await uploadOnCloudinary(fullPath);
+    }
+    console.log("✅ All files uploaded!");
+  } catch (err) {
+    console.error("Error reading folder or uploading:", err);
+  }
+}
 
-// uploadAllFiles();
+uploadAllFiles();

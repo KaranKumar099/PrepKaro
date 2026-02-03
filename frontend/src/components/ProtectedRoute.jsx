@@ -1,17 +1,13 @@
-// components/ProtectedRoute.jsx
 import { Navigate } from "react-router-dom";
-import { useUser } from "../context/userContext";
+import { useUserStore } from "../store/UseUserStore";
 
 const ProtectedRoute = ({ children }) => {
-  const { user } = useUser();
+  const { user, loading } = useUserStore();
 
-  if (!user) {
-    // Not logged in → redirect to login/auth page
-    return <Navigate to="/auth" replace />;
-  }
+  if (loading) return <p>Checking auth...</p>;
+  if (!user) return <Navigate to="/login" replace />;
 
-  // Logged in → render the page
   return children;
 };
 
-export default ProtectedRoute;
+export default ProtectedRoute

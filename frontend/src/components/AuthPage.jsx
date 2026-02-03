@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import { useUser } from "../context/userContext";
+import { useUserStore } from '../store/UseUserStore';
 
 export default function Login() {
     const navigate = useNavigate()
@@ -20,7 +20,7 @@ export default function Login() {
     });
   };
 
-  const {setUser} = useUser()
+  const {setUser} = useUserStore()
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

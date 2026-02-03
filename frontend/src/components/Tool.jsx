@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Download, Clock, Target, CheckCircle, Sparkles, TrendingUp, RefreshCw} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router";
-import { useQuestions } from "../context/questionsContext.jsx";
+import { useQuestionStore } from "../store/UseQuestionStore.jsx";
 import axios from "axios"
 
 export default function Tool() {
@@ -155,7 +155,7 @@ export default function Tool() {
     setQuestionCount(details.questionCount)
   };
 
-  const {setQuestions, setAttemptId} = useQuestions();
+  const {setQuestions, setAttemptID} = useQuestionStore();
   const [examId, setExamId] = useState(null);
   const navigate = useNavigate();
 
@@ -232,7 +232,7 @@ export default function Tool() {
         }
       )
       console.log("Attempt : ", res)
-      setAttemptId(res.data.data._id)
+      setAttemptID(res.data.data._id)
       navigate("/exam")
     } catch (error) {
       console.error("Error in creating Mock Exam : ", error)

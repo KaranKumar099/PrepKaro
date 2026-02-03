@@ -1,11 +1,11 @@
 import {Zap, X, Settings, LogOut, Activity, Plus, FileText, BarChart3, Calendar, Trophy} from "lucide-react"
-import { useUser } from '../context/userContext'
+import { useUserStore } from "../store/UseUserStore"; 
 import axios from "axios";
 import { useNavigate } from "react-router";
 
 function SideBar({ sidebarOpen, setSidebarOpen, activeTab, setActiveTab }) {
     const navigate = useNavigate()
-    const {user, loading, setUser} = useUser()
+    const {user, loading, setUser} = useUserStore()
     if(loading) return null
 
     const sidebarItems = [

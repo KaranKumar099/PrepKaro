@@ -1,0 +1,1418 @@
+[
+  {
+    "questionText": "We reached the station late, and _______ missed the train.",
+    "picture": null,
+    "options": [
+      "A) near",
+      "B) nearly",
+      "C) utterly",
+      "D) mostly"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": null,
+    "topic": null,
+    "difficultyLvl": null
+  },
+  {
+    "questionText": "Kind : _______ : : Often : Frequently (By word meaning)",
+    "picture": null,
+    "options": [
+      "A) Mean",
+      "B) Type",
+      "C) Cruel",
+      "D) Kindly"
+    ],
+    "answer": [
+      "MTA"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": null,
+    "topic": null,
+    "difficultyLvl": null
+  },
+  {
+    "questionText": "A series of natural numbers 𝐹1, 𝐹2, 𝐹3, 𝐹4, 𝐹5, 𝐹6, 𝐹7, … obeys 𝐹𝑛+1 = 𝐹𝑛 + 𝐹𝑛−1 for all integers 𝑛 ≥ 2. If 𝐹6 = 37, and 𝐹7 = 60, then what is 𝐹1?",
+    "picture": null,
+    "options": [
+      "A) 4",
+      "B) 5",
+      "C) 8",
+      "D) 9"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Discrete Mathematics: recurrence relations",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A survey for a certain year found that 90% of pregnant women received medical care at least once before giving birth. Of these women, 60% received medical care from doctors, while 40% received medical care from other healthcare providers. Given this information, which one of the following statements can be inferred with certainty?\n(A) More than half of the pregnant women received medical care at least once from a doctor.\n(B) Less than half of the pregnant women received medical care at least once from a doctor.\n(C) More than half of the pregnant women received medical care at most once from a doctor.\n(D) Less than half of the pregnant women received medical care at most once from a doctor.",
+    "picture": null,
+    "options": [
+      "A) More than half of the pregnant women received medical care at least once from a doctor.",
+      "B) Less than half of the pregnant women received medical care at least once from a doctor.",
+      "C) More than half of the pregnant women received medical care at most once from a doctor.",
+      "D) Less than half of the pregnant women received medical care at most once from a doctor."
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": null,
+    "topic": null,
+    "difficultyLvl": null
+  },
+  {
+    "questionText": "Looking at the surface of a smooth 3-dimensional object from the outside, which one of the following options is TRUE?\n(A) The surface of the object must be concave everywhere.\n(B) The surface of the object must be convex everywhere.\n(C) The surface of the object may be concave in some places and convex in other places.\n(D) The object can have edges, but no corners.",
+    "picture": null,
+    "options": [
+      "A) The surface of the object must be concave everywhere.",
+      "B) The surface of the object must be convex everywhere.",
+      "C) The surface of the object may be concave in some places and convex in other places.",
+      "D) The object can have edges, but no corners."
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": null,
+    "topic": null,
+    "difficultyLvl": null
+  },
+  {
+    "questionText": "The country of Zombieland is in distress since more than 75% of its working population is suffering from serious health issues. Studies conducted by competent health experts concluded that a complete lack of physical exercise among its working population was one of the leading causes of their health issues. As one of the measures to address the problem, the Government of Zombieland has decided to provide monetary incentives to those who ride bicycles to work. Based only on the information provided above, which one of the following statements can be logically inferred with certainty?\n(A) All the working population of Zombieland will henceforth ride bicycles to work.\n(B) Riding bicycles will ensure that all of the working population of Zombieland is free of health issues.\n(C) The health experts suggested to the Government of Zombieland to declare riding bicycles as mandatory.\n(D) The Government of Zombieland believes that riding bicycles is a form of physical exercise.",
+    "picture": null,
+    "options": [
+      "A) All the working population of Zombieland will henceforth ride bicycles to work.",
+      "B) Riding bicycles will ensure that all of the working population of Zombieland is free of health issues.",
+      "C) The health experts suggested to the Government of Zombieland to declare riding bicycles as mandatory.",
+      "D) The Government of Zombieland believes that riding bicycles is a form of physical exercise."
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": null,
+    "topic": null,
+    "difficultyLvl": null
+  },
+  {
+    "questionText": "Consider two functions of time (𝑡),\n𝑓(𝑡) = 0.01 𝑡2\n𝑔(𝑡) = 4 𝑡\nwhere 0 < 𝑡 < ∞.\nNow consider the following two statements:\n(i) For some 𝑡 > 0, 𝑔(𝑡) > 𝑓(𝑡).\n(ii) There exists a 𝑇, such that 𝑓(𝑡) > 𝑔(𝑡) for all 𝑡 > 𝑇.\nWhich one of the following options is TRUE?\n(A) only (i) is correct\n(B) only (ii) is correct\n(C) both (i) and (ii) are correct\n(D) neither (i) nor (ii) is correct",
+    "picture": null,
+    "options": [
+      "A) only (i) is correct",
+      "B) only (ii) is correct",
+      "C) both (i) and (ii) are correct",
+      "D) neither (i) nor (ii) is correct"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Calculus: functions, limits",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "f(x) and g(y) are functions of x and y, respectively, and f(x)g(y) = 0 for all real values of x and y. Which one of the following options is necessarily TRUE for all x and y?\n(A) f(x) = 0 and g(y) = 0\n(B) f(x)g(y) = constant = 0\n(C) f(x) ≠ constant and g(y) ≠ constant\n(D) f(x)g(y) = f(x) + g(y) − f(x)g(y)",
+    "picture": null,
+    "options": [
+      "A) f(x) = 0 and g(y) = 0",
+      "B) f(x)g(y) = constant = 0",
+      "C) f(x) ≠ constant and g(y) ≠ constant",
+      "D) f(x)g(y) = f(x) + g(y) − f(x)g(y)"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Functions",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the options best describes the transformation of the 2-dimensional figure P to Q, and then to R, as shown?\n(A) Operation 1: A clockwise rotation by 90º about an axis perpendicular to the plane of the figure\nOperation 2: A reflection along a horizontal line\n(B) Operation 1: A counter clockwise rotation by 90º about an axis perpendicular to the plane of the figure\nOperation 2: A reflection along a horizontal line\n(C) Operation 1: A clockwise rotation by 90º about an axis perpendicular to the plane of the figure\nOperation 2: A reflection along a vertical line\n(D) Operation 1: A counter clockwise rotation by 180º about an axis perpendicular to the plane of the figure\nOperation 2: A reflection along a vertical line",
+    "picture": null,
+    "options": [
+      "A) Operation 1: A clockwise rotation by 90º about an axis perpendicular to the plane of the figure; Operation 2: A reflection along a horizontal line",
+      "B) Operation 1: A counter clockwise rotation by 90º about an axis perpendicular to the plane of the figure; Operation 2: A reflection along a horizontal line",
+      "C) Operation 1: A clockwise rotation by 90º about an axis perpendicular to the plane of the figure; Operation 2: A reflection along a vertical line",
+      "D) Operation 1: A counter clockwise rotation by 180º about an axis perpendicular to the plane of the figure; Operation 2: A reflection along a vertical line"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": null,
+    "topic": null,
+    "difficultyLvl": null
+  },
+  {
+    "questionText": "Consider the following statements regarding the front-end and back-end of a compiler.\nS1: The front-end includes phases that are independent of the target hardware.\nS2: The back-end includes phases that are specific to the target hardware.\nS3: The back-end includes phases that are specific to the programming language used in the source code.\nIdentify the CORRECT option.\n(A) Only S1 is TRUE.\n(B) Only S1 and S2 are TRUE.\n(C) S1, S2, and S3 are all TRUE.\n(D) Only S1 and S3 are TRUE.",
+    "picture": null,
+    "options": [
+      "A) Only S1 is TRUE.",
+      "B) Only S1 and S2 are TRUE.",
+      "C) S1, S2, and S3 are all TRUE.",
+      "D) Only S1 and S3 are TRUE."
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Compiler Design",
+    "topic": "Front-end and Back-end Phases",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the following sequences when stored in an array at locations A[1], . . . , A[10] forms a max-heap?\n(A) 23, 17, 10, 6, 13, 14, 1, 5, 7, 12\n(B) 23, 17, 14, 7, 13, 10, 1, 5, 6, 12\n(C) 23, 17, 14, 6, 13, 10, 1, 5, 7, 15\n(D) 23, 14, 17, 1, 10, 13, 16, 12, 7, 5",
+    "picture": null,
+    "options": [
+      "A) 23, 17, 10, 6, 13, 14, 1, 5, 7, 12",
+      "B) 23, 17, 14, 7, 13, 10, 1, 5, 6, 12",
+      "C) 23, 17, 14, 6, 13, 10, 1, 5, 7, 15",
+      "D) 23, 14, 17, 1, 10, 13, 16, 12, 7, 5"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Binary Heaps",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let SLLdel be a function that deletes a node in a singly-linked list given a pointer to the node and a pointer to the head of the list. Similarly, let DLLdel be another function that deletes a node in a doubly-linked list given a pointer to the node and a pointer to the head of the list. Let n denote the number of nodes in each of the linked lists. Which one of the following choices is TRUE about the worst-case time complexity of SLLdel and DLLdel?\n(A) SLLdel is O(1) and DLLdel is O(n)\n(B) Both SLLdel and DLLdel are O(log(n))\n(C) Both SLLdel and DLLdel are O(1)\n(D) SLLdel is O(n) and DLLdel is O(1)",
+    "picture": null,
+    "options": [
+      "A) SLLdel is O(1) and DLLdel is O(n)",
+      "B) Both SLLdel and DLLdel are O(log(n))",
+      "C) Both SLLdel and DLLdel are O(1)",
+      "D) SLLdel is O(n) and DLLdel is O(1)"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Linked Lists",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the Deterministic Finite-state Automaton (DFA) A shown below. The DFA runs on the alphabet {0, 1}, and has the set of states {s, p, q, r}, with s being the start state and p being the only final state. Which one of the following regular expressions correctly describes the language accepted by A?\n(A) 1(0∗11)∗\n(B) 0(0 + 1)∗\n(C) 1(0 + 11)∗\n(D) 1(110∗)∗",
+    "picture": null,
+    "options": [
+      "A) 1(0∗11)∗",
+      "B) 0(0 + 1)∗",
+      "C) 1(0 + 11)∗",
+      "D) 1(110∗)∗"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular Expressions and Finite Automata",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The Lucas sequence Ln is defined by the recurrence relation: Ln = Ln−1 + Ln−2, for n ≥ 3, with L1 = 1 and L2 = 3. Which one of the options given is TRUE?\n(A) Ln = ((1 + √5)/2)^n + ((1 − √5)/2)^n\n(B) Ln = ((1 + √5)/2)^n − ((1 − √5)/3)^n\n(C) Ln = ((1 + √5)/2)^n + ((1 − √5)/3)^n\n(D) Ln = ((1 + √5)/2)^n − ((1 − √5)/2)^n",
+    "picture": null,
+    "options": [
+      "A) Ln = ((1 + √5)/2)^n + ((1 − √5)/2)^n",
+      "B) Ln = ((1 + √5)/2)^n − ((1 − √5)/3)^n",
+      "C) Ln = ((1 + √5)/2)^n + ((1 − √5)/3)^n",
+      "D) Ln = ((1 + √5)/2)^n − ((1 − √5)/2)^n"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Recurrence Relations",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the options given below refers to the degree (or arity) of a relation in relational database systems?\n(A) Number of attributes of its relation schema.\n(B) Number of tuples stored in the relation.\n(C) Number of entries in the relation.\n(D) Number of distinct domains of its relation schema.",
+    "picture": null,
+    "options": [
+      "A) Number of attributes of its relation schema.",
+      "B) Number of tuples stored in the relation.",
+      "C) Number of entries in the relation.",
+      "D) Number of distinct domains of its relation schema."
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra, tuple calculus, SQL",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Suppose two hosts are connected by a point-to-point link and they are configured to use Stop-and-Wait protocol for reliable data transfer. Identify in which one of the following scenarios, the utilization of the link is the lowest.\n(A) Longer link length and lower transmission rate\n(B) Longer link length and higher transmission rate\n(C) Shorter link length and lower transmission rate\n(D) Shorter link length and higher transmission rate",
+    "picture": null,
+    "options": [
+      "A) Longer link length and lower transmission rate",
+      "B) Longer link length and higher transmission rate",
+      "C) Shorter link length and lower transmission rate",
+      "D) Shorter link length and higher transmission rate"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Networks",
+    "topic": "Transport layer: flow control and congestion control, UDP, TCP, sockets",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let\nA =\n[ 1 2 3 4\n  4 1 2 3\n  3 4 1 2\n  2 3 4 1 ]\nand\nB =\n[ 3 4 1 2\n  4 1 2 3\n  1 2 3 4\n  2 3 4 1 ]\nLet det(A) and det(B) denote the determinants of the matrices A and B, respectively.\nWhich one of the options given below is TRUE?\n(A) det(A) = det(B)\n(B) det(B) = −det(A)\n(C) det(A) = 0\n(D) det(AB) = det(A) + det(B)",
+    "picture": null,
+    "options": [
+      "A) det(A) = det(B)",
+      "B) det(B) = −det(A)",
+      "C) det(A) = 0",
+      "D) det(AB) = det(A) + det(B)"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Linear Algebra: Matrices, determinants, system of linear equations, eigenvalues and eigenvectors, LU decomposition",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following definition of a lexical token id for an identifier in a programming language, using extended regular expressions:\nletter → [A-Za-z]\ndigit → [0-9]\nid → letter (letter | digit)*\nWhich one of the following Non-deterministic Finite-state Automata with ε-transitions accepts the set of valid identifiers? (A double-circle denotes a final state)\n(A)\nletter letter digit ε\n(B)\nletter letter digit ε ε\n(C)\nletter letter digit ε ε ε ε ε\n(D)\nletter letter digit ε",
+    "picture": null,
+    "options": [
+      "A) letter letter digit ε",
+      "B) letter letter digit ε ε",
+      "C) letter letter digit ε ε ε ε ε",
+      "D) letter letter digit ε"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular expressions and finite automata",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "An algorithm has to store several keys generated by an adversary in a hash table. The adversary is malicious who tries to maximize the number of collisions. Let k be the number of keys, m be the number of slots in the hash table, and k > m. Which one of the following is the best hashing strategy to counteract the adversary?\n(A) Division method, i.e., use the hash function h(k) = k mod m.\n(B) Multiplication method, i.e., use the hash function h(k) = floor(m(kA − floor(kA))), where A is a carefully chosen constant.\n(C) Universal hashing method.\n(D) If k is a prime number, use Division method. Otherwise, use Multiplication method.",
+    "picture": null,
+    "options": [
+      "A) Division method, i.e., use the hash function h(k) = k mod m.",
+      "B) Multiplication method, i.e., use the hash function h(k) = floor(m(kA − floor(kA))), where A is a carefully chosen constant.",
+      "C) Universal hashing method.",
+      "D) If k is a prime number, use Division method. Otherwise, use Multiplication method."
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Algorithms",
+    "topic": "Searching, sorting, hashing",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The output of a 2-input multiplexer is connected back to one of its inputs as shown in the figure.\n0\n1\nS\nQ\nMultiplexer\nMatch the functional equivalence of this circuit to one of the following options.\n(A) D Flip-flop\n(B) D Latch\n(C) Half-adder\n(D) Demultiplexer",
+    "picture": null,
+    "options": [
+      "A) D Flip-flop",
+      "B) D Latch",
+      "C) Half-adder",
+      "D) Demultiplexer"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Digital Logic",
+    "topic": "Combinational and sequential circuits",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one or more of the following need to be saved on a context switch from one thread (T1) of a process to another thread (T2) of the same process?\n(A) Page table base register\n(B) Stack pointer\n(C) Program counter\n(D) General purpose registers",
+    "picture": null,
+    "options": [
+      "A) Page table base register",
+      "B) Stack pointer",
+      "C) Program counter",
+      "D) General purpose registers"
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Operating System",
+    "topic": "System calls, processes, threads, inter‐process communication, concurrency and synchronization",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one or more of the following options guarantee that a computer system will transition from user mode to kernel mode?\n(A) Function Call\n(B) malloc Call\n(C) Page Fault\n(D) System Call",
+    "picture": null,
+    "options": [
+      "A) Function Call",
+      "B) malloc Call",
+      "C) Page Fault",
+      "D) System Call"
+    ],
+    "answer": [
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Operating System",
+    "topic": "System calls, processes, threads, inter‐process communication, concurrency and synchronization",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following statements is/are INCORRECT about the OSPF (Open Shortest Path First) routing protocol used in the Internet?\n(A) OSPF implements Bellman-Ford algorithm to find shortest paths.\n(B) OSPF uses Dijkstra’s shortest path algorithm to implement least-cost path routing.\n(C) OSPF is used as an inter-domain routing protocol.\n(D) OSPF implements hierarchical routing.",
+    "picture": null,
+    "options": [
+      "A) OSPF implements Bellman-Ford algorithm to find shortest paths.",
+      "B) OSPF uses Dijkstra’s shortest path algorithm to implement least-cost path routing.",
+      "C) OSPF is used as an inter-domain routing protocol.",
+      "D) OSPF implements hierarchical routing."
+    ],
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Networks",
+    "topic": "Routing protocols: shortest path, flooding, distance vector and link state routing",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Geetha has a conjecture about integers, which is of the form ∀x (P(x) ⇒ ∃yQ(x, y)), where P is a statement about integers, and Q is a statement about pairs of integers. Which of the following (one or more) option(s) would imply Geetha’s conjecture?\n(A) ∃x (P(x) ∧ ∀yQ(x, y))\n(B) ∀x∀yQ(x, y)\n(C) ∃y∀x (P(x) ⇒ Q(x, y))\n(D) ∃x (P(x) ∧ ∃yQ(x, y))",
+    "picture": null,
+    "options": [
+      "A) ∃x (P(x) ∧ ∀yQ(x, y))",
+      "B) ∀x∀yQ(x, y)",
+      "C) ∃y∀x (P(x) ⇒ Q(x, y))",
+      "D) ∃x (P(x) ∧ ∃yQ(x, y))"
+    ],
+    "answer": [
+      "A",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Propositional and first order logic",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one or more of the following CPU scheduling algorithms can potentially cause starvation?\n(A) First-in First-Out\n(B) Round Robin\n(C) Priority Scheduling\n(D) Shortest Job First",
+    "picture": null,
+    "options": [
+      "A) First-in First-Out",
+      "B) Round Robin",
+      "C) Priority Scheduling",
+      "D) Shortest Job First"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Operating System",
+    "topic": "CPU and I/O scheduling",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let f(x) = x^3 + 15x^2 − 33x − 36 be a real-valued function. Which of the following statements is/are TRUE?\n(A) f(x) does not have a local maximum.\n(B) f(x) has a local maximum.\n(C) f(x) does not have a local minimum.\n(D) f(x) has a local minimum.",
+    "picture": null,
+    "options": [
+      "A) f(x) does not have a local maximum.",
+      "B) f(x) has a local maximum.",
+      "C) f(x) does not have a local minimum.",
+      "D) f(x) has a local minimum."
+    ],
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Calculus",
+    "topic": "Maxima and minima",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let f and g be functions of natural numbers given by f(n) = n and g(n) = n^2. Which of the following statements is/are TRUE?\n(A) f ∈ O(g)\n(B) f ∈ Ω(g)\n(C) f ∈ o(g)\n(D) f ∈ Θ(g)",
+    "picture": null,
+    "options": [
+      "A) f ∈ O(g)",
+      "B) f ∈ Ω(g)",
+      "C) f ∈ o(g)",
+      "D) f ∈ Θ(g)"
+    ],
+    "answer": [
+      "B",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Algorithms",
+    "topic": "Asymptotic worst case time and space complexity",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let A be the adjacency matrix of the graph with vertices {1, 2, 3, 4, 5}. Let λ1, λ2, λ3, λ4, and λ5 be the five eigenvalues of A. Note that these eigenvalues need not be distinct. The value of λ1 + λ2 + λ3 + λ4 + λ5 = ____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "A",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Linear Algebra",
+    "topic": "Matrices, determinants, system of linear equations, eigenvalues and eigenvectors",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The value of the definite integral ∫ from x=-3 to x=3 ∫ from y=-2 to y=2 ∫ from z=-1 to z=1 (4x^2y − z^3) dz dy dx is ____ (Rounded off to the nearest integer).",
+    "picture": null,
+    "options": [],
+    "answer": null,
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Calculus",
+    "topic": "Integration",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A particular number is written as 132 in radix-4 representation. The same number in radix-5 representation is ____.",
+    "picture": null,
+    "options": [],
+    "answer": null,
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Digital Logic",
+    "topic": "Number representations and computer arithmetic (fixed and floating point)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a 3-stage pipelined processor having a delay of 10 ns (nanoseconds), 20 ns, and 14 ns, for the first, second, and the third stages, respectively. Assume that there is no other delay and the processor does not suffer from any pipeline hazards. Also assume that one instruction is fetched every cycle. The total execution time for executing 100 instructions on this processor is ____ ns.",
+    "picture": null,
+    "options": [],
+    "answer": null,
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Instruction pipelining, pipeline hazards",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A keyboard connected to a computer is used at a rate of 1 keystroke per second. The computer system polls the keyboard every 10 ms (milli seconds) to check for a keystroke and consumes 100 μs (micro seconds) for each poll. If it is determined after polling that a key has been pressed, the system consumes an additional 200 μs to process the keystroke. Let T1 denote the fraction of a second spent in polling and processing a keystroke. In an alternative implementation, the system uses interrupts instead of polling. An interrupt is raised for every keystroke. It takes a total of 1 ms for servicing an interrupt and processing a keystroke. Let T2 den...",
+    "picture": null,
+    "options": [],
+    "answer": null,
+    "score": null,
+    "questionType": null,
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "I/O interface (interrupt and DMA mode)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Note the fraction of a second spent in servicing the interrupt and processing a keystroke. The ratio T1/T2 is ___. (Rounded off to one decimal place)",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "10.2"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "I/O interface (interrupt and DMA mode)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The integer value printed by the ANSI-C program given below is ___.\n#include<stdio.h>\nint funcp(){\nstatic int x = 1;\nx++;\nreturn x;\n}\nint main(){\nint x,y;\nx = funcp();\ny = funcp()+x;\nprintf(\"%d\\n\", (x+y));\nreturn 0;\n}",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "7"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following program:\nint main()\n{\nf1();\nf2(2);\nf3();\nreturn(0);\n}\nint f1()\n{\nreturn(1);\n}\nint f2(int X)\n{\nf3();\nif (X==1)\nreturn f1();\nelse\nreturn (X*f2(X-1));\n}\nint f3()\n{\nreturn(5);\n}\nWhich one of the following options represents the activation tree corresponding to the main function?\n(A)\nmain\nf1 f2 f3\nf3  f2\nf3  f1\n(B)\nmain\nf2 f3\nf1\nf1\nf3\n(C)\nmain\nf2\nf1\nf3  f1\n(D)\nmain\nf1 f2 f3\nf3  f2  f1",
+    "picture": null,
+    "options": [
+      "A) main f1 f2 f3 f3  f2 f3  f1",
+      "B) main f2 f3 f1 f1 f3",
+      "C) main f2 f1 f3  f1",
+      "D) main f1 f2 f3 f3  f2  f1"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Recursion",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the control flow graph shown.\nj = n\na = 10\ni = i + 1\nj = j − 1\nB1\nB2\ni = a + 1\na = 20\nB3\nB4\nEXIT\nENTRY\ni = m − 1\nWhich one of the following choices correctly lists the set of live variables at the exit point of each basic block?\n(A)  B1: {}, B2: {a}, B3: {a}, B4: {a}\n(B)  B1: {i, j}, B2: {a}, B3: {a}, B4: {i}\n(C)  B1: {a, i, j}, B2: {a, i, j}, B3: {a, i}, B4: {a}\n(D)  B1: {a, i, j}, B2: {a, j}, B3: {a, j}, B4: {a, i, j}",
+    "picture": null,
+    "options": [
+      "A) B1: {}, B2: {a}, B3: {a}, B4: {a}",
+      "B) B1: {i, j}, B2: {a}, B3: {a}, B4: {i}",
+      "C) B1: {a, i, j}, B2: {a, i, j}, B3: {a, i}, B4: {a}",
+      "D) B1: {a, i, j}, B2: {a, j}, B3: {a, j}, B4: {a, i, j}"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Compiler Design",
+    "topic": "Data flow analyses: liveness analysis",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the two functions incr and decr shown below.\nincr(){\nwait(s);\nX = X+1;\nsignal(s);\n}\ndecr(){\nwait(s);\nX = X-1;\nsignal(s);\n}\nThere are 5 threads each invoking incr once, and 3 threads each invoking decr once, on the same shared variable X. The initial value of X is 10.\nSuppose there are two implementations of the semaphore s, as follows:\nI-1: s is a binary semaphore initialized to 1.\nI-2: s is a counting semaphore initialized to 2.\nLet V1, V2 be the values of X at the end of execution of all the threads with implementations I-1, I-2, respectively.\nWhich one of the following choices corresponds to the minimum possible values of V1, V2, respectively?\n(A) 15, 7\n(B) 7, 7\n(C) 12, 7\n(D) 12, 8",
+    "picture": null,
+    "options": [
+      "A) 15, 7",
+      "B) 7, 7",
+      "C) 12, 7",
+      "D) 12, 8"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Operating System",
+    "topic": "Concurrency and synchronization",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the context-free grammar G below\nS → aSb | X\nX → aX | Xb | a | b ,\nwhere S and X are non-terminals, and a and b are terminal symbols. The starting non-terminal is S.\nWhich one of the following statements is CORRECT?\n(A) The language generated by G is (a + b)*\n(B) The language generated by G is a*(a + b)b*\n(C) The language generated by G is a*b*(a + b)\n(D) The language generated by G is not a regular language",
+    "picture": null,
+    "options": [
+      "A) The language generated by G is (a + b)*",
+      "B) The language generated by G is a*(a + b)b*",
+      "C) The language generated by G is a*b*(a + b)",
+      "D) The language generated by G is not a regular language"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Context-free grammars",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the given C-code and its corresponding assembly code, with a few operands U1–U4 being unknown. Some useful information as well as the semantics of each unique assembly instruction is annotated as inline comments in the code. The memory is byte-addressable.\n//C-code\nint a[10], b[10], i;\n// int is 32-bit\nfor (i=0; i<10;i++)\na[i] = b[i] * 8;\n;assembly-code (; indicates comments)\n;r1-r5 are 32-bit integer registers\n;initialize r1=0, r2=10\n;initialize r3, r4 with base address of a, b\nL01: jeq r1, r2, end \t;if(r1==r2) goto end\nL02: lw \tr5, 0(r4) \t;r5 <- Memory[r4+0]\nL03: shl r5, r5, U1 \t;r5 <- r5 << U1\nL04: sw \tr5, 0(r3) \t;Memory[r3+0] <- r5\nL05: add r3, r3, U2 \t;r3 <- r3+U2\nL06: add r4, r4, U3\nL07: add r1, r1, 1\nL08: jmp U4 \t;goto U4\nL09: end\nWhich one of the following options is a CORRECT replacement for operands in the position (U1, U2, U3, U4) in the above assembly code?",
+    "picture": null,
+    "options": [
+      "A) (8, 4, 1, L02)",
+      "B) (3, 4, 4, L01)",
+      "C) (8, 1, 1, L02)",
+      "D) (3, 1, 1, L01)"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A 4 kilobyte (KB) byte-addressable memory is realized using four 1 KB memory blocks. Two input address lines (IA4 and IA3) are connected to the chip select (CS) port of these memory blocks through a decoder as shown in the figure. The remaining ten input address lines from IA11–IA0 are connected to the address port of these blocks. The chip select (CS) is active high.\nThe input memory addresses (IA11–IA0), in decimal, for the starting locations (Addr=0) of each block (indicated as X1, X2, X3, X4 in the figure) are among the options given below. Which one of the following options is CORRECT?",
+    "picture": null,
+    "options": [
+      "A) (0, 1, 2, 3)",
+      "B) (0, 1024, 2048, 3072)",
+      "C) (0, 8, 16, 24)",
+      "D) (0, 0, 0, 0)"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory and secondary storage",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a sequential digital circuit consisting of T flip-flops and D flip-flops as shown in the figure. CLKIN is the clock input to the circuit. At the beginning, Q1, Q2 and Q3 have values 0, 1 and 1, respectively.\nWhich one of the given values of (Q1, Q2, Q3) can NEVER be obtained with this digital circuit?",
+    "picture": null,
+    "options": [
+      "A) (0, 0, 1)",
+      "B) (1, 0, 0)",
+      "C) (1, 0, 1)",
+      "D) (1, 1, 1)"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Digital Logic",
+    "topic": "Combinational and sequential circuits",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A Boolean digital circuit is composed using two 4-input multiplexers (M1 and M2) and one 2-input multiplexer (M3) as shown in the figure. X0–X7 are the inputs of the multiplexers M1 and M2 and could be connected to either 0 or 1. The select lines of the multiplexers are connected to Boolean variables A, B and C as shown.\nWhich one of the following set of values of (X0, X1, X2, X3, X4, X5, X6, X7) will realise the Boolean function A + A.C + A.B.C?",
+    "picture": null,
+    "options": [
+      "A) (1, 1, 0, 0, 1, 1, 1, 0)",
+      "B) (1, 1, 0, 0, 1, 1, 0, 1)",
+      "C) (1, 1, 0, 1, 1, 1, 0, 0)",
+      "D) (0, 0, 1, 1, 0, 1, 1, 1)"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Digital Logic",
+    "topic": "Combinational and sequential circuits",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let A be a priority queue for maintaining a set of elements. Suppose A is implemented using a max-heap data structure. The operation Extract-Max(A) extracts and deletes the maximum element from A. The operation Insert(A,key) inserts a new element key in A. The properties of a max-heap are preserved at the end of each of these operations. When A contains n elements, which one of the following statements about the worst case running time of these two operations is TRUE?\n(A) Both Extract-Max(A) and Insert(A,key) run in O(1).\n(B) Both Extract-Max(A) and Insert(A,key) run in O(log(n)).\n(C) Extract-Max(A) runs in O(1) whereas Insert(A,key) runs in O(n).\n(D) Extract-Max(A) runs in O(1) whereas Insert(A,key) runs in O(log(n)).",
+    "picture": null,
+    "options": [
+      "A) Both Extract-Max(A) and Insert(A,key) run in O(1).",
+      "B) Both Extract-Max(A) and Insert(A,key) run in O(log(n)).",
+      "C) Extract-Max(A) runs in O(1) whereas Insert(A,key) runs in O(n).",
+      "D) Extract-Max(A) runs in O(1) whereas Insert(A,key) runs in O(log(n))."
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Arrays, stacks, queues, linked lists, trees, binary search trees, binary heaps, graphs.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the C function foo and the binary tree shown.\ntypedef struct node {\nint val;\nstruct node *left, *right;\n} node;\nint foo(node *p) {\nint retval;\nif (p == NULL)\nreturn 0;\nelse {\nretval = p->val + foo(p->left) + foo(p->right);\nprintf(\"%d \", retval);\nreturn retval;\n}\n}\n10\n5\n3 8\n11\n13\nWhen foo is called with a pointer to the root node of the given binary tree, what will it print?\n(A) 3 8 5 13 11 10\n(B) 3 5 8 10 11 13\n(C) 3 8 16 13 24 50\n(D) 3 16 8 50 24 13",
+    "picture": null,
+    "options": [
+      "A) 3 8 5 13 11 10",
+      "B) 3 5 8 10 11 13",
+      "C) 3 8 16 13 24 50",
+      "D) 3 16 8 50 24 13"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C. Recursion. Arrays, stacks, queues, linked lists, trees, binary search trees, binary heaps, graphs.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let U = {1, 2, . . . , n}, where n is a large positive integer greater than 1000. Let k be a positive integer less than n. Let A, B be subsets of U with |A| = |B| = k and A ∩ B = ∅. We say that a permutation of U separates A from B if one of the following is true.\n- All members of A appear in the permutation before any of the members of B.\n- All members of B appear in the permutation before any of the members of A.\nHow many permutations of U separate A from B?\n(A) n!\n(B) ( n 2k ) (n − 2k)!\n(C) ( n 2k ) (n − 2k)! (k!)2\n(D) 2 ( n 2k ) (n − 2k)! (k!)2",
+    "picture": null,
+    "options": [
+      "A) n!",
+      "B) ( n 2k ) (n − 2k)!",
+      "C) ( n 2k ) (n − 2k)! (k!)2",
+      "D) 2 ( n 2k ) (n − 2k)! (k!)2"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Combinatorics: counting, recurrence relations, generating functions.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let f : A → B be an onto (or surjective) function, where A and B are nonempty sets. Define an equivalence relation ∼ on the set A as a1 ∼ a2 if f (a1) = f (a2), where a1, a2 ∈ A. Let E = {[x] : x ∈ A} be the set of all the equivalence classes under ∼. Define a new mapping F : E → B as F ([x]) = f (x), for all the equivalence classes [x] in E. Which of the following statements is/are TRUE?\n(A) F is NOT well-defined.\n(B) F is an onto (or surjective) function.\n(C) F is a one-to-one (or injective) function.\n(D) F is a bijective function.",
+    "picture": null,
+    "options": [
+      "A) F is NOT well-defined.",
+      "B) F is an onto (or surjective) function.",
+      "C) F is a one-to-one (or injective) function.",
+      "D) F is a bijective function."
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Discrete Mathematics: Sets, relations, functions, partial orders and lattices.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Suppose you are asked to design a new reliable byte-stream transport protocol like TCP. This protocol, named myTCP, runs over a 100 Mbps network with Round Trip Time of 150 milliseconds and the maximum segment lifetime of 2 minutes. Which of the following is/are valid lengths of the Sequence Number field in the myTCP header?\n(A) 30 bits\n(B) 32 bits\n(C) 34 bits\n(D) 36 bits",
+    "picture": null,
+    "options": [
+      "A) 30 bits",
+      "B) 32 bits",
+      "C) 34 bits",
+      "D) 36 bits"
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Networks",
+    "topic": "Transport layer: flow control and congestion control, UDP, TCP, sockets.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let X be a set and 2X denote the powerset of X. Define a binary operation Δ on 2X as follows: AΔB = (A − B) ∪ (B − A). Let H = (2X , Δ). Which of the following statements about H is/are correct?\n(A) H is a group.\n(B) Every element in H has an inverse, but H is NOT a group.\n(C) For every A ∈ 2X , the inverse of A is the complement of A.\n(D) For every A ∈ 2X , the inverse of A is A.",
+    "picture": null,
+    "options": [
+      "A) H is a group.",
+      "B) Every element in H has an inverse, but H is NOT a group.",
+      "C) For every A ∈ 2X , the inverse of A is the complement of A.",
+      "D) For every A ∈ 2X , the inverse of A is A."
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Discrete Mathematics: Sets, relations, functions, partial orders and lattices. Monoids, Groups.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A local DNS server deployed on your local host over the 3-tier DNS hierarchy in an iterative mode. No resource records are cached anywhere across all DNS servers. Let RTT denote the round trip time between your local host and DNS servers in the DNS hierarchy. The round trip time between the local host and the web server hosting www.gate-2023.in is also equal to RTT. The HTML file associated with the URL is small enough to have negligible transmission time and negligible rendering time by your web browser, which references 10 equally small objects on the same web server. Which of the following statements is/are CORRECT about the minimum elapsed time between clicking on the URL and your browser fully rendering it?\n(A) 7 RTTs, in case of non-persistent HTTP with 5 parallel TCP connections.\n(B) 5 RTTs, in case of persistent HTTP with pipelining.\n(C) 9 RTTs, in case of non-persistent HTTP with 5 parallel TCP connections.\n(D) 6 RTTs, in case of persistent HTTP with pipelining.",
+    "picture": null,
+    "options": [
+      "A) 7 RTTs, in case of non-persistent HTTP with 5 parallel TCP connections.",
+      "B) 5 RTTs, in case of persistent HTTP with pipelining.",
+      "C) 9 RTTs, in case of non-persistent HTTP with 5 parallel TCP connections.",
+      "D) 6 RTTs, in case of persistent HTTP with pipelining."
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Networks",
+    "topic": "Application layer protocols: DNS, SMTP, HTTP, FTP, Email.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a random experiment where two fair coins are tossed. Let A be the event that denotes HEAD on both the throws, B be the event that denotes HEAD on the first throw, and C be the event that denotes HEAD on the second throw. Which of the following statements is/are TRUE?\n(A) A and B are independent.\n(B) A and C are independent.\n(C) B and C are independent.\n(D) Prob(B|C) = Prob(B)",
+    "picture": null,
+    "options": [
+      "A) A and B are independent.",
+      "B) A and C are independent.",
+      "C) B and C are independent.",
+      "D) Prob(B|C) = Prob(B)"
+    ],
+    "answer": [
+      "C",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Probability and Statistics: Conditional probability and Bayes theorem.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider functions Function 1 and Function 2 expressed in pseudocode as follows:\nFunction 1\nwhile n > 1 do\nfor i = 1 to n do\nx = x + 1;\nend for\nn = floor(n/2);\nend while\nFunction 2\nfor i = 1 to 100 * n do\nx = x + 1;\nend for\nLet f1(n) and f2(n) denote the number of times the statement “x = x + 1” is executed in Function 1 and Function 2, respectively. Which of the following statements is/are TRUE?\n(A) f1(n) ∈ Θ(f2(n))\n(B) f1(n) ∈ o(f2(n))\n(C) f1(n) ∈ ω(f2(n))\n(D) f1(n) ∈ O(n)",
+    "picture": null,
+    "options": [
+      "A) f1(n) ∈ Θ(f2(n))",
+      "B) f1(n) ∈ o(f2(n))",
+      "C) f1(n) ∈ ω(f2(n))",
+      "D) f1(n) ∈ O(n)"
+    ],
+    "answer": [
+      "C",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Algorithms",
+    "topic": "Asymptotic worst case time and space complexity.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let G be a simple, finite, undirected graph with vertex set {v1, . . . , vn}. Let Δ(G) denote the maximum degree of G and let N = {1, 2, . . .} denote the set of all possible colors. Color the vertices of G using the following greedy strategy:\nfor i = 1, . . . , n\ncolor(vi) ← min{j ∈ N : no neighbour of vi is colored j}\nWhich of the following statements is/are TRUE?\n(A) This procedure results in a proper vertex coloring of G.\n(B) The number of colors used is at most Δ(G) + 1.\n(C) The number of colors used is at most Δ(G).\n(D) The number of colors used is equal to the chromatic number of G.",
+    "picture": null,
+    "options": [
+      "A) This procedure results in a proper vertex coloring of G.",
+      "B) The number of colors used is at most Δ(G) + 1.",
+      "C) The number of colors used is at most Δ(G).",
+      "D) The number of colors used is equal to the chromatic number of G."
+    ],
+    "answer": [
+      "A",
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Discrete Mathematics: Graphs: connectivity, matching, colouring.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let U = {1, 2, 3}. Let 2U denote the powerset of U. Consider an undirected graph G whose vertex set is 2U. For any A, B ∈ 2U, (A, B) is an edge in G if and only if (i) A ≠ B, and (ii) either A ⊂ B or B ⊂ A. For any vertex A in G, the set of all possible orderings in which the vertices of G can be visited in a Breadth First Search (BFS) starting from A is denoted by B(A). If ∅ denotes the empty set, then the cardinality of B(∅) is ____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "A",
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Discrete Mathematics: Sets, relations, functions, partial orders and lattices.",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Consider the following two-dimensional array D in the C programming language, which is stored in row-major order:\nint D[128][128];\nDemand paging is used for allocating memory and each physical page frame holds 512 elements of the array D. The Least Recently Used (LRU) page-replacement policy is used by the operating system. A total of 30 physical page frames are allocated to a process which executes the following code snippet:\nfor (int i = 0; i < 128; i++)\n  for (int j = 0; j < 128; j++)\n    D[j][i] *= 10;\nThe number of page faults generated during the execution of this code snippet is ____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "5040"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Operating System",
+    "topic": "Memory management and virtual memory.",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Consider a computer system with 57-bit virtual addressing using multi-level tree-structured page tables with L levels for virtual to physical address translation. The page size is 4 KB (1 KB = 1024 B) and a page table entry at any of the levels occupies 8 bytes. The value of L is _____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "4096"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Operating System",
+    "topic": "Memory management and virtual memory",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a sequence a of elements a0 = 1, a1 = 5, a2 = 7, a3 = 8, a4 = 9, and a5 = 2. The following operations are performed on a stack S and a queue Q, both of which are initially empty.\nI: push the elements of a from a0 to a5 in that order into S.\nII: enqueue the elements of a from a0 to a5 in that order into Q.\nIII: pop an element from S.\nIV: dequeue an element from Q.\nV: pop an element from S.\nVI: dequeue an element from Q.\nVII: dequeue an element from Q and push the same element into S.\nVIII: Repeat operation VII three times.\nIX: pop an element from S.\nX: pop an element from S.\nThe top element of S after executing the above operations is _____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "5"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Arrays, stacks, queues",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the syntax directed translation given by the following grammar and semantic rules. Here N, I, F and B are non-terminals. N is the starting non-terminal, and #, 0 and 1 are lexical tokens corresponding to input letters “#”, “0” and “1”, respectively. X.val denotes the synthesized attribute (a numeric value) associated with a non-terminal X. I1 and F1 denote occurrences of I and F on the right hand side of a production, respectively. For the tokens 0 and 1, 0.val = 0 and 1.val = 1.\nN → I # F   N.val = I.val + F.val\nI → I1 B   I.val = (2 I1.val ) + B.val\nI → B      I.val = B.val\nF → B F1   F.val = 1/2 (B.val + F1.val)\nF → B      F.val = 1/2 B.val\nB → 0      B.val = 0.val\nB → 1      B.val = 1.val\nThe value computed by the translation scheme for the input string 10#011 is _____. (Rounded off to three decimal places)",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "8"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Compiler Design",
+    "topic": "Syntax-directed translation",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Consider the following table named Student in a relational database. The primary key of this table is rollNum.\nStudent\nrollNum  name  gender  marks\n1  Naman  M  62\n2  Aliya  F  70\n3  Aliya  F  80\n4  James  M  82\n5  Swati  F  65\nThe SQL query below is executed on this database.\nSELECT *\nFROM Student\nWHERE gender = ‘F’ AND marks > 65;\nThe number of rows returned by the query is _____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "2.374",
+      "2.375",
+      "2.376"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Databases",
+    "topic": "SQL",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider a database of fixed-length records, stored as an ordered file. The database has 25,000 records, with each record being 100 bytes, of which the primary key occupies 15 bytes. The data file is block-aligned in that each data record is fully contained within a block. The database is indexed by a primary index file, which is also stored as a block-aligned ordered file. The figure below depicts this indexing scheme.\n(15 Bytes)\nPrimary Key  Other Fields\n(85 Bytes)\nData File\nPrimary Key\nBlock Anchor\nPointer\nBlock\nIndex File\nSuppose the block size of the file system is 1024 bytes, and a pointer to a block occupies 5 bytes. The system uses binary search on the index file to search for a record with a given key. You may assume that a binary search on an index file of b blocks takes log2 b block accesses in the worst case.\nGiven a key, the number of block accesses required to identify the block in the data file that may contain a record with the key, in the worst case, is _____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "2"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Databases",
+    "topic": "File organization, indexing",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the language L over the alphabet {0, 1}, given below:\nL = {w ∈ {0, 1}∗ | w does not contain three or more consecutive 1’s}.\nThe minimum number of states in a Deterministic Finit",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "6"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular expressions and finite automata",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "An 8-way set associative cache of size 64 KB (1 KB = 1024 bytes) is used in a system with 32-bit address. The address is sub-divided into TAG, INDEX, and BLOCK OFFSET. The number of bits in the TAG is _____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "4"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory and secondary storage",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The forwarding table of a router is shown below.\nSubnet Number\tSubnet Mask\tInterface ID\n200.150.0.0\t255.255.0.0\t1\n200.150.64.0\t255.255.224.0\t2\n200.150.68.0\t255.255.255.0\t3\n200.150.68.64\t255.255.255.224\t4\nDefault\t0\nA packet addressed to a destination address 200.150.68.118 arrives at the router. It will be forwarded to the interface with ID _____.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "19"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Computer Networks",
+    "topic": "Routing protocols: shortest path, flooding, distance vector and link state routing; Fragmentation and IP addressing, IPv4, CIDR notation",
+    "difficultyLvl": "Medium"
+  }
+]

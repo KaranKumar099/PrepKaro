@@ -1,0 +1,1425 @@
+[
+  {
+    "questionText": "The _________ is too high for it to be considered _________.",
+    "picture": null,
+    "options": [
+      "A) fair / fare",
+      "B) faer / fair",
+      "C) fare / fare",
+      "D) fare / fair"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "General Aptitude (GA)",
+    "topic": "",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "A function y(x) is defined in the interval [0, 1] on the x-axis as y(x) = { 2 if 0 ≤ x < 1/3; 3 if 1/3 ≤ x < 3/4; 1 if 3/4 ≤ x ≤ 1 }. Which one of the following is the area under the curve for the interval [0, 1] on the x-axis?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111115/isxveeqopgevigqirud2.png",
+    "options": [
+      "A) 5/6",
+      "B) 6/5",
+      "C) 13/6",
+      "D) 6/13"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Calculus: Integration",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let r be a root of the equation x^2 + 2x + 6 = 0. Then the value of the expression (r + 2)(r + 3)(r + 4)(r + 5) is",
+    "picture": null,
+    "options": [
+      "A) 51",
+      "B) −51",
+      "C) 126",
+      "D) −126"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Linear Algebra: Matrices, determinants, system of linear equations",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Given below are four statements. Statement 1: All students are inquisitive. Statement 2: Some students are inquisitive. Statement 3: No student is inquisitive. Statement 4: Some students are not inquisitive. From the given four statements, find the two statements that CANNOT BE TRUE simultaneously, assuming that there is at least one student in the class.",
+    "picture": null,
+    "options": [
+      "A) Statement 1 and Statement 3",
+      "B) Statement 1 and Statement 2",
+      "C) Statement 2 and Statement 4",
+      "D) Statement 3 and Statement 4"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Discrete Mathematics: Propositional and first order logic",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Some people believe that “what gets measured, improves”. Some others believe that “what gets measured, gets gamed”. One possible reason for the difference in the beliefs is the work culture in organizations. In organizations with good work culture, metrics help improve outcomes. However, the same metrics are counterproductive in organizations with poor work culture. Which one of the following is the CORRECT logical inference based on the information in the above passage?",
+    "picture": null,
+    "options": [
+      "A) Metrics are useful in organizations with poor work culture",
+      "B) Metrics are useful in organizations with good work culture",
+      "C) Metrics are always counterproductive in organizations with good work culture",
+      "D) Metrics are never useful in organizations with good work culture"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "General Aptitude (GA)",
+    "topic": "",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "In a recently conducted national entrance test, boys constituted 65% of those who appeared for the test. Girls constituted the remaining candidates and they accounted for 60% of the qualified candidates. Which one of the following is the correct logical inference based on the information provided in the above passage?",
+    "picture": null,
+    "options": [
+      "A) Equal number of boys and girls qualified",
+      "B) Equal number of boys and girls appeared for the test",
+      "C) The number of boys who appeared for the test is less than the number of girls who appeared",
+      "D) The number of boys who qualified the test is less than the number of girls who qualified"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Probability and Statistics: Mean, median, mode and standard deviation",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A box contains five balls of same size and shape. Three of them are green coloured balls and two of them are orange coloured balls. Balls are drawn from the box one at a time. If a green ball is drawn, it is not replaced. If an orange ball is drawn, it is replaced with another orange ball. First ball is drawn. What is the probability of getting an orange ball in the next draw?",
+    "picture": null,
+    "options": [
+      "A) 1/2",
+      "B) 8/25",
+      "C) 19/50",
+      "D) 23/50"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Probability and Statistics: Conditional probability and Bayes theorem",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The corners and mid-points of the sides of a triangle are named using the distinct letters P, Q, R, S, T and U, but not necessarily in the same order. Consider the following statements: \n The line joining P and R is parallel to the line joining Q and S. \n P is placed on the side opposite to the corner T.  \n S and U cannot be placed on the same side. \n Which one of the following statements is correct based on the above information?\n",
+    "picture": null,
+    "options": [
+      "A) P cannot be placed at a corner",
+      "B) S cannot be placed at a corner",
+      "C) U cannot be placed at a mid-point",
+      "D) R cannot be placed at a corner"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "General Aptitude (GA)",
+    "topic": "",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "A plot of land must be divided between four families. They want their individual plots to be similar in shape, not necessarily equal in area. The land has equally spaced poles, marked as dots in the below figure. Two ropes, R1 and R2, are already present and cannot be moved. What is the least number of additional straight ropes needed to create the desired plots? A single rope can pass through three poles that are aligned in a straight line.",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111133/uzabd3ang0pqx9jewmdc.png",
+    "options": [
+      "A) 2",
+      "B) 4",
+      "C) 5",
+      "D) 3"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "General Aptitude (GA)",
+    "topic": "",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Which one of the following statements is TRUE for all positive functions f(n)?",
+    "picture": null,
+    "options": [
+      "A) Θ(f(n^2)) = f(n^2) when f(n) is a polynomial",
+      "B) f(n^2) o f(n^2) = f(n^2)",
+      "C) O(f(n^2)) = f(n^2) when f(n) is an exponential function",
+      "D) Ω(f(n^2)) = f(n^2)"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Algorithms",
+    "topic": "Asymptotic worst case time and space complexity",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the following regular expressions correctly represents the language of the finite automaton given below?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111152/ojbjlf4t7joic5b788kv.png",
+    "options": [
+      "A) ab* bab* ba* aba*",
+      "B) (ab*) (bab*) ba* aba*",
+      "C) (ab*) (b* ba* a* b*)",
+      "D) (ba*) (a* ab* b* ab* ba*)"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular expressions and finite automata",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the following statements is TRUE?",
+    "picture": null,
+    "options": [
+      "A) The (1) LALR parser for a grammar G cannot have reduce-reduce conflict if the (1) LR parser for G does not have reduce-reduce conflict.",
+      "B) Symbol table is accessed only during the lexical analysis phase.",
+      "C) Data flow analysis is necessary for run-time memory management.",
+      "D) (1) LR parsing is sufficient for deterministic context-free languages."
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Compiler Design",
+    "topic": "Parsing",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "In a relational data model, which one of the following statements is TRUE?",
+    "picture": null,
+    "options": [
+      "A) A relation with only two attributes is always in BCNF.",
+      "B) If all attributes of a relation are prime attributes, then the relation is in BCNF.",
+      "C) Every relation has at least one non-prime attribute.",
+      "D) BCNF decompositions preserve functional dependencies."
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra, tuple calculus, SQL. Integrity constraints, normal forms.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the problem of reversing a singly linked list. To take an example, given the linked list below,Which one of the following statements is TRUE about the time complexity of algorithms that solve the above problem in (1) O space?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111162/pfv8mtwhb27ghyirghih.png",
+    "options": [
+      "A) The best algorithm for the problem takes Θ(n) time in the worst case.",
+      "B) The best algorithm for the problem takes Θ(n log n) time in the worst case.",
+      "C) The best algorithm for the problem takes Θ(n^2) time in the worst case.",
+      "D) It is not possible to reverse a singly linked list in O(1) space."
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Linked lists",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Suppose we are given n keys, m hash table slots, and two simple uniform hash functions h1 and h2. Further suppose our hashing scheme uses h1 for the odd keys and h2 for the even keys. What is the expected number of keys in a slot?",
+    "picture": null,
+    "options": [
+      "A) m/n",
+      "B) n/m",
+      "C) 2n/m",
+      "D) 2n/m"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Algorithms",
+    "topic": "Hashing",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the following facilitates transfer of bulk data from hard disk to main memory with the highest throughput?",
+    "picture": null,
+    "options": [
+      "A) DMA based I/O transfer",
+      "B) Interrupt driven I/O transfer",
+      "C) Polling based I/O transfer",
+      "D) Programmed I/O transfer"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "I/O interface (interrupt and DMA mode)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let R1 and R2 be two 4-bit registers that store numbers in 2’s complement form. For the operation R1+R2, which one of the following values of R1 and R2 gives an arithmetic overflow?",
+    "picture": null,
+    "options": [
+      "A) R1 = 1011 and R2 = 1110",
+      "B) R1 = 1100 and R2 = 1010",
+      "C) R1 = 0011 and R2 = 0100",
+      "D) R1 = 1001 and R2 = 1111"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Digital Logic",
+    "topic": "Number representations and computer arithmetic (fixed and floating point)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following threads, T1, T2, and T3 executing on a single processor, synchronized using three binary semaphore variables, S1, S2, and S3, operated upon using standard wait() and signal(). The threads can be context switched in any order and at any time.\nT1  T2  T3\nwhile(true){\nwait(S3);\nprint(“C”);\nsignal(S2); }\nwhile(true){\nwait(S1);\nprint(“B”);\nsignal(S3); }\nwhile(true){\nwait(S2);\nprint(“A”);\nsignal(S1); }\nWhich initialization of the semaphores would print the sequence BCABCABCA….?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111163/t9vlaeojomznxl2yudq4.png",
+    "options": [
+      "A) S1 = 1; S2 = 1; S3 = 1",
+      "B) S1 = 1; S2 = 1; S3 = 0",
+      "C) S1 = 1; S2 = 0; S3 = 0",
+      "D) S1 = 0; S2 = 1; S3 = 1"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Operating System",
+    "topic": "Processes, threads, inter‐process communication, concurrency and synchronization",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following two statements with respect to the matrices m×n A, n×m B, n×n C and n×n D\nStatement 1: tr(AB) = tr(BA)\nStatement 2: tr(CD) = tr(DC)\nwhere tr() represents the trace of a matrix. Which one of the following holds?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111164/xnng3namaegbe2gjumgi.png",
+    "options": [
+      "A) Statement 1 is correct and Statement 2 is wrong.",
+      "B) Statement 1 is wrong and Statement 2 is correct.",
+      "C) Both Statement 1 and Statement 2 are correct.",
+      "D) Both Statement 1 and Statement 2 are wrong."
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Linear Algebra: Matrices, determinants, system of linear equations",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "What is printed by the following ANSI C program?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111166/samdr1o7z4op1sft7bf6.png",
+    "options": [
+      "A) 1, 10, 11",
+      "B) 1, 10, 14",
+      "C) 10, 14, 11",
+      "D) 10, 10, 14"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider an enterprise network with two Ethernet segments, a web server and a firewall, connected via three routers as shown below.\nWhat is the number of subnets inside the enterprise network?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111167/nychiotkebazk6ygvdrq.png",
+    "options": [
+      "A) 3",
+      "B) 12",
+      "C) 6",
+      "D) 8"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Networks",
+    "topic": "Fragmentation and IP addressing, IPv4, CIDR notation",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following statements is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) Every subset of a recursively enumerable language is recursive.",
+      "B) If a language L and its complement L are both recursively enumerable, then L must be recursive.",
+      "C) Complement of a context-free language must be recursive.",
+      "D) If L1 and L2 are regular, then L1 ∩ L2 must be deterministic context-free."
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular and context-free languages, Turing machines and undecidability",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let WB and WT be two set associative cache organizations that use LRU algorithm for cache block replacement. WB is a write back cache and WT is a write through cache. Which of the following statements is/are FALSE?",
+    "picture": null,
+    "options": [
+      "A) Each cache block in WB and WT has a dirty bit.",
+      "B) Every write hit in WB leads to a data transfer from cache to main memory.",
+      "C) Eviction of a block from WT will not lead to data transfer from cache to main memory.",
+      "D) A read miss in WB will never lead to eviction of a dirty block from WB."
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory and secondary storage",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following three relations in a relational database.\n(Employee eId, Name), (Brand bId, bName), (Own eId, bId)\nWhich of the following relational algebra expressions return the set of eIds who own all the brands?",
+    "picture": null,
+    "options": [
+      "A) πeId(πeId,bId(Own) ÷ πbId(Brand))",
+      "B) πeId(πeId(Own) − πeId(πeId,bId(Own) × πbId(Brand) − Own))",
+      "C) πeId(πeId,bId(Own) ÷ πbId(Own))",
+      "D) πeId(πeId,bId(Own) × πbId(Own) ÷ πbId(Brand))"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following statements is/are TRUE for a group?",
+    "picture": null,
+    "options": [
+      "A) If for all x, y ∈ G, (xy)^2 = x^2 y^2, then G is commutative.",
+      "B) If for all x ∈ G, x^2 = 1, then G is commutative. Here, 1 is the identity element of G.",
+      "C) If the order of G is 2, then G is commutative.",
+      "D) If G is commutative, then a subgroup of G need not be commutative."
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Monoids, Groups",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Suppose a binary search tree with 1000 distinct elements is also a complete binary tree. The tree is stored using the array representation of binary heap trees. Assuming that the array indices start with 0, the 3rd largest element of the tree is stored at index_____________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "509"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Trees, binary search trees, binary heaps",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the augmented grammar with {id, *, (, ), +} as the set of terminals.\nS' → S\nS → S + R | R\nR → R * P | P\nP → (S) | id\nIf I0 is the set of two LR(0) items {[S' → •S], [S → •S + R]}, then goto(I0, '(') contains exactly __________ items.",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111117/l8izhywxjfulaox9ifkd.png",
+    "options": [],
+    "answer": [
+      "5"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Compiler Design",
+    "topic": "Parsing",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a simple undirected graph of 10 vertices. If the graph is disconnected, then the maximum number of edges it can have is ____________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "36"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Graphs: connectivity",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a relation (A, B, C, D, E) with the following three functional dependencies.\nAB → C; BC → D; C → E;\nThe number of superkeys in the relation R is _____________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "8"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra, normal forms",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The number of arrangements of six identical balls in three identical bins is______.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "7"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Combinatorics: counting",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A cache memory that has a hit rate of 0.8 has an access latency 10 ns and miss penalty 100 ns. An optimization is done on the cache to reduce the miss rate. However, the optimization results in an increase of cache access latency to 15 ns, whereas the miss penalty is not affected. The minimum hit rate (rounded off to two decimal places) needed after the optimization such that it should not increase the average memory access time is _____________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "0.85"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The value of the following limit is _____________.",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111169/j7wz1jvhudou7h568cm2.png",
+    "options": [],
+    "answer": [
+      "-0.5"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Calculus",
+    "topic": "Limits, continuity and differentiability",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the resolution of the domain name www.gate.org.in by a DNS resolver. Assume that no resource records are cached anywhere across the DNS servers and that iterative query mechanism is used in the resolution. The number of DNS query-response pairs involved in completely resolving the domain name is_____________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "4"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Networks",
+    "topic": "Application layer protocols: DNS",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the following is the closed form for the generating function of the sequence {a_n} (n ≥ 0) defined below?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111119/scklmebejp3m1yp7jcn0.png",
+    "options": [
+      "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111121/u4bjb66bkhwmxpy8sxlk.png",
+      "http://res.cloudinary.com/dooaabxbs/image/upload/v1767111122/lfzpkwjfb2wfdospl8if.png",
+      "http://res.cloudinary.com/dooaabxbs/image/upload/v1767111124/ale0mkja1xd2ljp5cxsp.png",
+      "http://res.cloudinary.com/dooaabxbs/image/upload/v1767111125/exf48cpm9hev0cqjh7ml.png"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Combinatorics: generating functions",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a simple undirected unweighted graph with at least three vertices. If A is the adjacency matrix of the graph, then the number of 3-cycles in the graph is given by the trace of",
+    "picture": null,
+    "options": [
+      "A) A^3",
+      "B) A^3 divided by 2",
+      "C) A^3 divided by 3",
+      "D) A^3 divided by 6"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Graphs: connectivity",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the following statements is FALSE?",
+    "picture": null,
+    "options": [
+      "A) The TLB performs an associative search in parallel on all its valid entries using page number of incoming virtual address.",
+      "B) If the virtual address of a word given by CPU has a TLB hit, but the subsequent search for the word results in a cache miss, then the word will always be present in the main memory.",
+      "C) The memory access time using a given inverted page table is always same for all incoming virtual addresses.",
+      "D) In a system that uses hashed page tables, if two distinct virtual addresses V1 and V2 map to the same value while hashing, then the memory access time of these addresses will not be the same."
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory management and virtual memory",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let Ri(z) and Wi(z) denote read and write operations on a data element z by a transaction T_i, respectively. Consider the schedule S with four transactions. S: R₄(x)R₂(x)R₃(x)R₁(y)W₁(y)W₂(x)W₃(y)W₄(y) \n Which one of the following serial schedules is conflict equivalent to S?",
+    "picture": null,
+    "options": [
+      "A) T₁ → T₃ → T₄ → T₂",
+      "B) T₁ → T₄ → T₃ → T₂",
+      "C) T₄ → T₁ → T₃ → T₂",
+      "D) T₃ → T₁ → T₄ → T₂"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Databases",
+    "topic": "Transactions and concurrency control",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a digital display system (DDS) shown in the figure that displays the contents of register X. A 16-bit code word is used to load a word in X, either from S or from R. S is a 1024-word memory segment and R is a 32-word register file. Based on the value of mode bit M, T selects an input word to load in X. P and Q interface with the corresponding bits in the code word to choose the addressed word. Which one of the following represents the functionality of P, Q, and T?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111127/zd2a606ttclb8uyoqdds.png",
+    "options": [
+      "A) P is 10:1 multiplexer; Q is 5:1 multiplexer; T is 2:1 multiplexer",
+      "B) P is 10:210 decoder; Q is 5:25 decoder; T is 2:1 encoder",
+      "C) P is 10:210 decoder; Q is 5:25 decoder; T is 2:1 multiplexer",
+      "D) P is 1:10 de-multiplexer; Q is 1:5 de-multiplexer; T is 2:1 multiplexer"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Machine instructions and addressing modes",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider three floating point numbers A, B and C stored in registers RA, RB and RC, respectively as per IEEE-754 single precision floating point format. The 32-bit content stored in these registers (in hexadecimal form) are as follows. RA= 0xC1400000 RB = 0x42100000 RC = 0x41400000 Which one of the following is FALSE?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111128/a9ynw9uosgxuhzz7ubfw.png",
+    "options": [
+      "A) 0 = A + C",
+      "B) C = A + B",
+      "C) B = 3 × C",
+      "D) (B − C) > 0"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Digital Logic",
+    "topic": "Number representations and computer arithmetic (fixed and floating point)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider four processes P, Q, R, and S scheduled on a CPU as per round robin algorithm with a time quantum of 4 units. The processes arrive in the order P, Q, R, S, all at time t = 0. There is exactly one context switch from S to Q, exactly one context switch from R to Q, and exactly two context switches from Q to R. There is no context switch from S to P. Switching to a ready process after the termination of another process is also considered a context switch. Which one of the following is NOT possible as CPU burst time (in time units) of these processes?",
+    "picture": null,
+    "options": [
+      "A) P = 4, Q = 10, R = 6, S = 2",
+      "B) P = 2, Q = 9, R = 5, S = 1",
+      "C) P = 4, Q = 12, R = 5, S = 4",
+      "D) P = 3, Q = 7, R = 7, S = 3"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Operating System",
+    "topic": "CPU and I/O scheduling",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "What is printed by the following ANSI C program?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111130/c4m1obnm1hlxrq2arhsu.png",
+    "options": [
+      "A) 1 2 3\n10 11 12\n19 20 21",
+      "B) 1 4 7\n10 13 16\n19 22 25",
+      "C) 1 2 3\n4 5 6\n7 8 9",
+      "D) 1 2 3\n13 14 15\n25 26 27"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "What is printed by the following ANSI C program?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111131/o4by0fkx8fl296nxesnb.png",
+    "options": [
+      "A) z K S",
+      "B) 122 75 83",
+      "C) * - +",
+      "D) P x +"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider solving the following system of simultaneous equations using LU decomposition. Which one of the following is the correct combination of values for L32, U33, and x1?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111136/viysoqwn7zg68y89wzfi.png",
+    "options": [
+      "A) L32 = 1/2, U33 = -1, x1 = -1",
+      "B) L32 = 2, U33 = 2, x1 = -1",
+      "C) L32 = -1/2, U33 = 2, x1 = 0",
+      "D) L32 = -1/2, U33 = -1/2, x1 = 0"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Linear Algebra",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following is/are undecidable?",
+    "picture": null,
+    "options": [
+      "A) Given two Turing machines M1 and M2, decide if L(M1) = L(M2).",
+      "B) Given a Turing machine M, decide if L(M) is regular.",
+      "C) Given a Turing machine M, decide if M accepts all strings.",
+      "D) Given a Turing machine M, decide if M takes more than 1073 steps on every string."
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Turing machines and undecidability",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Consider the following languages:\nL1 = { a^n w a^n | w ∈ {a, b}* }\nL2 = { w x w^R | w, x ∈ {a, b}*, |w|,|x| > 0 }\nNote that w^R is the reversal of the string w. Which of the following is/are TRUE?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111145/wv0tgw8crqc2u2vnr3s8.png",
+    "options": [
+      "A) L1 and L2 are regular.",
+      "B) L1 and L2 are context-free.",
+      "C) L1 is regular and L2 is context-free.",
+      "D) L1 and L2 are context-free but not regular."
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular and context-free languages",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following languages:\nL1 = { ww | w ∈ {a, b}* }\nL2 = { a^n b^n c^m | m, n ≥ 0 }\nL3 = { a^m b^n c^n | m, n ≥ 0 }\nWhich of the following statements is/are FALSE?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111146/qfxxqqcwdrslxwtpnfxu.png",
+    "options": [
+      "A) L1 is not context-free but L2 and L3 are deterministic context-free.",
+      "B) Neither L1 nor L2 is context-free.",
+      "C) L2, L3 and L2 ∩ L3 all are context-free.",
+      "D) Neither L1 nor its complement is context-free."
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Context-free languages, pumping lemma",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Consider a simple undirected weighted graph G, all of whose edge weights are distinct. Which of the following statements about the minimum spanning trees of G is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) The edge with the second smallest weight is always part of any minimum spanning tree of G.",
+      "B) One or both of the edges with the third smallest and the fourth smallest weights are part of any minimum spanning tree of G.",
+      "C) Suppose S ⊆ V be such that S ≠ ∅ and S ≠ V. Consider the edge with the minimum weight such that one of its vertices is in S and the other in V \\ S. Such an edge will always be part of any minimum spanning tree of G.",
+      "D) G can have multiple minimum spanning trees."
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Algorithms",
+    "topic": "Minimum spanning trees",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The following simple undirected graph is referred to as the Peterson graph. Which of the following statements is/are TRUE?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111148/du1y0mclu9fb54guedgb.png",
+    "options": [
+      "A) The chromatic number of the graph is 3.",
+      "B) The graph has a Hamiltonian path.",
+      "C) The following graph is isomorphic to the Peterson graph.",
+      "D) The size of the largest independent set of the given graph is 3. (A subset of vertices of a graph form an independent set if no two vertices of the subset are adjacent.)"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Graphs: connectivity, matching, colouring",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following recurrence:\n(1) f(1) = 1;\n(2n) f(2n) = 2f(n) + 1, for n ≥ 1;\n(2n+1) f(2n+1) = 2f(n+1) - 1, for n ≥ 1.\nThen, which of the following statements is/are TRUE?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111150/qyj7s4grzxxzisviqpbe.png",
+    "options": [
+      "A) f(2n-1) = 2n - 1",
+      "B) f(2n) = 1",
+      "C) f(5n+2) = 2n + 1",
+      "D) f(2n+1) = 2n + 1"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Recurrence relations",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the properties hold for the adjacency matrix A of a simple undirected unweighted graph having n vertices?",
+    "picture": null,
+    "options": [
+      "A) The diagonal entries of A^2 are the degrees of the vertices of the graph.",
+      "B) If the graph is connected, then none of the entries of A^n - I + n can be zero.",
+      "C) If the sum of all the elements of A is at most 2(n-1), then the graph must be acyclic.",
+      "D) If there is at least a 1 in each of A’s rows and columns, then the graph must be connected."
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Graphs: connectivity, matching, colouring",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a system with 2 KB direct mapped data cache with a block size of 64 bytes. The system has a physical address space of 64 KB and a word length of 16 bits. During the execution of a program, four data words P, Q, R, and S are accessed in that order 10 times (i.e., PQRSPQRS…). Hence, there are 40 accesses to data cache altogether. Assume that the data cache is initially empty and no other data words are accessed by the program. The addresses of the first bytes of P, Q, R, and S are 0xA248, 0xC28A, 0xCA8A, and 0xA262, respectively. For the execution of the above program, which of the following statements is/are TRUE with respect to the data cache?\n(A) Every access to S is a hit.\n(B) Once P is brought to the cache it is never evicted.\n(C) At the end of the execution only R and S reside in the cache.\n(D) Every access to R evicts Q from the cache.",
+    "picture": null,
+    "options": [
+      "A) Every access to S is a hit.",
+      "B) Once P is brought to the cache it is never evicted.",
+      "C) At the end of the execution only R and S reside in the cache.",
+      "D) Every access to R evicts Q from the cache."
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory and secondary storage",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider routing table of an organization’s router shown below: \n Which of the following prefixes in CIDR notation can be collectively used to correctly aggregate all of the subnets in the routing table?\n(A) 12.20.164.0/20\n(B) 12.20.164.0/22\n(C) 12.20.164.0/21\n(D) 12.20.168.0/22",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111154/e7f0uy0oit6fj9svdvrg.png",
+    "options": [
+      "A) 12.20.164.0/20",
+      "B) 12.20.164.0/22",
+      "C) 12.20.164.0/21",
+      "D) 12.20.168.0/22"
+    ],
+    "answer": [
+      "B",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Networks",
+    "topic": "Fragmentation and IP addressing, IPv4, CIDR notation",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the relational database with the following four schemas and their respective instances.\nThe number of rows returned by the above SQL query is___________.",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111155/ndnj85zx57vh6eq1vjaz.png",
+    "options": [],
+    "answer": [
+      "2"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra, tuple calculus, SQL",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a network with three routers P, Q, R shown in the figure below. All the links have cost of unity. The routers exchange distance vector routing information and have converged on the routing tables, after which the link Q−R fails. Assume that P and Q send out routing updates at random times, each at the same average rate. The probability of a routing loop formation (rounded off to one decimal place) between P and Q, leading to count-to-infinity problem, is___________.",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111157/fja7n00azgg6vjavuds1.png",
+    "options": [],
+    "answer": [
+      "0.5"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Networks",
+    "topic": "Routing protocols: shortest path, flooding, distance vector and link state routing",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let G(V, E) be a directed graph, where V = {1, 2,3, 4,5} is the set of vertices and E is the set of directed edges, as defined by the following adjacency matrix A.\nA[i][j] = 1, 1 ≤ j ≤ i ≤ 5\n0, otherwise\nA[i][j] = 1 indicates a directed edge from node i to node j. A directed spanning tree of G rooted at r ∈ V is defined as a subgraph T of G such that the undirected version of T is a tree, and T contains a directed path from r to every other vertex in V. The number of such directed spanning trees rooted at vertex 5 is_____________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "24"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Graphs: connectivity, matching, colouring",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a 100 Mbps link between an earth station (sender) and a satellite (receiver) at an altitude of 2100 km. The signal propagates at a speed of 3x10^8 m/s. The time taken (in milliseconds, rounded off to two decimal places) for the receiver to completely receive a packet of 1000 bytes transmitted by the sender is_________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "7.08"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Networks",
+    "topic": "Basics of packet, circuit and virtual circuit-switching",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "When the maximum segment lifetime (MSL) is set to 60 seconds, the minimum number of bits required for the sequence number field of the TCP header, to prevent the sequence number space from wrapping around during the MSL is____________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "33"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Networks",
+    "topic": "Transport layer: flow control and congestion control, UDP, TCP, sockets",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A processor X1 operating at 2 GHz has a standard 5-stage RISC instruction pipeline having a base CPI (cycles per instruction) of one without any pipeline hazards. For a given program P that has 30% branch instructions, control hazards incur 2 cycles stall for every branch. A new version of the processor X2 operating at same clock frequency has an additional branch predictor unit (BPU) that completely eliminates stalls for correctly predicted branches. There is neither any savings nor any additional stalls for wrong predictions. There are no structural hazards and data hazards for X1 and X2. If the BPU has a prediction accuracy of 80%, the speed up (rounded off to two decimal places) obtained by X2 over X1 in executing P is____________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "1.42",
+      "1.43",
+      "1.44",
+      "1.45"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Instruction pipelining, pipeline hazards",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the queues Q1 containing four elements and Q2 containing none (shown as the Initial State in the figure). The only operations allowed on these two queues are Enqueue(Q,element) and Dequeue(Q). The minimum number of Enqueue operations on Q1 required to place the elements of Q1 in Q2 in reverse order (shown as the Final State in the figure) without using any additional storage is___________.",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111158/wrblhl27uyhto8tetr70.png",
+    "options": [],
+    "answer": [
+      "0"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Arrays, stacks, queues, linked lists, trees, binary search trees, binary heaps, graphs",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider two files systems A and B, that use contiguous allocation and linked allocation, respectively. A file of size 100 blocks is already stored in A and also in B. Now, consider inserting a new block in the middle of the file (between 50th and 51st block), whose data is already available in the memory. Assume that there are enough free blocks at the end of the file and that the file control blocks are already in memory. Let the number of disk accesses required to insert a block in the middle of the file in A and B are nA and nB respectively, then the value of nA + nB is_________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "153"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Operating System",
+    "topic": "File systems",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a demand paging system with four page frames (initially empty) and LRU page replacement policy. For the following page reference string 7, 2, 7, 3, 2, 5, 3, 4, 6, 7, 7, 1, 5, 6, 1 the page fault rate, defined as the ratio of number of page faults to the number of memory accesses (rounded off to one decimal place) is_________.",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "0.6"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Operating System",
+    "topic": "Memory management and virtual memory",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following grammar along with translation rules. S → S # T { S.val = S1.val # T.val } S → T { S.val = T.val } T → T % R { T.val = T1.val % R.val } T → R { T.val = R.val } R → id { R.val = id.val } Here # and % are operators and id is a token that represents an integer and id.val represents the corresponding integer value. The set of non-terminals is {S, T, R, P} and a subscripted non-terminal indicates an instance of the non-terminal. Using this translation scheme, the computed value of S.val for root of the parse tree for the expression 20 #10%5 #8%2%2 is _____________.",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1767111161/zfmavfklvntsrvy4drdx.png",
+    "options": [],
+    "answer": [
+      "80"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2022
+    },
+    "chapter": "Compiler Design",
+    "topic": "Syntax-directed translation",
+    "difficultyLvl": "Hard"
+  }
+]

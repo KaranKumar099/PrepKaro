@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Download, Clock, Target, CheckCircle, Sparkles, TrendingUp, RefreshCw} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router";
-import { useQuestions } from "../context/questionsContext.jsx";
+import { useQuestionStore } from "../store/UseQuestionStore"; 
 import axios from "axios"
 
 export default function Tool() {
@@ -114,7 +114,7 @@ export default function Tool() {
     setQuestionCount(details.questionCount)
   };
 
-  const {setQuestions, setAttemptId} = useQuestions();
+  const {setQuestions, setAttemptID} = useQuestionStore();
   const [examId, setExamId] = useState(null);
   const navigate = useNavigate();
 
@@ -147,12 +147,12 @@ export default function Tool() {
       console.log('Payload size:', payloadSize, 'bytes');
       console.log('Payload size:', (payloadSize / 1024 / 1024).toFixed(2), 'MB');
 
-const testData = { questions: fetchedQuestions };
-const testRes = await axios.post(
-    'http://localhost:8000/api/test-large',
-    testData
-);
-console.log("Test result:", testRes.data);
+      const testData = { questions: fetchedQuestions };
+      const testRes = await axios.post(
+          'http://localhost:8000/api/test-large',
+          testData
+      );
+      console.log("Test result:", testRes.data);
 
       const res2 = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/exam`,
@@ -208,7 +208,7 @@ console.log("Test result:", testRes.data);
         }
       )
       console.log("Attempt : ", res)
-      setAttemptId(res.data.data._id)
+      setAttemptID(res.data.data._id)
       navigate("/exam")
     } catch (error) {
       console.error("Error in creating Mock Exam : ", error)

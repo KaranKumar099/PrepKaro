@@ -48,7 +48,6 @@ const questionModel = new Schema({
   },
   topic: {
     type: String,
-    required: true,
   },
   difficultyLvl: {
     type: String,

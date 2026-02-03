@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useQuestions } from "../context/questionsContext";
+import { useQuestionStore } from "../store/UseQuestionStore"; 
 import axios from "axios"
 import { useNavigate } from "react-router";
 import ExamTimer from "./ExamTimer";
 
 const Exam = () => {
   const navigate = useNavigate()
-  const {questions, attemptId} = useQuestions()
+  const {questions, attemptID} = useQuestionStore()
 
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -28,7 +28,7 @@ const Exam = () => {
       try {
         const token = localStorage.getItem("accessToken");
         await axios.post(
-          `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/timespent`,
+          `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/timespent`,
           { questionId: qId, timeSpent: timeSpentSeconds },
           { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
         );
@@ -44,7 +44,7 @@ const Exam = () => {
     const token = localStorage.getItem("accessToken")
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/answer`,
+        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/answer`,
         {
           questionId : qId,
           userAnswer : optIndex,
@@ -67,7 +67,7 @@ const Exam = () => {
     const token = localStorage.getItem("accessToken")
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/answer`,
+        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/answer`,
         {
           questionId : qId,
           markedForReview : marked[qId]
@@ -109,7 +109,7 @@ const Exam = () => {
     const token = localStorage.getItem("accessToken")
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/submit`,
+        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/submit`,
         {},
         {
           headers: {Authorization: `Bearer ${token}`},
@@ -120,7 +120,7 @@ const Exam = () => {
       if(document.fullscreenElement){
         document.exitFullscreen()
       }
-      navigate(`/attempt/${attemptId}`)
+      navigate(`/attempt/${attemptID}`)
     } catch (error) {
       console.error("Error in submitting : ", error)
     }

@@ -58,6 +58,8 @@ const saveAnswer = asyncHandler(async (req, res) => {
     let status;
     const question = await Question.findById(questionId)
     console.log("question answered: ", question)
+    console.log("user answer : ", userAnswer)
+    
     if(question.answer.charCodeAt(0)-65 === userAnswer){
         status = "correct"
     }else{

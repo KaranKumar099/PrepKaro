@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Brain, BarChart3, Download, Target, CheckCircle, ArrowRight, Sparkles, Zap, Play } from 'lucide-react';
+import { Brain, BarChart3, Download, Target, CheckCircle, ArrowRight, Zap, Play } from 'lucide-react';
 import { useNavigate } from 'react-router';
-import { useUser } from "../context/userContext";
+import { useUserStore } from '../store/UseUserStore'; 
 import {motion} from "framer-motion"
 
 export default function Home() {
@@ -9,9 +9,9 @@ export default function Home() {
   const [statsCounter, setStatsCounter] = useState({ students: 0, papers: 0, success: 0 });
 
   const exams = [
-    { name: 'JEE Main', icon: '🎯' },
-    { name: 'JEE Advanced', icon: '🚀' },
-    { name: 'NEET', icon: '⚕️' },
+    { name: 'JEE Main', logo: '🎯' },
+    { name: 'JEE Advanced', logo: '🚀' },
+    { name: 'NEET', logo: '⚕️' },
     { name: 'SSC', logo: 'src/assets/ssc-logo.png' },
     { name: 'UPSC', logo: 'src/assets/upsc-logo.png' }
   ];
@@ -90,7 +90,7 @@ export default function Home() {
   }, []);
 
   const navigate = useNavigate()
-  const { user } = useUser();
+  const { user } = useUserStore();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const getUser = () => {
@@ -275,10 +275,7 @@ export default function Home() {
                 >
                   <div className="p-8 h-full flex flex-col justify-between">
                     <div>
-                      {exam.icon 
-                      ? <div className="text-6xl mb-4">{exam.icon}</div>
-                      : <div className='w-18 h-18 mb-3'><img src={exam.logo} className='h-full w-full object-contain' alt=""/></div>
-                      }
+                      <div className='w-18 h-18 mb-3'><img src={exam.logo} className='h-full w-full object-contain' alt=""/></div>
                       <h3 className="text-3xl font-bold text-gray-900 mb-2">{exam.name}</h3>
                       <p className="text-gray-600 text-sm">Practice Test Paper</p>
                     </div>
@@ -376,7 +373,7 @@ export default function Home() {
               key={i}
               className="p-6 bg-white rounded-xl border border-gray-200 hover:shadow-md transition-all cursor-pointer text-center"
             >
-              <div className="text-5xl mb-3">{exam.icon}</div>
+              <div className='w-full h-18 flex justify-center mb-1'><img src={exam.logo} className='object-contain' alt=""/></div>
               <h3 className="text-base font-bold text-gray-900">{exam.name}</h3>
               <p className="text-xs text-gray-500 mt-2">1000+ Questions</p>
             </div>

@@ -1,9 +1,8 @@
-import { useUser } from "../context/userContext";
+import { useUserStore } from "../store/UseUserStore"; 
 import { useNavigate } from "react-router";
 
-
 const UserPage = () => {
-  const { user, logout } = useUser()
+  const { user, logout } = useUserStore()
   const navigate = useNavigate()
   const goToAuthPage = ()=>{
     navigate("/auth")

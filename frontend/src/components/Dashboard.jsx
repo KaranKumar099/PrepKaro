@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, FileText, Download, Target, TrendingUp, Flame , Calendar, BarChart3, Plus, Search, Bell, Trophy, Menu } from 'lucide-react';
 import { useNavigate } from 'react-router';
-import {useUser} from "../context/userContext"
+import { useUserStore } from '../store/UseUserStore'; 
 import axios from 'axios';
 import SideBar from './SideBar';
 
@@ -11,7 +11,7 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('overview');
   const [allExams, setAllExams] = useState([]);
 
-  const {user} = useUser()
+  const {user} = useUserStore()
   
   useEffect(()=>{
     const generatedExams = async () => {

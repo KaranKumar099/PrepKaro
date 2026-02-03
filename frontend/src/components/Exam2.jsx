@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useQuestions } from "../context/questionsContext";
+import { useQuestionStore } from "../store/UseQuestionStore"; 
 import axios from "axios"
 import { useNavigate } from "react-router";
 import ExamTimer from "./ExamTimer";
 
 export default function ExamApp() {
   const navigate = useNavigate()
-  const {questions, attemptId} = useQuestions()
+  const {questions, attemptID} = useQuestionStore()
 
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -30,7 +30,7 @@ export default function ExamApp() {
       try {
         const token = localStorage.getItem("accessToken");
         await axios.post(
-          `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/timespent`,
+          `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/timespent`,
           { questionId: qId, timeSpent: timeSpentSeconds },
           { headers: { Authorization: `Bearer ${token}` }, withCredentials: true }
         );
@@ -46,7 +46,7 @@ export default function ExamApp() {
     const token = localStorage.getItem("accessToken")
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/answer`,
+        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/answer`,
         {
           questionId : qId,
           userAnswer : optIndex,
@@ -69,7 +69,7 @@ export default function ExamApp() {
     const token = localStorage.getItem("accessToken")
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/answer`,
+        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/answer`,
         {
           questionId : qId,
           markedForReview : marked[qId]
@@ -113,7 +113,7 @@ export default function ExamApp() {
     const token = localStorage.getItem("accessToken")
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/submit`,
+        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/submit`,
         {},
         {
           headers: {Authorization: `Bearer ${token}`},
@@ -124,7 +124,7 @@ export default function ExamApp() {
       if(document.fullscreenElement){
         document.exitFullscreen()
       }
-      navigate(`/attempt/${attemptId}`)
+      navigate(`/attempt/${attemptID}`)
     } catch (error) {
       console.error("Error in submitting : ", error)
     }
