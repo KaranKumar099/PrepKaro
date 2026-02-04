@@ -20,23 +20,11 @@ app.use(
     })
 );
 
-app.use((req, res, next) => {
-    console.log(`${req.method} ${req.url}`);
-    console.log("Content-Length:", req.headers['content-length'], "bytes");
-    next();
-});
-
 // In your app.js
 app.use(express.json({ limit: "50mb" }));  // Increase from 10mb
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(express.static("public"));
 app.use(cookieParser());
-
-app.post('/api/test-large', express.json({ limit: '50mb' }), (req, res) => {
-    console.log("Test endpoint hit!");
-    console.log("Body size:", JSON.stringify(req.body).length);
-    res.json({ success: true, size: JSON.stringify(req.body).length });
-});
 
 // import routers
 import attemptRouter from "./routes/attempt.route.js"

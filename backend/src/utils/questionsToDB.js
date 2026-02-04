@@ -16,7 +16,7 @@ await mongoose.connect(mongoURI, {
 });
 
 const insertQuestionsIntoDB = async () => {
-    const questions = JSON.parse(fs.readFileSync("CS-2022.json", "utf-8"))
+    const questions = JSON.parse(fs.readFileSync("CS-2023.json", "utf-8"))
     try {
         console.log("uploading questions into DB....")
         await Question.insertMany(questions)

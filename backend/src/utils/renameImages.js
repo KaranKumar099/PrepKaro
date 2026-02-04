@@ -4,7 +4,7 @@ import path from "path";
 const folderPath = "assets"
 
 // -----------------------
-// Rename images name 104
+// Rename images name 33
 // -----------------------
 const prefix = "img_";
 fs.readdir(folderPath, (err, files) => {
@@ -13,11 +13,11 @@ fs.readdir(folderPath, (err, files) => {
   files.forEach((file, index) => {
     const ext = path.extname(file);
     const oldPath = path.join(folderPath, file);
-    const newPath = path.join(folderPath, `${prefix}${index + 1}${ext}`);
+    const newPath = path.join(folderPath, `${prefix}${index + 34}${ext}`);
 
     fs.rename(oldPath, newPath, (err) => {
       if (err) console.error("Error renaming file:", err);
-      else console.log(`✅ Renamed: ${file} → ${prefix}${index + 1}${ext}`);
+      else console.log(`✅ Renamed: ${file} → ${prefix}${index + 34}${ext}`);
     });
   });
 });

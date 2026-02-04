@@ -1,0 +1,24 @@
+[  {
+    "questionText": "Consider the following program:\nint main()\n{\nf1();\nf2(2);\nf3();\nreturn(0);\n}\nint f1()\n{\nreturn(1);\n}\nint f2(int X)\n{\nf3();\nif (X==1)\nreturn f1();\nelse\nreturn (X*f2(X-1));\n}\nint f3()\n{\nreturn(5);\n}\nWhich one of the following options represents the activation tree corresponding to the main function?\n(A)\nmain\nf1 f2 f3\nf3  f2\nf3  f1\n(B)\nmain\nf2 f3\nf1\nf1\nf3\n(C)\nmain\nf2\nf1\nf3  f1\n(D)\nmain\nf1 f2 f3\nf3  f2  f1",
+    "picture": null,
+    "options": [
+      "A) main f1 f2 f3 f3  f2 f3  f1",
+      "B) main f2 f3 f1 f1 f3",
+      "C) main f2 f1 f3  f1",
+      "D) main f1 f2 f3 f3  f2  f1"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2023
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Recursion",
+    "difficultyLvl": "Medium"
+  }]

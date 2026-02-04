@@ -133,7 +133,7 @@ export default function Login() {
 
       {/* Right Side - Login Form */}
       <div className="w-full lg:w-1/2 bg-gray-50 flex items-center justify-center p-8">
-        <div className="w-full max-w-md">
+        <form onSubmit={handleSubmit} className="w-full max-w-md">
           <h2 className="text-3xl font-bold mb-8 text-center">
             {isLogin ? 'Log In' : 'Sign Up'}
           </h2>
@@ -207,7 +207,7 @@ export default function Login() {
               </>
             )}
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
