@@ -1,0 +1,1502 @@
+[
+  {
+    "questionText": "If ‘→’ denotes increasing order of intensity, then the meaning of the words [dry → arid → parched] is analogous to [diet → fast → ________ ].\nWhich one of the given options is appropriate to fill the blank?",
+    "picture": null,
+    "options": [
+      "A) starve",
+      "B) reject",
+      "C) feast",
+      "D) deny"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": null,
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "If two distinct non-zero real variables 𝑥 and 𝑦 are such that (𝑥 + 𝑦) is proportional to (𝑥 − 𝑦) then the value of 𝑥/𝑦",
+    "picture": null,
+    "options": [
+      "A) depends on 𝑥𝑦",
+      "B) depends only on 𝑥 and not on 𝑦",
+      "C) depends only on 𝑦 and not on 𝑥",
+      "D) is a constant"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Algebra",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider the following sample of numbers:\n9, 18, 11, 14, 15, 17, 10, 69, 11, 13\nThe median of the sample is",
+    "picture": null,
+    "options": [
+      "A) 13.5",
+      "B) 14",
+      "C) 11",
+      "D) 18.7"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Probability and Statistics",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "The number of coins of ₹1, ₹5, and ₹10 denominations that a person has are in the ratio 5:3:13. Of the total amount, the percentage of money in ₹5 coins is",
+    "picture": null,
+    "options": [
+      "A) 21%",
+      "B) 14 2/7%",
+      "C) 10%",
+      "D) 30%"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": null,
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "For positive non-zero real variables 𝑝 and 𝑞, if\nlog (𝑝² + 𝑞²) = log 𝑝 + log 𝑞 + 2 log 3,\nthen, the value of (𝑝⁴+𝑞⁴)/(𝑝²𝑞²) is",
+    "picture": null,
+    "options": [
+      "A) 79",
+      "B) 81",
+      "C) 9",
+      "D) 83"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Algebra",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "In the given text, the blanks are numbered (i)−(iv). Select the best match for all the blanks.\nSteve was advised to keep his head (i) before heading (ii) to bat;\nfor, while he had a head (iii) batting, he could only do so with a cool head s (iv) his shoulders.",
+    "picture": null,
+    "options": [
+      "A) (i) down (ii) down (iii) on (iv) for",
+      "B) (i) on (ii) down (iii) for (iv) on",
+      "C) (i) down (ii) out (iii) for (iv) on",
+      "D) (i) on (ii) out (iii) on (iv) for"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": null,
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A rectangular paper sheet of dimensions 54 cm × 4 cm is taken. The two longer edges of the sheet are joined together to create a cylindrical tube. A cube whose surface area is equal to the area of the sheet is also taken.\nThen, the ratio of the volume of the cylindrical tube to the volume of the cube is",
+    "picture": null,
+    "options": [
+      "A) 1/π",
+      "B) 2/π",
+      "C) 3/π",
+      "D) 4/π"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": null,
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The pie chart presents the percentage contribution of different macronutrients to a typical 2,000 kcal diet of a person.\nThe typical energy density (kcal/g) of these macronutrients is given in the table. The total fat (all three types), in grams, this person consumes is ",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378623/ea8njznfg8vw8lvqqv90.png",
+    "options": [
+      "A) 44.4",
+      "B) 77.8",
+      "C) 100",
+      "D) 3,600"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": null,
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A rectangular paper of 20 cm × 8 cm is folded 3 times. Each fold is made along the line of symmetry, which is perpendicular to its long edge. The perimeter of the final folded sheet (in cm) is",
+    "picture": null,
+    "options": [
+      "A) 18",
+      "B) 24",
+      "C) 20",
+      "D) 21"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": null,
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The least number of squares to be added in the figure to make AB a line of symmetry is",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378624/co6mbzhhkyc1f6nrnpvb.png",
+    "options": [
+      "A) 6",
+      "B) 4",
+      "C) 5",
+      "D) 7"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": null,
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Let 𝑓: ℝ → ℝ be a function such that 𝑓(𝑥) = max{𝑥, 𝑥³}, 𝑥 ∈ ℝ , where ℝ is the set of all real numbers. The set of all points where 𝑓(𝑥) is NOT differentiable is",
+    "picture": null,
+    "options": [
+      "A) {−1, 1, 2}",
+      "B) {−2, −1, 1}",
+      "C) {0, 1}",
+      "D) {−1, 0, 1}"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Calculus",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The product of all eigenvalues of the matrix [[1 2 3]\n[4 5 6]\n[7 8 9]] is",
+    "picture": null,
+    "options": [
+      "A) -1",
+      "B) 0",
+      "C) 1",
+      "D) 2"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Linear Algebra",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a system that uses 5 bits for representing signed integers in 2’s complement format. In this system, two integers 𝐴 and 𝐵 are represented as 𝐴=01010 and 𝐵=11010. Which one of the following operations will result in either an arithmetic overflow or an arithmetic underflow?",
+    "picture": null,
+    "options": [
+      "A) 𝐴 + 𝐵",
+      "B) 𝐴 − 𝐵",
+      "C) 𝐵 − 𝐴",
+      "D) 2 ∗ 𝐵"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Digital Logic",
+    "topic": "Number representations and computer arithmetic (fixed and floating point)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a permutation sampled uniformly at random from the set of all permutations of {1, 2, 3, ⋯ , 𝑛} for some 𝑛 ≥ 4. Let 𝑋 be the event that 1 occurs before 2 in the permutation, and 𝑌 the event that 3 occurs before 4. Which one of the following statements is TRUE?",
+    "picture": null,
+    "options": [
+      "A) The events 𝑋 and 𝑌 are mutually exclusive",
+      "B) The events 𝑋 and 𝑌 are independent",
+      "C) Either event 𝑋 or 𝑌 must occur",
+      "D) Event 𝑋 is more likely than event 𝑌"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Probability and Statistics",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the following statements is FALSE?",
+    "picture": null,
+    "options": [
+      "A) In the cycle stealing mode of DMA, one word of data is transferred between an I/O device and main memory in a stolen cycle",
+      "B) For bulk data transfer, the burst mode of DMA has a higher throughput than the cycle stealing mode",
+      "C) Programmed I/O mechanism has a better CPU utilization than the interrupt driven I/O mechanism",
+      "D) The CPU can start executing an interrupt service routine faster with vectored interrupts than with non-vectored interrupts"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "I/O interface (interrupt and DMA mode)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A user starts browsing a webpage hosted at a remote server. The browser opens a single TCP connection to fetch the entire webpage from the server. The webpage consists of a top-level index page with multiple embedded image objects. Assume that all caches (e.g., DNS cache, browser cache) are all initially empty. The following packets leave the user’s computer in some order.\n(i) HTTP GET request for the index page\n(ii) DNS request to resolve the web server’s name to its IP address\n(iii) HTTP GET request for an image object\n(iv) TCP SYN to open a connection to the web server\nWhich one of the following is the CORRECT chronological order (earliest in time to latest) of the packets leaving the computer ?",
+    "picture": null,
+    "options": [
+      "A) (iv), (ii), (iii), (i)",
+      "B) (ii), (iv), (iii), (i)",
+      "C) (ii), (iv), (i), (iii)",
+      "D) (iv), (ii), (i), (iii)"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Application layer protocols: DNS, SMTP, HTTP, FTP, Email",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Given an integer array of size N, we want to check if the array is sorted (in either ascending or descending order). An algorithm solves this problem by making a single pass through the array and comparing each element of the array only with its adjacent elements. The worst-case time complexity of this algorithm is",
+    "picture": null,
+    "options": [
+      "A) both Ο(𝑁) and Ω(𝑁)",
+      "B) Ο(𝑁) but not Ω(𝑁)",
+      "C) Ω(𝑁) but not Ο(𝑁)",
+      "D) neither Ο(𝑁) nor Ω(𝑁)"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Algorithms",
+    "topic": "Asymptotic worst case time and space complexity",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider the following C program:\n#include <stdio.h>\nint main(){\nint a = 6;\nint b = 0;\nwhile(a < 10) {\na = a / 12 + 1;\na += b;}\nprintf(”%d”, a);\nreturn 0;}\nWhich one of the following statements is CORRECT?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378625/afp3garudmtx5fzlzbtz.png",
+    "options": [
+      "A) The program prints 9 as output",
+      "B) The program prints 10 as output",
+      "C) The program gets stuck in an infinite loop",
+      "D) The program prints 6 as output"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following C program:\n#include <stdio.h>\nvoid fX();\nint main(){\nfX();\nreturn 0;}\nvoid fX(){\nchar a;\nif((a=getchar()) != ’\\n’)\nfX();\nif(a != ’\\n’)\nputchar(a);}\nAssume that the input to the program from the command line is 1234 followed by a newline character. Which one of the following statements is CORRECT?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378626/kfh3havvv60p8mhvrrz1.png",
+    "options": [
+      "A) The program will not terminate",
+      "B) The program will terminate with no output",
+      "C) The program will terminate with 4321 output",
+      "D) The program will terminate with 1234 output"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let S be the specification: \"Instructors teach courses. Students register for courses. Courses are allocated classrooms. Instructors guide students.\" Which one of the following ER diagrams CORRECTLY represents S?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378628/uhg1srrlpqeikyriv5a7.png",
+    "options": [
+      "A) (i)",
+      "B) (ii)",
+      "C) (iii)",
+      "D) (iv)"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "ER-model",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "In a B+ tree, the requirement of at least half-full (50%) node occupancy is relaxed for which one of the following cases?",
+    "picture": null,
+    "options": [
+      "A) Only the root node",
+      "B) All leaf nodes",
+      "C) All internal nodes",
+      "D) Only the leftmost leaf node"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "File organization, indexing (e.g., B and B+ trees)",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Q.22 Which of the following statements about a relation R in first normal form (1NF) is/are TRUE ?",
+    "picture": null,
+    "options": [
+      "A) R can have a multi-attribute key",
+      "B) R cannot have a foreign key",
+      "C) R cannot have a composite attribute",
+      "D) R cannot have more than one candidate key"
+    ],
+    "answer": [
+      "A",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra, tuple calculus, SQL. Integrity constraints, normal forms.",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝐿1, 𝐿2 be two regular languages and 𝐿3 a language which is not regular. Which of the following statements is/are always TRUE?",
+    "picture": null,
+    "options": [
+      "A) 𝐿1 = 𝐿2 if and only if 𝐿1 ∩ comp(𝐿2) = 𝜙",
+      "B) 𝐿1 ∪ 𝐿3 is not regular",
+      "C) comp(𝐿3) is not regular",
+      "D) comp(𝐿1) ∪ comp(𝐿2) is regular"
+    ],
+    "answer": [
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular and context-free languages, pumping lemma",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following statements about threads is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) Threads can only be implemented in kernel space",
+      "B) Each thread has its own file descriptor table for open files",
+      "C) All the threads belonging to a process share a common stack",
+      "D) Threads belonging to a process are by default not protected from each other"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "System calls, processes, threads, inter‐process communication, concurrency and synchronization",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Which of the following process state transitions is/are NOT possible?",
+    "picture": null,
+    "options": [
+      "A) Running to Ready",
+      "B) Waiting to Running",
+      "C) Ready to Waiting",
+      "D) Running to Terminated"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "System calls, processes, threads, inter‐process communication, concurrency and synchronization",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following is/are Bottom-Up Parser(s)?",
+    "picture": null,
+    "options": [
+      "A) Shift-reduce Parser",
+      "B) Predictive Parser",
+      "C) LL(1) Parser",
+      "D) LR Parser"
+    ],
+    "answer": [
+      "A",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Compiler Design",
+    "topic": "Lexical analysis, parsing, syntax-directed translation",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Let 𝐴 and 𝐵 be two events in a probability space with 𝑃(𝐴) = 0.3, 𝑃(𝐵) = 0.5, and 𝑃(𝐴 ∩ 𝐵) = 0.1. Which of the following statements is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) The two events 𝐴 and 𝐵 are independent",
+      "B) 𝑃(𝐴 ∪ 𝐵) = 0.7",
+      "C) 𝑃(𝐴 ∩ 𝐵𝑐) = 0.2, where 𝐵𝑐 is the complement of the event 𝐵",
+      "D) 𝑃(𝐴𝑐 ∩ 𝐵𝑐) = 0.4, where 𝐴𝑐 and 𝐵𝑐 are the complements of the events 𝐴 and 𝐵, respectively"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Probability and Statistics",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the circuit shown below where the gates may have propagation delays. Assume that all signal transitions occur instantaneously and that wires have no delays. Which of the following statements about the circuit is/are CORRECT?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378629/zc643vsoubmbz8b1wadp.png",
+    "options": [
+      "A) With no propagation delays, the output 𝒀 is always logic Zero",
+      "B) With no propagation delays, the output 𝒀 is always logic One",
+      "C) With propagation delays, the output 𝒀 can have a transient logic One after 𝑿 transitions from logic Zero to logic One",
+      "D) With propagation delays, the output 𝒀 can have a transient logic Zero after 𝑿 transitions from logic One to logic Zero"
+    ],
+    "answer": [
+      "A",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Digital Logic",
+    "topic": "Combinational and sequential circuits",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "TCP client P successfully establishes a connection to TCP server Q. Let 𝑁𝑃 denote the sequence number in the SYN sent from P to Q. Let 𝑁𝑄 denote the acknowledgement number in the SYN ACK from Q to P. Which of the following statements is/are CORRECT?",
+    "picture": null,
+    "options": [
+      "A) The sequence number 𝑁𝑃 is chosen randomly by P",
+      "B) The sequence number 𝑁𝑃 is always 0 for a new connection",
+      "C) The acknowledgement number 𝑁𝑄 is equal to 𝑁𝑃",
+      "D) The acknowledgement number 𝑁𝑄 is equal to 𝑁𝑃 + 1"
+    ],
+    "answer": [
+      "A",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Transport layer: flow control and congestion control, UDP, TCP, sockets",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a 5-stage instruction pipeline with Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Register Writeback (WB) stages. Which of the following statements about forwarding is/are CORRECT?",
+    "picture": null,
+    "options": [
+      "A) In a pipelined execution, forwarding means the result from a source stage of an earlier instruction is passed on to the destination stage of a later instruction",
+      "B) In forwarding, data from the output of the MEM stage can be passed on to the input of the EX stage of the next instruction",
+      "C) Forwarding cannot prevent all pipeline stalls",
+      "D) Forwarding does not require any extra hardware to retrieve the data from the pipeline stages"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Instruction pipelining, pipeline hazards",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following fields is/are modified in the IP header of a packet going out of a network address translation (NAT) device from an internal network to an external network?",
+    "picture": null,
+    "options": [
+      "A) Source IP",
+      "B) Destination IP",
+      "C) Header Checksum",
+      "D) Total Length"
+    ],
+    "answer": [
+      "A",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Network Address Translation (NAT)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝐴 and 𝐵 be non-empty finite sets such that there exist one-to-one and onto functions (i) from 𝐴 to 𝐵 and (ii) from 𝐴 × 𝐴 to 𝐴 ∪ 𝐵. The number of possible values of |𝐴| is __________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "2"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Sets, relations, functions",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Consider the operator precedence and associativity rules for the integer arithmetic operators given in the table below.\nThe value of the expression 3 + 1 + 5 ∗ 2 / 7 + 2 − 4 − 7 − 6 / 2 as per the below rules is __________",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378630/ry198qynl5u4hooxbjnl.png",
+    "options": [],
+    "answer": [
+      "6"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The number of spanning trees in a complete graph of 4 vertices labelled A, B, C, and D is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "16"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Discrete Mathematics",
+    "topic": "Graphs: connectivity, matching, colouring",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider the following two relations, R(A,B) and S(A,C):\nThe total number of tuples obtained by evaluating the following expression\n𝝈𝑩<𝑪(𝑹 ⋈𝑹.𝑨=𝑺.𝑨 𝑺)\nis _________",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378632/jjjakqzsfm4kar6litqc.png",
+    "options": [],
+    "answer": [
+      "2"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a network path P—Q—R between nodes P and R via router Q. Node P sends a file of size 106 bytes to R via this path by splitting the file into chunks of 103 bytes each. Node P sends these chunks one after the other without any wait time between the successive chunk transmissions. Assume that the size of extra headers added to these chunks is negligible, and that the chunk size is less than the MTU. Each of the links P—Q and Q—R has a bandwidth of 106 bits/sec, and negligible propagation latency. Router Q immediately transmits every packet it receives from P to R, with negligible processing and queueing delays. Router Q can simultaneously receive on link P—Q and transmit on link Q—R. Assume P starts transmitting the chunks at time 𝑡 = 0. Which one of the following options gives the time (in seconds, rounded off to 3 decimal places) at which R receives all the chunks of the file?",
+    "picture": null,
+    "options": [
+      "A) 8.000",
+      "B) 8.008",
+      "C) 15.992",
+      "D) 16.000"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Basics of packet, circuit and virtual circuit-switching",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following syntax-directed definition (SDD).\n\nGiven \"MMLK\" as the input, which one of the following options is the CORRECT value computed by the SDD (in the attribute 𝑆. 𝑣𝑎𝑙)?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378633/bmt8x5pbx33t1pf73gsd.png",
+    "options": [
+      "A) 45",
+      "B) 50",
+      "C) 55",
+      "D) 65"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Compiler Design",
+    "topic": "Syntax-directed translation",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following grammar 𝐺, with 𝑆 as the start symbol. The grammar 𝐺 has three incomplete productions denoted by (1), (2), and (3).\n𝑆 → 𝑑𝑎𝑇 | (1)\n𝑇 → 𝑎𝑆 | 𝑏𝑇 | (2)\n𝑅 → (3) | 𝜖\nThe set of terminals is {𝑎, 𝑏, 𝑐, 𝑑, 𝑓}. The FIRST and FOLLOW sets of the different\nnon-terminals are as follows.\nFIRST(𝑆) = {𝑐, 𝑑, 𝑓}, FIRST(𝑇) = {𝑎, 𝑏, 𝜖}, FIRST(𝑅) = {𝑐, 𝜖}\nFOLLOW(𝑆) = FOLLOW(𝑇) = {𝑐, 𝑓, $}, FOLLOW(𝑅) = {𝑓}\nWhich one of the following options CORRECTLY fills in the incomplete productions?",
+    "picture": null,
+    "options": [
+      "A) (1) 𝑆 → 𝑅𝑓 (2) 𝑇 → 𝜖 (3) 𝑅 → 𝑐𝑇𝑅",
+      "B) (1) 𝑆 → 𝑓𝑅 (2) 𝑇 → 𝜖 (3) 𝑅 → 𝑐𝑇𝑅",
+      "C) (1) 𝑆 → 𝑓𝑅 (2) 𝑇 → 𝑐𝑇 (3) 𝑅 → 𝑐𝑅",
+      "D) (1) 𝑆 → 𝑅𝑓 (2) 𝑇 → 𝑐𝑇 (3) 𝑅 → 𝑐𝑅"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Context-free grammars and push-down automata",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following pseudo-code.\nWhich one of the following options CORRECTLY specifies the number of basic blocks and the number of instructions in the largest basic block, respectively ?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378634/dqh9jtc21e2pgb1tf1yn.png",
+    "options": [
+      "A) 6 and 6",
+      "B) 6 and 7",
+      "C) 7 and 7",
+      "D) 7 and 6"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Compiler Design",
+    "topic": "Intermediate code generation",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following two threads T1 and T2 that update two shared variables\na and b. Assume that initially a = b = 1. Though context switching between\nthreads can happen at any time, each statement of T1 or T2 is executed atomically\nwithout interruption.\nWhich one of the following options lists all the possible combinations of values of\na and b after both T1 and T2 finish execution?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378635/k4ft0jrgdym9e4o3hapf.png",
+    "options": [
+      "A) (a = 4, b = 4); (a = 3, b = 3); (a = 4, b = 3)",
+      "B) (a = 3, b = 4); (a = 4, b = 3); (a = 3, b = 3)",
+      "C) (a = 4, b = 4); (a = 4, b = 3); (a = 3, b = 4)",
+      "D) (a = 2, b = 2); (a = 2, b = 3); (a = 3, b = 4)"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "Concurrency and synchronization",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "An array [82, 101, 90, 11, 111, 75, 33, 131, 44, 93] is heapified. Which one of the\nfollowing options represents the first three elements in the heapified array?",
+    "picture": null,
+    "options": [
+      "A) 82, 90, 101",
+      "B) 82, 11, 93",
+      "C) 131, 11, 93",
+      "D) 131, 111, 90"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Binary heaps",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider the following recurrence relation:\n𝑇(𝑛) = {√𝑛𝑇(√𝑛) + 𝑛 for 𝑛 ≥ 1,\n1 for 𝑛 = 1.\nWhich one of the following options is CORRECT?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378636/ruk9iit4bk3iip5qsjv7.png",
+    "options": [
+      "A) 𝑇(𝑛) = Θ(𝑛 log log 𝑛)",
+      "B) 𝑇(𝑛) = Θ(𝑛 log 𝑛)",
+      "C) 𝑇(𝑛) = Θ(𝑛2 log 𝑛)",
+      "D) 𝑇(𝑛) = Θ(𝑛2 log log 𝑛)"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Algorithms",
+    "topic": "Recurrence relations",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a binary min-heap containing 105 distinct elements. Let 𝑘 be the index (in\nthe underlying array) of the maximum element stored in the heap. The number of\npossible values of 𝑘 is",
+    "picture": null,
+    "options": [
+      "A) 53",
+      "B) 52",
+      "C) 27",
+      "D) 1"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Binary heaps",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The symbol → indicates functional dependency in the context of a relational\ndatabase. Which of the following options is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) (𝑋, 𝑌) → (𝑍, 𝑊) implies 𝑋 → (𝑍, 𝑊)",
+      "B) (𝑋, 𝑌) → (𝑍, 𝑊) implies (𝑋, 𝑌) → 𝑍",
+      "C) ((𝑋, 𝑌) → 𝑍 and 𝑊 → 𝑌) implies (𝑋, 𝑊) → 𝑍",
+      "D) (𝑋 → 𝑌 and 𝑌 → 𝑍) implies 𝑋 → 𝑍"
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra, tuple calculus, SQL",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝐺 be a directed graph and 𝑇 a depth first search (DFS) spanning tree in 𝐺 that\nis rooted at a vertex 𝑣. Suppose 𝑇 is also a breadth first search (BFS) tree in 𝐺,\nrooted at 𝑣. Which of the following statements is/are TRUE for every such graph 𝐺\nand tree 𝑇 ?",
+    "picture": null,
+    "options": [
+      "A) There are no back-edges in 𝐺 with respect to the tree 𝑇",
+      "B) There are no cross-edges in 𝐺 with respect to the tree 𝑇",
+      "C) There are no forward-edges in 𝐺 with respect to the tree 𝑇",
+      "D) The only edges in 𝐺 are the edges in 𝑇"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Algorithms",
+    "topic": "Graph traversals",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following read-write schedule 𝑆 over three transactions 𝑇1, 𝑇2, and 𝑇3, where the subscripts in the schedule indicate transaction IDs:\n𝑆: 𝑟1(𝑧); 𝑤1(𝑧); 𝑟2(𝑥); 𝑟3(𝑦); 𝑤3(𝑦); 𝑟2(𝑦); 𝑤2(𝑥); 𝑤2(𝑦);\nWhich of the following transaction schedules is/are conflict equivalent to 𝑆 ?",
+    "picture": null,
+    "options": [
+      "A) 𝑇1𝑇2𝑇3",
+      "B) 𝑇1𝑇3𝑇2",
+      "C) 𝑇3𝑇2𝑇1",
+      "D) 𝑇3𝑇1𝑇2"
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "Transactions and concurrency control",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a Boolean expression given by 𝐹(𝑋, 𝑌, 𝑍) = ∑(3,5,6,7).\nWhich of the following statements is/are CORRECT?",
+    "picture": null,
+    "options": [
+      "A) 𝐹(𝑋, 𝑌, 𝑍) = Π(0,1,2,4)",
+      "B) 𝐹(𝑋, 𝑌, 𝑍) = 𝑋𝑌 + 𝑌𝑍 + 𝑋𝑍",
+      "C) 𝐹(𝑋, 𝑌, 𝑍) is independent of input 𝑌",
+      "D) 𝐹(𝑋, 𝑌, 𝑍) is independent of input 𝑋"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Digital Logic",
+    "topic": "Boolean algebra",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following C function definition.\nint f(int x, int y) {\n\tfor (int i=0; i<y; i++) {\n\t\tx=x+x+y;\n\t}\n\treturn x;\n}\nWhich of the following statements is/are TRUE about the above function?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378638/etm7aigd0lok89btsawg.png",
+    "options": [
+      "A) If the inputs are x=20, y=10, then the return value is greater than 2<sup>20</sup>",
+      "B) If the inputs are x=20, y=20, then the return value is greater than 2<sup>20</sup>",
+      "C) If the inputs are x, y=10, then the return value is less than 2<sup>10</sup>",
+      "D) If the inputs are x=10, y=20, then the return value is greater than 2<sup>20</sup>"
+    ],
+    "answer": [
+      "B",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝐴 be any 𝑛 × 𝑚 matrix, where 𝑚 > 𝑛. Which of the following statements is/are TRUE about the system of linear equations 𝐴𝑥 = 0 ?",
+    "picture": null,
+    "options": [
+      "A) There exist at least 𝑚 − 𝑛 linearly independent solutions to this system",
+      "B) There exist 𝑚 − 𝑛 linearly independent vectors such that every solution is a linear combination of these vectors",
+      "C) There exists a non-zero solution in which at least 𝑚 − 𝑛 variables are 0",
+      "D) There exists a solution in which at least 𝑛 variables are non-zero"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Linear Algebra",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the 5-state DFA 𝑀 accepting the language 𝐿(𝑀) ⊂ (0 + 1)<sup>*</sup> shown below. For any string 𝑤 ∈ (0 + 1)<sup>*</sup> let 𝑛0(𝑤) be the number of 0′𝑠 in 𝑤 and 𝑛1(𝑤) be the number of 1′𝑠 in 𝑤.\nWhich of the following statements is/are FALSE?",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378639/oi4blaw9dx68nnv8ypcj.png",
+    "options": [
+      "A) States 2 and 4 are distinguishable in 𝑀",
+      "B) States 3 and 4 are distinguishable in 𝑀",
+      "C) States 2 and 5 are distinguishable in 𝑀",
+      "D) Any string 𝑤 with 𝑛0(𝑤) = 𝑛1(𝑤) is in 𝐿(𝑀)"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular expressions and finite automata",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The chromatic number of a graph is the minimum number of colours used in a proper colouring of the graph. Let 𝐺 be any graph with 𝑛 vertices and chromatic number 𝑘. Which of the following statements is/are always TRUE?",
+    "picture": null,
+    "options": [
+      "A) 𝐺 contains a complete subgraph with 𝑘 vertices",
+      "B) 𝐺 contains an independent set of size at least 𝑛/𝑘",
+      "C) 𝐺 contains at least 𝑘(𝑘 − 1)/2 edges",
+      "D) 𝐺 contains a vertex of degree at least 𝑘"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Graphs: connectivity, matching, colouring",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the operators ◊ and □ defined by 𝑎 ◊ 𝑏 = 𝑎 + 2𝑏, 𝑎□𝑏 = 𝑎𝑏, for positive integers. Which of the following statements is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) Operator ◊ obeys the associative law",
+      "B) Operator □ obeys the associative law",
+      "C) Operator ◊ over the operator □ obeys the distributive law",
+      "D) Operator □ over the operator ◊ obeys the distributive law"
+    ],
+    "answer": [
+      "B",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Monoids, Groups",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider two set-associative cache memory architectures: WBC, which uses the write back policy, and WTC, which uses the write through policy. Both of them use the LRU (Least Recently Used) block replacement policy. The cache memory is connected to the main memory. Which of the following statements is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) A read miss in WBC never evicts a dirty block",
+      "B) A read miss in WTC never triggers a write back operation of a cache block to main memory",
+      "C) A write hit in WBC can modify the value of the dirty bit of a cache block",
+      "D) A write miss in WTC always writes the victim cache block to main memory before loading the missed bl"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory and secondary storage",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a 512 GB hard disk with 32 storage surfaces. There are 4096 sectors per track and each sector holds 1024 bytes of data. The number of cylinders in the hard disk is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "4096"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory and secondary storage",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The baseline execution time of a program on a 2 GHz single core machine is 100 nanoseconds (ns). The code corresponding to 90% of the execution time can be fully parallelized. The overhead for using an additional core is 10 ns when running on a multicore system. Assume that all cores in the multicore system run their share of the parallelized code for an equal amount of time. The number of cores that minimize the execution time of the program is ________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "3"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "ALU, data‐path and control unit",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A given program has 25% load/store instructions. Suppose the ideal CPI (cycles per instruction) without any memory stalls is 2. The program exhibits 2% miss rate on instruction cache and 8% miss rate on data cache. The miss penalty is 100 cycles. The speedup (rounded off to two decimal places) achieved with a perfect cache (i.e., with NO data or instruction cache misses) is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "3.00"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory and secondary storage",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following code snippet using the fork() and wait() system calls. Assume that the code compiles and runs correctly, and that the system calls run successfully without any errors.\nint x = 3;\nwhile(x > 0) {\nfork();\nprintf(\"hello\");\nwait(NULL);\nx--;\n}\nThe total number of times the printf statement is executed is _______",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378641/pgmxiz13jcc06njhow6t.png",
+    "options": [],
+    "answer": [
+      "14"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "System calls, processes, threads, inter‐process communication, concurrency and synchronization",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Consider the entries shown below in the forwarding table of an IP router. Each entry consists of an IP prefix and the corresponding next hop router for packets whose destination IP address matches the prefix. The notation “/N” in a prefix indicates a subnet mask with the most significant N bits set to 1.\nThis router forwards 20 packets each to 5 hosts. The IP addresses of the hosts are 10.1.1.16, 10.1.1.72, 10.1.1.132, 10.1.1.191, and 10.1.1.205 . The number of packets forwarded via the next hop router R2 is _______",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378643/pbmm9ifbvfgtfhs0e0oe.png",
+    "options": [],
+    "answer": [
+      "40"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Fragmentation and IP addressing, IPv4, CIDR notation",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝐺 = (𝑉, Σ, 𝑆, 𝑃) be a context-free grammar in Chomsky Normal Form with Σ = {𝑎, 𝑏, 𝑐} and 𝑉 containing 10 variable symbols including the start symbol 𝑆. The string 𝑤 = 𝑎30𝑏30𝑐30 is derivable from 𝑆. The number of steps (application of rules) in the derivation 𝑆 →∗ 𝑤 is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "179"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Context-free grammars and push-down automata",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "The number of edges present in the forest generated by the DFS traversal of an undirected graph 𝐺 with 100 vertices is 40. The number of connected components in 𝐺 is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "60"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Algorithms",
+    "topic": "Graph traversals",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider the following two regular expressions over the alphabet {0,1}:\n𝑟 = 0∗ + 1∗\n𝑠 = 01∗ + 10∗\nThe total number of strings of length less than or equal to 5, which are neither in 𝑟 nor in 𝑠, is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "44"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular expressions and finite automata",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a memory management system that uses a page size of 2 KB. Assume that both the physical and virtual addresses start from 0. Assume that the pages 0, 1, 2, and 3 are stored in the page frames 1, 3, 2, and 0, respectively. The physical address (in decimal format) corresponding to the virtual address 2500 (in decimal format) is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "6596"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "Memory management and virtual memory",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A bag contains 10 red balls and 15 blue balls. Two balls are drawn randomly without replacement. Given that the first ball drawn is red, the probability (rounded off to 3 decimal places) that both balls drawn are red is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "0.370 to 0.380"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Probability and Statistics",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider a digital logic circuit consisting of three 2-to-1 multiplexers M1, M2, and M3 as shown below. X1 and X2 are inputs of M1. X3 and X4 are inputs of M2. A, B, and C are select lines of M1, M2, and M3, respectively.\nFor an instance of inputs X1=1, X2=1, X3=0, and X4=0, the number of combinations of A, B, C that give the output Y=1 is _________",
+    "picture": "https://res.cloudinary.com/dooaabxbs/image/upload/v1770378644/rykrrssz4ksdhwz2iefb.png",
+    "options": [],
+    "answer": [
+      "4"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Digital Logic",
+    "topic": "Combinational and sequential circuits",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider sending an IP datagram of size 1420 bytes (including 20 bytes of IP header) from a sender to a receiver over a path of two links with a router between them. The first link (sender to router) has an MTU (Maximum Transmission Unit) size of 542 bytes, while the second link (router to receiver) has an MTU size of 360 bytes. The number of fragments that would be delivered at the receiver is ________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "6"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Fragmentation and IP addressing, IPv4, CIDR notation",
+    "difficultyLvl": "Medium"
+  }
+]

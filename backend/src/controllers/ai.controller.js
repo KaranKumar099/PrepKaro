@@ -1,34 +1,6 @@
 import {asyncHandler} from "../utils/asyncHandler.js"
 import {apiResponse} from "../utils/apiResponse.js"
-import {apiError} from "../utils/apiError.js"
-import axios from "axios"
 import {Question} from "../models/question.model.js"
-
-async function callAzureInference(prompt) {
-    const ENDPOINT = "";
-    const MODEL = "openai/gpt-4.1-mini";
-  const url = `${ENDPOINT}/chat/completions`;
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-  };
-
-  const body = {
-    model: MODEL,
-    messages: [
-      { role: "system", content: "You are an chatbot assistant." },
-      { role: "user", content: prompt },
-    ],
-    temperature: 0,
-  };
-
-  try {
-    const response = await axios.post(url, body, { headers });
-    return response.data;
-  } catch (error) {
-    console.error("API error:", error.response?.data || error.message);
-  }
-}
 
 const getRandomQuestions = asyncHandler(async (req, res) => {
   const {exam, difficulty, questionCount}=req.body
@@ -114,31 +86,4 @@ const getRandomQuestions = asyncHandler(async (req, res) => {
   )
 })
 
-const generatePaper = asyncHandler(async (req, res) => {
-    const prompt = ""
-    const response = callAzureInference(prompt)
-    if(!response){
-        throw new apiError(400, "Error in requesting OPENAI api")
-    }
-
-    const text =
-      // openai chat-completions style
-      response?.choices?.[0]?.message?.content
-      // openai older completions
-      || response?.choices?.[0]?.text
-      // some providers return nested output array
-      || (response?.output?.[0]?.content?.[0]?.text)
-      // other nested structures
-      || (typeof response === "string" ? response : null);
-
-    const finalText = (text || "")
-      .toString()
-      .trim();
-    console.log("Extracted reply:", finalText); 
-
-    return res.status(200).json(
-        new apiResponse(200, finalText, "successful paper generation using openai")
-    )
-})
-
-export {generatePaper, getRandomQuestions}
+export { getRandomQuestions}

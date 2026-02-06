@@ -113,11 +113,11 @@ function chunkText(text, maxChars = 4000) {
 
 // Process the PDF
 async function processPdf(questionPdfPath, outputJson = "questions.json") {
-  const { questionText, answerText, syllabusText } = await extractPdfContent(questionPdfPath,"assets/CS_ANS_GATE2023.pdf", "assets/CS_2026_Syllabus.pdf");
+  const { questionText, answerText, syllabusText } = await extractPdfContent(questionPdfPath,"assets/CS1FinalAnswerKey.pdf", "assets/CS_2026_Syllabus.pdf");
   const chunks = chunkText(questionText);
   const results = [];
 
-  for (let i = 0; i < chunks.length; i++) {
+  for (let i = 2; i < chunks.length; i++) {
     const chunkId = i + 1;
     const chunk = chunks[i];
 
@@ -125,39 +125,104 @@ async function processPdf(questionPdfPath, outputJson = "questions.json") {
         You are an expert exam-paper analyzer and JSON formatter.
 
         You are given 3 types of inputs:
-        1. **Exam Questions (PDF text)** — Contains questions, diagrams, and options.
-        2. **Answer Key (PDF text)** — Contains the correct answers, marks per question, and sometimes question types (MCQ, True/False, Numerical, etc.).
-        3. **Syllabus (text or JSON)** — Lists all topics, subtopics, and chapters for the subject.
+        1. **Exam Questions (PDF text)** — Contains GATE exam questions with options, figures (if any), question type (MCQ/MSQ/NAT), and exam year.
+        2. **Answer Key (PDF text)** — Contains correct answers and marks/score for each question.
+        3. **Syllabus (text or JSON)** — Contains the official GATE syllabus with chapters (sections) and topics.
 
-        Your job is to combine information from all three and produce a unified JSON output array of question objects.
+        Your task is to generate a JSON array of question objects strictly following the provided MongoDB schema.
 
-        Each object must have the following structure:
+        --------------------------------------------------
+        TASK DETAILS
+        --------------------------------------------------
+
+        For EACH question in exam.pdf:
+
+        1. Extract:
+          - questionText (exact text, preserve symbols, equations, formatting)
+          - options (if present, store as ["A) ...", "B) ...", ...])
+          - picture:
+              - If the question references a diagram/figure, set a placeholder string like "figure_qXX.png"
+              - Otherwise set null
+
+        2. From answerkey.pdf:
+          - questionType:
+            - MCQ → single correct option
+            - MSQ → multiple correct options
+            - NAT → numerical answer (options array should be empty)
+          - Extract the correct answer(s)
+            - MCQ/MSQ → option labels like ["A"], ["B","D"]
+            - NAT → numeric value as string, e.g. ["42"]
+          - Extract score (1, 2, or other as specified)
+
+        3. From syllabus.pdf:
+          - Assign the most appropriate chapter (mandatory)
+          - Assign the most specific topic (if identifiable, else null)
+          - Use only syllabus-defined chapter and topic names
+
+        4. Auto-tag difficultyLvl using the following logic:
+          - Easy:
+              - Direct formula application
+              - One-step reasoning
+              - Basic concept recall
+          - Medium:
+              - Multi-step reasoning
+              - Concept + calculation
+              - Moderate logical analysis
+          - Hard:
+              - Tricky edge cases
+              - Deep conceptual understanding
+              - Lengthy derivation or combined concepts
+
+        5. Populate exam metadata:
+          - category: "Gate"
+          - branch: "Computer Science and Information Technology"
+          - code: "CS"
+          - year: Extract from exam.pdf (or provided metadata)
+
+        --------------------------------------------------
+        OUTPUT REQUIREMENTS
+        --------------------------------------------------
+
+        • Output ONLY valid JSON (no explanation, no markdown).
+        • Output must be an array of objects.
+        • Every object MUST conform exactly to this schema:
 
         {
-          "questionText": "full text of the question",
-          "picture": "filename.png" or null,
-          "options": ["A) ...", "B) ...", "C) ...", "D) ..."] or [] if not applicable,
-          "answer": ['B'] for MCQ or ['A', 'C', 'D'] for MSQ",
-          "score": number like 1 or 2,
-          "questionType": "MCQ | MSQ | NAT",
+          "questionText": String,
+          "picture": String | null,
+          "options": [String],
+          "answer": [String],
+          "score": Number,
+          "questionType": "MCQ" | "MSQ" | "NAT",
           "exam": {
-            "category": "Gate",
-            "branch": "Computer Science and Information Technology Set 2",
-            "code": "CS2",
-            "year": 2025
+            "category": String,
+            "branch": String,
+            "code": String,
+            "year": Number
           },
-          "chapter": "Chapter name from syllabus",
-          "topic": "Topic name from syllabus",
-          "difficultyLvl": "Easy/Medium/Hard"
+          "chapter": String,
+          "topic": String | null,
+          "difficultyLvl": "Easy" | "Medium" | "Hard"
         }
 
-        Guidelines:
-        - Match each question in the exam text with its corresponding entry in the answer key using the question number.
-        - If marks or type are missing, infer from context or mark as null.
-        - Use the syllabus to determine the chapter and topic of each question by semantic similarity between the question text and syllabus terms.
-        - Ensure JSON is **strictly valid** and **fully enclosed in [ ... ]**.
-        - Never include explanations, reasoning, or commentary — only return JSON.
-        - If a question cannot be matched to an answer key or syllabus entry, still include it but set the missing fields to null.
+        --------------------------------------------------
+        VALIDATION RULES
+        --------------------------------------------------
+
+        • options must be empty for NAT questions
+        • answer must never be empty
+        • chapter must never be null
+        • difficultyLvl must always be assigned
+        • Use consistent option labeling: A), B), C), D)
+        • Do NOT hallucinate missing data
+        • If any value cannot be confidently determined, set it to null (except mandatory fields)
+
+        --------------------------------------------------
+        BEGIN PROCESSING
+        --------------------------------------------------
+
+        Read exam.pdf, answerkey.pdf, and syllabus.pdf.
+        Generate the final JSON now.
 
         Chunk ${chunkId}:
         ${chunk}
@@ -187,7 +252,7 @@ async function processPdf(questionPdfPath, outputJson = "questions.json") {
 }
 
 // Run
-processPdf("assets/cs_2023.pdf", "CS-2023.json");
+processPdf("assets/CS124S5.pdf", "CS-2024-2.json");
 
 // async function test(){
 //   const url = `${ENDPOINT}/chat/completions`;
