@@ -78,6 +78,7 @@ const getRandomQuestions = asyncHandler(async (req, res) => {
     combined = combined.concat(extraQs);
   }
 
+  console.log("combined: ", combined)
   // Shuffle final array
   combined.sort(() => Math.random() - 0.5);
 

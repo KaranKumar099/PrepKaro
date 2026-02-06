@@ -5,6 +5,7 @@ import { useUserStore } from '../store/UseUserStore';
 import axios from 'axios';
 import SideBar from './SideBar';
 import { useSidebarStore } from '../store/UseSideBarStore';
+import { quickActions, timeDifference } from '../constants';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -43,6 +44,20 @@ export default function Dashboard() {
   }, []);
 
   const recentTests = allExams.slice(0, 3);
+  let avgScore=0;
+  if(allExams.length){
+    const totalScore = allExams.reduce((sum, exam) => sum + (exam.score || 0), 0);
+    avgScore= totalScore/allExams.length;
+  }
+
+  let totalPracticeTime = 0;
+  if(allExams.length>0){
+    totalPracticeTime = allExams.reduce((sum, exam) => {
+      const {hours} = timeDifference(exam?.endTime, exam?.startTime)
+      if(hours) sum += hours;
+      return sum
+    }, 0)
+  }
 
   const upcomingTests = [
     { id: 1, exam: 'JEE Main Mock Test #25', date: 'Today, 4:00 PM', duration: '180 min' },
@@ -60,13 +75,6 @@ export default function Dashboard() {
     { subject: 'Chemistry', score: 72, total: 100, trend: 'up' },
     { subject: 'Mathematics', score: 68, total: 100, trend: 'down' },
     { subject: 'Biology', score: 90, total: 100, trend: 'up' },
-  ];
-
-  const quickActions = [
-    { icon: Plus, label: 'Generate New Paper', color: 'bg-blue-600', action: 'generate' },
-    { icon: FileText, label: 'My Test History', color: 'bg-gray-600', action: 'history' },
-    { icon: BarChart3, label: 'View Analytics', color: 'bg-gray-600', action: 'analytics' },
-    { icon: Download, label: 'Download Reports', color: 'bg-gray-600', action: 'reports' },
   ];
 
   const handleQuickAction = (actionType) => {
@@ -171,7 +179,7 @@ export default function Dashboard() {
                 <span className="text-gray-600 text-xs sm:text-sm">Avg. Score</span>
                 <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900">78%</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900">{avgScore.toFixed(2)}%</div>
               <div className="text-xs sm:text-sm text-green-600 mt-2">+5% from last month</div>
             </div>
 
@@ -180,7 +188,7 @@ export default function Dashboard() {
                 <span className="text-gray-600 text-xs sm:text-sm">Time Taken</span>
                 <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900">20 hrs</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900">{totalPracticeTime}</div>
               <div className="text-xs sm:text-sm text-green-600 mt-2">Practice time</div>
             </div>
           </div>

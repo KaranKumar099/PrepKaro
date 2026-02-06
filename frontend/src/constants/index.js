@@ -1,3 +1,5 @@
+import {Plus, FileText, BarChart3, Download} from "lucide-react"
+
 const gate_exams = [
   { name: "Aerospace Engineering", code: "AE" },
   { name: "Instrumentation Engineering", code: "IN" },
@@ -66,7 +68,7 @@ const allExams = [
   // GATE Exams
   ...gate_exams.map(exam => ({
     id: `gate-${exam.code}`,
-    name: `GATE ${exam.name}`,
+    name: `Gate ${exam.name}`,
     ...examDetails[`gate`]
   })),
 
@@ -87,4 +89,30 @@ const featuredExams = [
   { id: "gate-CS-1", name: "GATE CSE", icon: "💻" },
 ];
 
-export {gate_exams, ssc_exams, allExams, featuredExams, examDetails}
+const quickActions = [
+  { icon: Plus, label: 'Generate New Paper', color: 'bg-blue-600', action: 'generate' },
+  { icon: FileText, label: 'My Test History', color: 'bg-gray-600', action: 'history' },
+  { icon: BarChart3, label: 'View Analytics', color: 'bg-gray-600', action: 'analytics' },
+  { icon: Download, label: 'Download Reports', color: 'bg-gray-600', action: 'reports' },
+];
+
+const timeDifference = (endTimeString, startTimeString)=>{
+  const endTime = new Date(endTimeString);
+  const startTime = new Date(startTimeString);
+  const diffMs = endTime - startTime;
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  const minutes = Math.floor(diffMs / (1000 * 60)) % 60;
+  const seconds = Math.floor(diffMs / 1000) % 60;
+  return { hours, minutes, seconds};
+}
+
+const getDate = (startTimeString)=>{
+  const dayNumber = String(startTimeString.getUTCDate()).padStart(2, "0");
+  const month = String(startTimeString.getUTCMonth() + 1).padStart(2, "0");
+  const year = startTimeString.getUTCFullYear();
+  const weekday = startTimeString.toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
+  const date = `${dayNumber}-${month}-${year}, ${weekday}`
+  return date
+}
+
+export {gate_exams, ssc_exams, allExams, featuredExams, examDetails, quickActions, timeDifference, getDate}

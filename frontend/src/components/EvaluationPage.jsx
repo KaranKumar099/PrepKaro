@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CheckCircle, XCircle, Clock, Download, Share2, ChevronDown, ChevronUp, AlertCircle, Zap, Trophy, Brain, ArrowRight, Home } from 'lucide-react';
 import axios from "axios"
 import { useNavigate, useParams } from 'react-router';
+import { getDate, timeDifference } from '../constants';
 
 export default function ExamEvaluation() {
   const [expandedQuestion, setExpandedQuestion] = useState(null);
@@ -52,21 +53,10 @@ export default function ExamEvaluation() {
         const attemptData = response.data.data
         console.log("Attempt data:", response.data);
 
-        const endTime = new Date(attemptData.endTime);
-        const startTime = new Date(attemptData.startTime);
-        const diffMs = endTime - startTime;
-        const diffSeconds = Math.floor(diffMs / 1000);
-        const minutes = Math.floor(diffSeconds / 60);
-        const seconds = diffSeconds % 60;
+        const {minutes, seconds} = timeDifference(attemptData.endTime, attemptData.startTime);
         const timeSpent = `${minutes} min ${seconds} sec`
-        // console.log("Time Difference:", minutes, "minutes", seconds, "seconds");
 
-        const dayNumber = String(startTime.getUTCDate()).padStart(2, "0");
-        const month = String(startTime.getUTCMonth() + 1).padStart(2, "0");
-        const year = startTime.getUTCFullYear();
-        const weekday = startTime.toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
-        const date = `${dayNumber}-${month}-${year}, ${weekday}`
-        // console.log(`${dayNumber}-${month}-${year}, ${weekday}`);
+        const date = getDate(attemptData.startTime)
 
         setQuestions(attemptData.answers);
         setExamData({
