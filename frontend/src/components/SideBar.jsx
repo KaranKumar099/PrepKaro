@@ -1,4 +1,4 @@
-import {Zap, X, Settings, LogOut, Activity, Plus, FileText, BarChart3, Calendar, Trophy} from "lucide-react"
+import { X, Settings, LogOut, Activity, Plus, FileText, BarChart3, Calendar, Trophy, User} from "lucide-react"
 import { useUserStore } from "../store/UseUserStore"; 
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -150,11 +150,15 @@ function SideBar() {
             <div className="p-4 border-t border-gray-200">
                 <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
                 <div className="w-10 h-10 bg-blue-600 rounded-full overflow-hidden">
-                    <img src={user?.avatar} alt="" className='h-full w-full object-cover'/>
+                    {
+                        user?.avatar
+                        ? <img src={user?.avatar} alt="" className='h-full w-full object-cover'/>
+                        : <User/>
+                    }
                 </div>
-                <div className="flex-1">
+                <div className="flex-1" onClick={()=>navigate("/user")}>
                     <div className="font-semibold text-gray-900 text-sm">{user.name}</div>
-                    <div className="text-xs text-gray-600">View Profile</div>
+                    <div className="text-xs text-gray-600" >View Profile</div>
                 </div>
                 </div>
                 <div className="flex gap-2 mt-3">

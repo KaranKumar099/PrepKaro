@@ -4,6 +4,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import AuthPage from './components/AuthPage.jsx'
 import User from './components/User.jsx'
+import UserProfile from './components/UserProfile.jsx'
 import Tool from './components/Tool.jsx'
 import Layout from './layout.jsx'
 import Exam from './components/Exam.jsx'
@@ -38,7 +39,7 @@ const AppRoutes = ()=>{
         {  path: "",  element: user ? <Dashboard/> : <Home/>},
         {  path: "/auth",  element: <AuthPage/>,},
         {  path: "/login",  element: <Login/>,},
-        {  path: "/user",  element: <User/>,},
+        {  path: "/user",  element: <UserProfile/>,},
         {  path: "/history",  element: <ExamHistory/>,},
         {  path: "/tool",  element: (<ProtectedRoute><Tool/></ProtectedRoute>),},
         {  path: "/exam",  element: (<ExamApp/>),},

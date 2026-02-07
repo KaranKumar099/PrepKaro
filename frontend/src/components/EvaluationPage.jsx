@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CheckCircle, XCircle, Clock, Download, Share2, ChevronDown, ChevronUp, AlertCircle, Zap, Trophy, Brain, ArrowRight, Home } from 'lucide-react';
+import { CheckCircle, XCircle, Clock, Download, Share2, ChevronDown, ChevronUp, AlertCircle, Trophy, Brain, ArrowRight, Home } from 'lucide-react';
 import axios from "axios"
 import { useNavigate, useParams } from 'react-router';
 import { getDate, timeDifference } from '../constants';
@@ -28,6 +28,7 @@ export default function ExamEvaluation() {
     difficulty: 'medium'
   });
   const {attemptId} = useParams()
+  console.log("attempt: ", attemptId)
   const navigate = useNavigate()
 
   // const subjectWisePerformance = [

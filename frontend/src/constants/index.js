@@ -107,10 +107,11 @@ const timeDifference = (endTimeString, startTimeString)=>{
 }
 
 const getDate = (startTimeString)=>{
-  const dayNumber = String(startTimeString.getUTCDate()).padStart(2, "0");
-  const month = String(startTimeString.getUTCMonth() + 1).padStart(2, "0");
-  const year = startTimeString.getUTCFullYear();
-  const weekday = startTimeString.toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
+  const dateObj = new Date(startTimeString);
+  const dayNumber = String(dateObj.getUTCDate()).padStart(2, "0");
+  const month = String(dateObj.getUTCMonth() + 1).padStart(2, "0");
+  const year = dateObj.getUTCFullYear();
+  const weekday = dateObj.toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
   const date = `${dayNumber}-${month}-${year}, ${weekday}`
   return date
 }

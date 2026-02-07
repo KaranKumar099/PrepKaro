@@ -2,12 +2,12 @@ import React, { useRef, useState, useEffect } from "react";
 import { useQuestionStore } from "../store/UseQuestionStore"; 
 import axios from "axios"
 import { useNavigate } from "react-router";
-import ExamTimer from "./ExamTimer";
 
 export default function ExamApp() {
   const navigate = useNavigate()
   const {questions, attemptID} = useQuestionStore()
 
+  const {examName, setExamName} = useState("");
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
   const [marked, setMarked] = useState({});
@@ -20,6 +20,29 @@ export default function ExamApp() {
     const t = setInterval(() => setTime(prev => prev - 1), 1000);
     return () => clearInterval(t);
   }, []);
+
+  useEffect(()=>{
+    const fetchAttemptDetails = async () => {
+      try {
+        const token = localStorage.getItem("accessToken");
+        const res = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+            withCredentials: true,
+          }
+        );
+        setTime(res.data.data.exam.duration*60);
+        setExamName(res.data.data.exam.title);
+      } catch (error) {
+        console.error("Error fetching attempt details:", error);
+      }
+    };
+
+    if (attemptID) {
+      fetchAttemptDetails();
+    }
+  }, [attemptID])
 
   const saveTimeSpent = async (qId) => {
     const now = Date.now();
@@ -133,10 +156,11 @@ export default function ExamApp() {
   const currentQ = questions[current];
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-gray-50 h-screen overflow-hidden flex flex-col">
+
       {/* Header */}
       <div className="flex justify-between items-center bg-white px-6 py-4 rounded-lg shadow">
-        <h2 className="text-xl font-semibold">GATE Mathematics</h2>
+        <h2 className="text-xl font-semibold">{examName}</h2>
 
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1 font-semibold">
@@ -152,23 +176,55 @@ export default function ExamApp() {
       </div>
 
       {/* Layout */}
-      <div className="mt-6 grid grid-cols-4 gap-6">
+      <div className="mt-6 grid grid-cols-4 gap-6 flex-1 overflow-hidden">
+
+
+        {/* Sidebar */}
+        <div className="bg-white rounded-xl shadow border p-6 overflow-y-auto">
+
+          <h3 className="font-semibold text-lg">Exam Progress</h3>
+
+          <div className="mt-3 space-y-1 text-sm">
+            <p>Answered: {Object.keys(answers).length}</p>
+            <p>
+              marked: {Object.values(marked).filter(v => v).length}
+            </p>
+            <p>
+              Remaining: {questions.length - Object.keys(answers).length}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-5 gap-3 mt-4">
+            {questions.map((q, i) => (
+              <button
+                key={i}
+                onClick={() => handleNavigate(i)}
+                className={`w-10 h-10 rounded-lg border ${getButtonColor(q._id, i)}`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+        </div>
         
         {/* Question Card */}
-        <div className="bg-white rounded-xl shadow border p-6 col-span-3">
+        <div className="bg-white rounded-xl shadow border p-6 col-span-3 overflow-y-auto">
           <div className="flex justify-between mb-2">
             <p className="text-sm font-medium">
               Question {current + 1} of {questions.length}
             </p>
+            <div className="flex gap-4 text-sm text-gray-600 mb-3 justify-between">
+              <span className="px-2 py-1 bg-blue-50 rounded">
+                Type: {currentQ.questionType}
+              </span>
 
-            <button
-              onClick={() => handleMarkForReview(currentQ._id)}
-            >
-              {marked[current] ? "🚩" : "⚑"}
-            </button>
+              <span className="px-2 py-1 bg-green-50 rounded">
+                Appeared in : {currentQ.exam.year || "—"}
+              </span>
+            </div>
           </div>
 
-          <h3 className="text-lg font-semibold">
+          <h3 className="text-lg font-semibold whitespace-pre-line">
             {questions[current].questionText}
           </h3>
           <img src={currentQ.picture} className="max-h-100 w-auto object-contain mb-4" />
@@ -208,6 +264,11 @@ export default function ExamApp() {
               Previous
             </button>
 
+            <button 
+              onClick={() => setCurrent(current - 1)}
+              className="px-4 py-2 rounded border border-purple-600 text-purple-600 hover:bg-purple-200"
+            >Flag</button>
+
             <button
               onClick={() => 
                 current < questions.length - 1
@@ -218,33 +279,6 @@ export default function ExamApp() {
             >
               {current < questions.length - 1 ? "Next" : "Submit"}
             </button>
-          </div>
-        </div>
-
-        {/* Sidebar */}
-        <div className="bg-white rounded-xl shadow border p-6">
-          <h3 className="font-semibold text-lg">Exam Progress</h3>
-
-          <div className="mt-3 space-y-1 text-sm">
-            <p>Answered: {Object.keys(answers).length}</p>
-            <p>
-              marked: {Object.values(marked).filter(v => v).length}
-            </p>
-            <p>
-              Remaining: {questions.length - Object.keys(answers).length}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-5 gap-3 mt-4">
-            {questions.map((q, i) => (
-              <button
-                key={i}
-                onClick={() => handleNavigate(i)}
-                className={`w-10 h-10 rounded-lg border ${getButtonColor(q._id, i)}`}
-              >
-                {i + 1}
-              </button>
-            ))}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, FileText, Download, Target, TrendingUp, Flame, Calendar, BarChart3, Plus, Search, Bell, Trophy, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight, FileText, Target, TrendingUp, Flame, Calendar, Plus, Search, Bell, Trophy, Menu } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { useUserStore } from '../store/UseUserStore'; 
 import axios from 'axios';
@@ -188,7 +188,7 @@ export default function Dashboard() {
                 <span className="text-gray-600 text-xs sm:text-sm">Time Taken</span>
                 <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900">{totalPracticeTime}</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900">{totalPracticeTime} hrs</div>
               <div className="text-xs sm:text-sm text-green-600 mt-2">Practice time</div>
             </div>
           </div>
@@ -227,6 +227,7 @@ export default function Dashboard() {
                   <div
                     key={test._id}
                     className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 border border-gray-200 rounded-lg hover:border-blue-600 transition-all cursor-pointer"
+                    onClick={()=>navigate(`/attempt/${test._id}`)}
                   >
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
                       <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />

@@ -60,7 +60,7 @@ const saveAnswer = asyncHandler(async (req, res) => {
     console.log("question answered: ", question)
     console.log("user answer : ", userAnswer)
     
-    if(question.answer.charCodeAt(0)-65 === userAnswer){
+    if(question.answer[0].charCodeAt(0)-65 === userAnswer){
         status = "correct"
     }else{
         status= "incorrect"
