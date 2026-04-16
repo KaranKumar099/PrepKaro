@@ -1,88 +1,48 @@
 import fs from "fs";
-// import path from "path";
+import path from "path";
 import axios from "axios";
-import {PDFParse} from "pdf-parse";         // for text extraction
-// import * as pdfjsLib from "pdfjs-dist"; // for image extraction (with custom logic)
-
+import { PDFParse } from "pdf-parse";
 import dotenv from "dotenv";
-dotenv.config({path: 'backend/.env'});
+
+dotenv.config({ path: path.resolve(process.cwd(), "backend/.env") });
 
 const TOKEN = process.env.OPENAI_API_KEY;
 const ENDPOINT = "https://models.github.ai/inference";
-const MODEL = "openai/gpt-4.1";
+const MODEL = "gpt-4o"; // Changed from gpt-4.1 to a valid model name
 
-// Extract text + images
-// async function extractPdfContent(questionPdfPath, answerPdfPath="", syllabusPdfPath) {
-//   // fs.mkdirSync(imageDir, { recursive: true });
-
-//   // const questionDataBuffer = fs.readFileSync(questionPdfPath);
-//   const questionPdfData = new PDFParse(questionPdfPath);
-//   const questionText = await questionPdfData.getText();
-//   questionText = questionText.text;
-
-//   let answerText; 
-//   if(answerPdfPath != ""){
-//     // const answerDataBuffer = fs.readFileSync(answerPdfPath);
-//     const answerPdfData = new PDFParse(answerPdfPath);
-//     answerText = await answerPdfData.getText();
-//     answerText = answerText.text;
-//   }else{
-//     answerText = "";
-//   }
-
-//   // const syllabusDataBuffer = fs.readFileSync(syllabusPdfPath);
-//   const syllabusPdfData = new PDFParse(syllabusPdfPath);
-//   const syllabusText = await syllabusPdfData.getText();
-//   syllabusText = syllabusText.text;
-
-//   // const images = [];
-//   // const pdfDoc = await pdfjsLib.getDocument(questionPdfPath).promise;
-
-//   // for (let i = 1; i <= pdfDoc.numPages; i++) {
-//   //   const page = await pdfDoc.getPage(i);
-//   //   const ops = await page.getOperatorList();
-
-//   //   for (let j = 0; j < ops.fnArray.length; j++) {
-//   //     if (ops.fnArray[j] === pdfjsLib.OPS.paintImageXObject) {
-//   //       const imgName = `page${i}_img${j}.png`;
-//   //       const imgPath = path.join(imageDir, imgName);
-//   //       fs.writeFileSync(imgPath, "");
-//   //       images.push(imgPath);
-//   //     }
-//   //   }
-//   // }
-//   console.log("running")
-//   return { questionText, answerText, syllabusText };
-// }
-
-async function extractPdfContent(questionPdfPath, answerPdfPath = "", syllabusPdfPath) {
-
-  // QUESTION
-  const questionBuffer = await fs.promises.readFile(questionPdfPath);
-  const questionParser = new PDFParse(new Uint8Array(questionBuffer), { verbosity: 0 });
-  const questionResult = await questionParser.getText();
-  const questionText = questionResult.text;
-
-  // ANSWER (optional)
-  let answerText = "";
-  if (answerPdfPath) {
-    const answerBuffer = await fs.promises.readFile(answerPdfPath);
-    const answerParser = new PDFParse(new Uint8Array(answerBuffer), { verbosity: 0 });
-    const answerResult = await answerParser.getText();
-    answerText = answerResult.text;
+/**
+ * Extracts text from a PDF file.
+ */
+async function extractPdfText(pdfPath) {
+  if (!pdfPath) return "";
+  try {
+    const dataBuffer = await fs.promises.readFile(pdfPath);
+    const parser = new PDFParse({ data: dataBuffer });
+    const data = await parser.getText();
+    return data.text;
+  } catch (error) {
+    console.error(`Error reading PDF at ${pdfPath}:`, error.message);
+    return "";
   }
+}
 
-  // SYLLABUS
-  const syllabusBuffer = await fs.promises.readFile(syllabusPdfPath);
-  const syllabusParser = new PDFParse(new Uint8Array(syllabusBuffer), { verbosity: 0 });
-  const syllabusResult = await syllabusParser.getText();
-  const syllabusText = syllabusResult.text;
-
+/**
+ * Extracts content from Question, Answer, and Syllabus PDFs.
+ */
+async function extractPdfContent(questionPdfPath, answerPdfPath = "", syllabusPdfPath = "") {
+  console.log("Extracting text from PDFs...");
+  const [questionText, answerText, syllabusText] = await Promise.all([
+    extractPdfText(questionPdfPath),
+    extractPdfText(answerPdfPath),
+    extractPdfText(syllabusPdfPath)
+  ]);
   return { questionText, answerText, syllabusText };
 }
 
-// API Call
-async function callAzureInference(prompt) {
+/**
+ * API Call to Azure/GitHub Inference
+ */
+async function callInference(prompt) {
   const url = `${ENDPOINT}/chat/completions`;
   const headers = {
     "Content-Type": "application/json",
@@ -92,193 +52,157 @@ async function callAzureInference(prompt) {
   const body = {
     model: MODEL,
     messages: [
-      { role: "system", content: "You are an assistant that extracts exam questions into JSON." },
+      { role: "system", content: "You are a professional exam paper parser. You convert raw text into structured JSON perfectly." },
       { role: "user", content: prompt },
     ],
     temperature: 0,
+    response_format: { type: "json_object" } // Requesting JSON mode
   };
 
-  const response = await axios.post(url, body, { headers });
-  return response.data;
+  try {
+    const response = await axios.post(url, body, { headers });
+    return response.data;
+  } catch (error) {
+    console.error("API Call Error:", error.response?.data || error.message);
+    throw error;
+  }
 }
 
-// Chunk text
-function chunkText(text, maxChars = 4000) {
+/**
+ * Clean LLM response to ensure valid JSON
+ */
+function cleanJsonResponse(content) {
+  try {
+    // Remove markdown code blocks if present
+    const cleaned = content.replace(/```json/g, "").replace(/```/g, "").trim();
+    return JSON.parse(cleaned);
+  } catch (e) {
+    console.warn("⚠️ Failed to parse JSON, returning raw content as fallback.");
+    return null;
+  }
+}
+
+/**
+ * Chunk text intelligently by searching for double newlines or question numbers.
+ */
+function chunkText(text, maxChars = 5000) {
   const chunks = [];
-  for (let i = 0; i < text.length; i += maxChars) {
-    chunks.push(text.slice(i, i + maxChars));
+  let startIndex = 0;
+
+  while (startIndex < text.length) {
+    let endIndex = startIndex + maxChars;
+    if (endIndex >= text.length) {
+      chunks.push(text.slice(startIndex));
+      break;
+    }
+
+    // Attempt to find a natural break point (double newline) near the maxChars
+    const searchArea = text.slice(endIndex - 500, endIndex + 500);
+    const breakIndex = searchArea.lastIndexOf("\n\n");
+
+    if (breakIndex !== -1) {
+      endIndex = (endIndex - 500) + breakIndex;
+    }
+
+    chunks.push(text.slice(startIndex, endIndex).trim());
+    startIndex = endIndex;
   }
   return chunks;
 }
 
-// Process the PDF
-async function processPdf(questionPdfPath, outputJson = "questions.json") {
-  const { questionText, answerText, syllabusText } = await extractPdfContent(questionPdfPath,"assets/CS1FinalAnswerKey.pdf", "assets/CS_2026_Syllabus.pdf");
-  const chunks = chunkText(questionText);
-  const results = [];
+/**
+ * Process the PDF and extract questions.
+ */
+async function processPdf(questionPdfPath, answerPdfPath = "", syllabusPdfPath = "", outputJson = "extracted_questions.json") {
+  try {
+    const { questionText, answerText, syllabusText } = await extractPdfContent(
+      questionPdfPath,
+      answerPdfPath,
+      syllabusPdfPath
+    );
 
-  for (let i = 2; i < chunks.length; i++) {
-    const chunkId = i + 1;
-    const chunk = chunks[i];
+    if (!questionText) {
+      console.error("No text extracted from question PDF. Aborting.");
+      return;
+    }
 
-    const prompt = `
-        You are an expert exam-paper analyzer and JSON formatter.
+    const chunks = chunkText(questionText);
+    const results = [];
 
-        You are given 3 types of inputs:
-        1. **Exam Questions (PDF text)** — Contains GATE exam questions with options, figures (if any), question type (MCQ/MSQ/NAT), and exam year.
-        2. **Answer Key (PDF text)** — Contains correct answers and marks/score for each question.
-        3. **Syllabus (text or JSON)** — Contains the official GATE syllabus with chapters (sections) and topics.
+    console.log(`Processing ${chunks.length} chunks...`);
 
-        Your task is to generate a JSON array of question objects strictly following the provided MongoDB schema.
+    for (let i = 0; i < chunks.length; i++) {
+      const chunkId = i + 1;
+      const chunk = chunks[i];
 
-        --------------------------------------------------
-        TASK DETAILS
-        --------------------------------------------------
+      console.log(`Processing chunk ${chunkId}/${chunks.length}...`);
 
-        For EACH question in exam.pdf:
+      const prompt = `
+        TASK: Extract GATE exam questions into a JSON array following the schema below.
+        
+        INPUTS:
+        1. Exam Chunk: ${chunk}
+        2. Answer Key Info: ${answerText}
+        3. Syllabus Context: ${syllabusText}
 
-        1. Extract:
-          - questionText (exact text, preserve symbols, equations, formatting)
-          - options (if present, store as ["A) ...", "B) ...", ...])
-          - picture:
-              - If the question references a diagram/figure, set a placeholder string like "figure_qXX.png"
-              - Otherwise set null
-
-        2. From answerkey.pdf:
-          - questionType:
-            - MCQ → single correct option
-            - MSQ → multiple correct options
-            - NAT → numerical answer (options array should be empty)
-          - Extract the correct answer(s)
-            - MCQ/MSQ → option labels like ["A"], ["B","D"]
-            - NAT → numeric value as string, e.g. ["42"]
-          - Extract score (1, 2, or other as specified)
-
-        3. From syllabus.pdf:
-          - Assign the most appropriate chapter (mandatory)
-          - Assign the most specific topic (if identifiable, else null)
-          - Use only syllabus-defined chapter and topic names
-
-        4. Auto-tag difficultyLvl using the following logic:
-          - Easy:
-              - Direct formula application
-              - One-step reasoning
-              - Basic concept recall
-          - Medium:
-              - Multi-step reasoning
-              - Concept + calculation
-              - Moderate logical analysis
-          - Hard:
-              - Tricky edge cases
-              - Deep conceptual understanding
-              - Lengthy derivation or combined concepts
-
-        5. Populate exam metadata:
-          - category: "Gate"
-          - branch: "Computer Science and Information Technology"
-          - code: "CS"
-          - year: Extract from exam.pdf (or provided metadata)
-
-        --------------------------------------------------
-        OUTPUT REQUIREMENTS
-        --------------------------------------------------
-
-        • Output ONLY valid JSON (no explanation, no markdown).
-        • Output must be an array of objects.
-        • Every object MUST conform exactly to this schema:
-
+        SCHEMA:
         {
-          "questionText": String,
-          "picture": String | null,
-          "options": [String],
-          "answer": [String],
-          "score": Number,
-          "questionType": "MCQ" | "MSQ" | "NAT",
-          "exam": {
-            "category": String,
-            "branch": String,
-            "code": String,
-            "year": Number
-          },
-          "chapter": String,
-          "topic": String | null,
-          "difficultyLvl": "Easy" | "Medium" | "Hard"
+          "questions": [
+            {
+              "questionText": "Exact text of the question",
+              "options": ["A) ...", "B) ...", "C) ...", "D) ..."],
+              "answer": ["A"],
+              "score": 1,
+              "questionType": "MCQ" | "MSQ" | "NAT",
+              "exam": {
+                "category": "Gate",
+                "branch": "Computer Science and Information Technology",
+                "code": "CS",
+                "year": 2024
+              },
+              "chapter": "Chapter from syllabus",
+              "topic": "Topic from syllabus",
+              "difficultyLvl": "Easy" | "Medium" | "Hard"
+            }
+          ]
         }
 
-        --------------------------------------------------
-        VALIDATION RULES
-        --------------------------------------------------
+        RULES:
+        - Return ONLY a JSON object with a "questions" key.
+        - Options MUST be empty for NAT questions.
+        - Answer MUST be an array of strings (e.g., ["A"], ["B", "D"], or ["42.5"]).
+        - Preserve all mathematical symbols and formatting.
+        - If a question is incomplete in this chunk, skip it.
+      `;
 
-        • options must be empty for NAT questions
-        • answer must never be empty
-        • chapter must never be null
-        • difficultyLvl must always be assigned
-        • Use consistent option labeling: A), B), C), D)
-        • Do NOT hallucinate missing data
-        • If any value cannot be confidently determined, set it to null (except mandatory fields)
-
-        --------------------------------------------------
-        BEGIN PROCESSING
-        --------------------------------------------------
-
-        Read exam.pdf, answerkey.pdf, and syllabus.pdf.
-        Generate the final JSON now.
-
-        Chunk ${chunkId}:
-        ${chunk}
-
-        For answer, score and questionType, refer answer table: ${answerText}
-        And for chapter and topic, refer syllabus text: ${syllabusText}
-    `;
-
-    try {
-      const result = await callAzureInference(prompt);
-      const output = result?.choices?.[0]?.message?.content || "";
       try {
-        const parsed = JSON.parse(output);
-        if (Array.isArray(parsed)) results.push(...parsed);
-        else results.push(parsed);
-      } catch {
-        console.warn(`⚠️ Could not parse chunk ${chunkId}, saving raw text`);
-        results.push({ raw_output: output });
+        const result = await callInference(prompt);
+        const content = result?.choices?.[0]?.message?.content || "";
+        const parsed = cleanJsonResponse(content);
+        
+        if (parsed && parsed.questions) {
+          results.push(...parsed.questions);
+        } else if (Array.isArray(parsed)) {
+          results.push(...parsed);
+        }
+      } catch (err) {
+        console.error(`Error in chunk ${chunkId}:`, err.message);
       }
-    } catch (err) {
-      console.error(`❌ Error processing chunk ${chunkId}:`, err.message);
     }
-  }
 
-  fs.writeFileSync(outputJson, JSON.stringify(results, null, 2), "utf-8");
-  console.log(`✅ Extracted ${results.length} questions saved to ${outputJson}`);
+    // Deduplicate or filter out empty objects if necessary
+    const finalResults = results.filter(q => q && q.questionText);
+
+    fs.writeFileSync(outputJson, JSON.stringify(finalResults, null, 2), "utf-8");
+    console.log(`✅ Success! Extracted ${finalResults.length} questions to ${outputJson}`);
+  } catch (error) {
+    console.error("Fatal error in processPdf:", error);
+  }
 }
 
-// Run
-processPdf("assets/CS124S5.pdf", "CS-2024-2.json");
+// Example Usage
+const QUESTION_PDF = "assets/CS224S6_removed.pdf";
+const ANSWER_PDF = "assets/CS2FinalAnswerKey.pdf";
+const SYLLABUS_PDF = "assets/CS_2026_Syllabus.pdf";
 
-// async function test(){
-//   const url = `${ENDPOINT}/chat/completions`;
-//   const headers = {
-//     "Content-Type": "application/json",
-//     Authorization: `Bearer ${TOKEN}`,
-//   };
-//   console.log(TOKEN, ENDPOINT)
-//   const body = {
-//     model: MODEL,
-//     messages: [
-//       { role: "system", content: "You are an assistant that answer basic questions." },
-//       { role: "user", content: "What is the capital of India?" },
-//     ],
-//     temperature: 0,
-//   };
-
-//   const response = await axios.post(url, body, { headers });
-//   console.log("answer: ", response.data.choices[0].message.content);
-//   return ;
-// }
-
-// (async () => {
-//   try {
-//     await test();
-//   } catch (err) {
-//     console.error(err.response?.data || err);
-//   }
-// })();
+processPdf(QUESTION_PDF, ANSWER_PDF, SYLLABUS_PDF, "CS2-2024-extra.json");

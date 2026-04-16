@@ -2,14 +2,57 @@ import {asyncHandler} from "../utils/asyncHandler.js"
 import {apiResponse} from "../utils/apiResponse.js"
 import {Question} from "../models/question.model.js"
 
+const getQuestions = asyncHandler(async (req, res) => {
+  const {exam, difficulty, questionCount}=req.body
+  console.log(questionCount)
+
+  const temp = exam.split(" ")
+  const examCategory = temp[0]
+  const examBranch = temp.slice(1).join(" ")
+  console.log(`examCategory : ${examCategory}, examBranch : ${examBranch}`)
+
+  async function fetch(type, marks, count) {
+    const pipeline = [
+        {
+          $match: {
+            "exam.category": examCategory,
+            "exam.branch": examBranch,
+            questionType: type,
+            score: marks
+          }
+        },
+        { $sample: { size: count } }
+      ]
+    return await Question.aggregate(pipeline);
+  }
+
+  const questionsArr = [
+    ...(await fetch("MCQ", 1, 5)),
+    ...(await fetch("MCQ", 2, 5)),
+
+    ...(await fetch("MCQ", 1, 11)),
+    ...(await fetch("MSQ", 1, 10)),
+    ...(await fetch("NAT", 1, 4)),
+
+    ...(await fetch("MCQ", 2, 8)),
+    ...(await fetch("MSQ", 2, 10)),
+    ...(await fetch("NAT", 2, 12))
+  ];
+
+  return res.status(200).json(
+    new apiResponse(200, questionsArr, "successfully fetched questions from database")
+  )
+})
+
 const getRandomQuestions = asyncHandler(async (req, res) => {
   const {exam, difficulty, questionCount}=req.body
+  console.log(questionCount)
 
   // Difficulty distribution rules
   const distribution = {
-    easy: { easy: 0.2, medium: 0.75, hard: 0.05 },
-    medium: { easy: 0.1, medium: 0.8, hard: 0.1 },
-    hard: { easy: 0.05, medium: 0.75, hard: 0.2 },
+    easy: { easy: 0.25, medium: 0.6, hard: 0.15 },
+    medium: { easy: 0.15, medium: 0.7, hard: 0.15 },
+    hard: { easy: 0.1, medium: 0.7, hard: 0.2 },
     "very hard": { easy: 0, medium: 0.7, hard: 0.3 }
   };
 
@@ -23,10 +66,11 @@ const getRandomQuestions = asyncHandler(async (req, res) => {
 
   // Compute number of questions per difficulty
   const numQuestions = {
-    easy: Math.round(dist.easy * questionCount),
-    medium: Math.round(dist.medium * questionCount),
-    hard: Math.round(dist.hard * questionCount)
+    easy: Math.floor(dist.easy * questionCount),
+    medium: Math.floor(dist.medium * questionCount),
+    hard: Math.floor(dist.hard * questionCount)
   };
+  console.log(numQuestions)
 
   // Helper to fetch random questions per difficulty
   const fetchQuestions = async (diff, limit) => {
@@ -78,7 +122,7 @@ const getRandomQuestions = asyncHandler(async (req, res) => {
     combined = combined.concat(extraQs);
   }
 
-  console.log("combined: ", combined)
+  // console.log("combined: ", combined)
   // Shuffle final array
   combined.sort(() => Math.random() - 0.5);
 
@@ -87,4 +131,4 @@ const getRandomQuestions = asyncHandler(async (req, res) => {
   )
 })
 
-export { getRandomQuestions}
+export { getRandomQuestions, getQuestions}
