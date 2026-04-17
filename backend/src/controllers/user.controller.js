@@ -136,14 +136,16 @@ const getUserProfile = asyncHandler (async (req, res) => {
 })
 
 const updateUserProfile = asyncHandler (async (req, res) => {
-    const {newName, newUsername} = req.body;
+    const {newName, newEmail, newUsername, newTargetExam} = req.body;
 
     const user = await User.findByIdAndUpdate(
         req.user?._id,
         {
             $set: {
                 name: newName,
-                username: newUsername
+                email: newEmail,
+                username: newUsername,
+                targetExam: newTargetExam
             }
         },
         {
@@ -172,7 +174,7 @@ const updateAvatar = asyncHandler (async (req, res) => {
         req.user._id,
         {
             $set: {
-                avatar: newAvatar
+                avatar: newAvatar.url
             }
         },
         {new: true}

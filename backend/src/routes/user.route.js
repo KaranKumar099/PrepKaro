@@ -14,9 +14,15 @@ router.route("/register").post(
 
 router.route("/login").post(loginUser)
 router.route("/logout").post(jwtVerification, logoutUser)
-router.route("/user-profile").get(jwtVerification, getUserProfile)
-router.route("/update-avatar").patch(jwtVerification, updateAvatar)
-router.route("/update-user-profile").patch(jwtVerification, updateUserProfile)
+router.route("/profile").get(jwtVerification, getUserProfile)
+router.route("/update-avatar").patch(
+    jwtVerification, 
+    upload.fields([
+        { name: "avatar", maxCount: 1 }
+    ]), 
+    updateAvatar
+)
+router.route("/update-profile").patch(jwtVerification, updateUserProfile)
 router.route("/all-attempts").patch(jwtVerification, getAllAttempts)
 
 export default router

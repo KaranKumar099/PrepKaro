@@ -18,13 +18,13 @@ export const useUserStore = create((set)=>({
 
         try {
             const res = await axios.get(
-                `${import.meta.env.VITE_BACKEND_URL}/user/user-profile`,
+                `${import.meta.env.VITE_BACKEND_URL}/user/profile`,
                 {
                     headers: { Authorization: `Bearer ${token}` },
                     withCredentials: true,
                 }
             );
-            console.log("Fetched user:", res.data.data);
+            console.log("Profile fetched successfully", res.data.data)
             set({ user: res.data.data });
         } catch (err) {
             console.error("Profile fetch error:",err.response?.data || err.message);

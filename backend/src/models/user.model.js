@@ -28,6 +28,10 @@ const userSchema = new Schema({
         required: [true, "Password is Required"],
     },
     avatar: String,
+    targetExam: {
+        type: String,
+        default: "GATE"
+    }
 },{timestamps: true})
 
 userSchema.pre("save", async function (next) {
