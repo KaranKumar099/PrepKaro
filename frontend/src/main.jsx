@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import AuthPage from './components/AuthPage.jsx'
-import User from './components/User.jsx'
 import UserProfile from './components/UserProfile.jsx'
 import Tool from './components/Tool.jsx'
 import Layout from './layout.jsx'
@@ -42,7 +41,7 @@ const AppRoutes = ()=>{
         {  path: "/user",  element: <UserProfile/>,},
         {  path: "/history",  element: <ExamHistory/>,},
         {  path: "/tool",  element: (<ProtectedRoute><Tool/></ProtectedRoute>),},
-        {  path: "/exam",  element: (<ExamApp/>),},
+        {  path: "/exam",  element: (<Exam/>),},
         {  path: "/attempt/:attemptId/",  element: (<ExamEvaluation/>),},
         {  path: "/contact",  element: <Contact/>,},
       ]

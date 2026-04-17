@@ -79,12 +79,12 @@ export default function Dashboard() {
     }
   };
 
-  const achievements = [
-    { icon: '🔥', title: '7 Day Streak', desc: 'Consistency is key!', unlocked: true },
-    { icon: '🎯', title: 'Perfect Score', desc: 'Ace performance', unlocked: true },
-    { icon: '⚡', title: 'Speed Master', desc: '<60% time used', unlocked: false },
-    { icon: '🏆', title: 'Top 100', desc: 'Ranking high', unlocked: false },
-  ];
+  // const achievements = [
+  //   { icon: '🔥', title: '7 Day Streak', desc: 'Consistency is key!', unlocked: true },
+  //   { icon: '🎯', title: 'Perfect Score', desc: 'Ace performance', unlocked: true },
+  //   { icon: '⚡', title: 'Speed Master', desc: '<60% time used', unlocked: false },
+  //   { icon: '🏆', title: 'Top 100', desc: 'Ranking high', unlocked: false },
+  // ];
 
   return (
     <div className="h-screen flex overflow-hidden bg-[#F8FAFC] font-inter text-slate-800">
@@ -124,8 +124,12 @@ export default function Dashboard() {
                   <Bell className="w-5 h-5" />
                   <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-blue-600 rounded-full border-2 border-white"></span>
                 </button>
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200 cursor-pointer">
-                  {user.name?.[0]}
+                <div className="w-10 h-10 bg-blue-600 flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200 rounded-full overflow-hidden cursor-pointer">
+                  {user?.avatar ? (
+                    <img src={user?.avatar} className="w-full h-full object-cover" alt="" />
+                  ) : (
+                    user?.name?.[0] || 'U'
+                  )}
                 </div>
               </div>
             </div>
@@ -136,10 +140,10 @@ export default function Dashboard() {
           {/* Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {[
-              { label: 'Total Tests', val: allExams?.length, icon: FileText, sub: '+2 this week', color: 'blue' },
-              { label: 'Current Streak', val: `${user.streak || 5} Days`, icon: Flame, sub: 'Leveling up!', color: 'orange' },
-              { label: 'Average Score', val: `${avgScore.toFixed(1)}%`, icon: TrendingUp, sub: 'Improving consistently', color: 'green' },
-              { label: 'Practice Time', val: `${totalPracticeTime} hrs`, icon: Clock, sub: 'Time well spent', color: 'violet' },
+              { label: 'Total Tests', val: allExams?.length, icon: FileText, sub: '+2 this week', bg: 'bg-blue-50', text: 'text-blue-600' },
+              { label: 'Current Streak', val: `${user.streak || 5} Days`, icon: Flame, sub: 'Leveling up!', bg: 'bg-orange-50', text: 'text-orange-600' },
+              { label: 'Average Score', val: `${avgScore.toFixed(1)}%`, icon: TrendingUp, sub: 'Improving consistently', bg: 'bg-green-50', text: 'text-green-600' },
+              { label: 'Practice Time', val: `${totalPracticeTime} hrs`, icon: Clock, sub: 'Time well spent', bg: 'bg-violet-50', text: 'text-violet-600' },
             ].map((stat, i) => (
               <motion.div 
                 key={i}
@@ -147,8 +151,8 @@ export default function Dashboard() {
                 className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className={`p-3 rounded-2xl bg-${stat.color}-50`}>
-                    <stat.icon className={`w-6 h-6 text-${stat.color}-600`} />
+                  <div className={`p-3 rounded-2xl ${stat.bg}`}>
+                    <stat.icon className={`w-6 h-6 ${stat.text}`} />
                   </div>
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{stat.label}</span>
                 </div>
