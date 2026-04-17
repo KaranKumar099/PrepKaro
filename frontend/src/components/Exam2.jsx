@@ -7,7 +7,7 @@ export default function ExamApp() {
   const navigate = useNavigate()
   const {questions, attemptID} = useQuestionStore()
 
-  const {examName, setExamName} = useState("");
+  const [examName, setExamName] = useState("");
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState({});
   const [marked, setMarked] = useState({});
@@ -32,17 +32,38 @@ export default function ExamApp() {
             withCredentials: true,
           }
         );
-        setTime(res.data.data.exam.duration*60);
-        setExamName(res.data.data.exam.title);
+        const attemptData = res.data.data;
+        setTime(attemptData.exam.duration * 60);
+        setExamName(attemptData.exam.title);
+
+        // Load existing answers
+        const existingAnswers = {};
+        const existingMarked = {};
+        attemptData.answers.forEach(ans => {
+          const qId = ans.question._id || ans.question;
+          const q = questions.find(question => question._id === qId);
+          
+          if (q?.questionType?.toUpperCase() === 'MSQ') {
+            existingAnswers[qId] = ans.userAnswer ? ans.userAnswer.split(',').map(Number) : [];
+          } else if (q?.questionType?.toUpperCase() === 'NAT' ) {
+            existingAnswers[qId] = ans.userAnswer;
+          } else {
+            existingAnswers[qId] = ans.userAnswer ? parseInt(ans.userAnswer) : undefined;
+          }
+          existingMarked[qId] = ans.markedForReview;
+        });
+        setAnswers(existingAnswers);
+        setMarked(existingMarked);
+
       } catch (error) {
         console.error("Error fetching attempt details:", error);
       }
     };
 
-    if (attemptID) {
+    if (attemptID && questions.length > 0) {
       fetchAttemptDetails();
     }
-  }, [attemptID])
+  }, [attemptID, questions])
 
   const saveTimeSpent = async (qId) => {
     const now = Date.now();
@@ -65,14 +86,31 @@ export default function ExamApp() {
 
   const handleOptionClick = async (qId, optIndex) => {
     await saveTimeSpent(qId);
-    setAnswers({ ...answers, [qId]: optIndex });
+    
+    const question = questions.find(q => q._id === qId);
+    const isMSQ = question?.questionType?.toUpperCase() === 'MSQ';
+    let nextAnswer;
+
+    if (isMSQ) {
+      const currentSelection = Array.isArray(answers[qId]) ? answers[qId] : [];
+      if (currentSelection.includes(optIndex)) {
+        nextAnswer = currentSelection.filter(idx => idx !== optIndex);
+      } else {
+        nextAnswer = [...currentSelection, optIndex];
+      }
+    } else {
+      // Allow unselecting MCQ
+      nextAnswer = answers[qId] === optIndex ? undefined : optIndex;
+    }
+
+    setAnswers({ ...answers, [qId]: nextAnswer });
     const token = localStorage.getItem("accessToken")
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/answer`,
         {
           questionId : qId,
-          userAnswer : optIndex,
+          userAnswer : nextAnswer,
           markedForReview : marked[qId]
         },
         {
@@ -82,7 +120,32 @@ export default function ExamApp() {
       )
       console.log("Answer updated : ", response.data)
     } catch (error) {
-      console.error("Error in saving answer of questions : ", error)
+      console.error("Error in saving answer : ", error)
+    }
+  };
+
+  const handleNATBlur = async (qId) => {
+    await saveTimeSpent(qId);
+    const value = answers[qId];
+    // Allow saving empty string to clear the answer, but skip if undefined
+    if (value === undefined) return;
+
+    const token = localStorage.getItem("accessToken");
+    try {
+      await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/answer`,
+        {
+          questionId: qId,
+          userAnswer: value,
+          markedForReview: marked[qId]
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        }
+      );
+    } catch (error) {
+      console.error("Error in saving NAT answer: ", error);
     }
   };
 
@@ -110,19 +173,32 @@ export default function ExamApp() {
 
   const handleNavigate = async (index) => {
     const currentQId = questions[current]._id;
+    
+    // Save NAT answer if current question is NAT
+    if (questions[current]?.questionType?.toUpperCase() === 'NAT') {
+      await handleNATBlur(currentQId);
+    }
+    
     await saveTimeSpent(currentQId);
 
     setVisited({ ...visited, [questions[index]._id]: true });
     setCurrent(index);
   };
 
+  const isAnswered = (qId) => {
+    const ans = answers[qId];
+    if (ans === undefined || ans === null || ans === "") return false;
+    if (Array.isArray(ans)) return ans.length > 0;
+    return true;
+  };
+
   const getButtonColor = (qId, index) => {
-    if (current === index) return "bg-blue-500"; // current
-    if (answers[qId] !== undefined && marked[qId]) return "text-white bg-blue-500"; // answered + marked
-    if (answers[qId] !== undefined) return "text-blue-500 border-blue-500 bg-blue-200"; // answered
+    const answered = isAnswered(qId);
+    if (current === index) return "bg-blue-500 text-white"; // current
+    if (answered && marked[qId]) return "text-white bg-blue-500"; // answered + marked
+    if (answered) return "text-blue-500 border-blue-500 bg-blue-200"; // answered
     if (marked[qId]) return "text-purple-500 bg-purple-200 border-purple-500"; // marked only
-    if (visited[qId]) return "text-red-500 bg-red-200 border-red-500"; // visited but not answered
-    return "bg-blue-50"; // not visited
+    return "bg-blue-50"; // not visited or skipped (now both same)
   };
 
   const formatTime = () => {
@@ -131,11 +207,17 @@ export default function ExamApp() {
     return `${m}:${s}`;
   };
 
-  const handleSubmit =async ()=>{
-    console.log("answers: ", answers)
+  const handleSubmit = async () => {
+    const currentQId = questions[current]._id;
+    
+    // Save NAT answer if current question is NAT
+    if (questions[current]?.questionType?.toUpperCase() === 'NAT') {
+      await handleNATBlur(currentQId);
+    }
+
     const token = localStorage.getItem("accessToken")
     try {
-      const response = await axios.post(
+      await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptID}/submit`,
         {},
         {
@@ -143,7 +225,6 @@ export default function ExamApp() {
           withCredentials: true,
         }
       )
-      console.log("Attempt submitted : ", response.data)
       if(document.fullscreenElement){
         document.exitFullscreen()
       }
@@ -230,29 +311,41 @@ export default function ExamApp() {
           <img src={currentQ.picture} className="max-h-100 w-auto object-contain mb-4" />
           <div className="mt-4 space-y-3">
             {
-            currentQ.questionType === 'NAT'
-            ? <div>
+            currentQ.questionType?.toUpperCase() === 'NAT'
+            ? <div key={`nat-container-${currentQ?._id}`}>
               <label>Answer : </label>
-              <input type="number" name="answer" className="border-1 p-1 ml-4 rounded-sm" />
+              <input 
+                type="number" 
+                key={`nat-input-${currentQ?._id}`}
+                name={`nat-${currentQ?._id}`} 
+                className="border-1 p-1 ml-4 rounded-sm"
+                value={answers[currentQ?._id] !== undefined ? answers[currentQ?._id] : ""}
+                onChange={(e) => setAnswers({ ...answers, [currentQ?._id]: e.target.value })}
+                onBlur={() => handleNATBlur(currentQ?._id)}
+              />
             </div>
-            : questions[current].options.map((option, idx) => (
-              <label
-                key={idx}
-                className={`flex items-center gap-3 border rounded-lg px-4 py-3 cursor-pointer hover:bg-gray-50 ${answers[currentQ._id] === idx
-                  ? "bg-blue-100 border-blue-500"
-                  : ""
-              }`}
-                onClick={() => handleOptionClick(currentQ._id, idx)}
-              >
-                <input
-                  type="radio"
-                  name="answer"
-                  checked={answers[current] === option}
-                  onChange={() => handleOptionClick(currentQ._id, idx)}
-                />
-                {option}
-              </label>
-            ))}
+            : questions[current].options.map((option, idx) => {
+              const isSelected = Array.isArray(answers[currentQ._id]) 
+                ? answers[currentQ._id].includes(idx)
+                : (answers[currentQ._id] !== undefined && parseInt(answers[currentQ._id]) === idx);
+
+              return (
+                <label
+                  key={idx}
+                  className={`flex items-center gap-3 border rounded-lg px-4 py-3 cursor-pointer hover:bg-gray-50 ${
+                    isSelected ? "bg-blue-100 border-blue-500" : ""
+                  }`}
+                  onClick={() => handleOptionClick(currentQ._id, idx)}
+                >
+                  <input
+                    type={isSelected ? "checkbox" : "radio"}
+                    checked={isSelected}
+                    readOnly
+                  />
+                  {option}
+                </label>
+              );
+            })}
           </div>
 
           <div className="flex justify-between mt-6">
@@ -265,8 +358,12 @@ export default function ExamApp() {
             </button>
 
             <button 
-              onClick={() => setCurrent(current - 1)}
-              className="px-4 py-2 rounded border border-purple-600 text-purple-600 hover:bg-purple-200"
+              onClick={() => handleMarkForReview(currentQ._id)}
+              className={`px-4 py-2 rounded border transition-all ${
+                marked[currentQ?._id] 
+                ? "bg-purple-600 text-white border-purple-600" 
+                : "border-purple-600 text-purple-600 hover:bg-purple-50"
+              }`}
             >Flag</button>
 
             <button

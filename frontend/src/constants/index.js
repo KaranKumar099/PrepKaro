@@ -1,4 +1,4 @@
-import {Plus, FileText, BarChart3, Download} from "lucide-react"
+import {Plus, FileText, BarChart3, Download, Brain, Target, Zap, GraduationCap, Play, Star} from "lucide-react"
 
 const gate_exams = [
   { name: "Aerospace Engineering", code: "AE" },
@@ -89,6 +89,49 @@ const featuredExams = [
   { id: "gate-CS-1", name: "GATE CSE", icon: "💻" },
 ];
 
+
+const exams = [
+  { name: 'JEE Main', logo: '🎯', desc: 'Engineering Entrance' },
+  { name: 'JEE Advanced', logo: '🚀', desc: 'IIT Admission' },
+  { name: 'NEET', logo: '⚕️', desc: 'Medical Entrance' },
+  { name: 'SSC', logo: '📊', desc: 'Staff Selection' },
+  { name: 'UPSC', logo: '🏛️', desc: 'Civil Services' }
+];
+
+const features = [
+  {
+    icon: Brain,
+    title: 'AI-Powered Generation',
+    description: 'Smart algorithms that understand exam weightage and difficulty levels.',
+    color: 'blue'
+  },
+  {
+    icon: Target,
+    title: 'Real Exam Simulation',
+    description: 'Experience actual exam pressure with our simulated testing environment.',
+    color: 'indigo'
+  },
+  {
+    icon: BarChart3,
+    title: 'Deep Analytics',
+    description: 'Identify your weak points with topic-wise performance breakdown.',
+    color: 'sky'
+  },
+  {
+    icon: Download,
+    title: 'Offline Ready',
+    description: 'Generate and download unlimited PDF papers for practice anywhere.',
+    color: 'blue'
+  }
+];
+
+const steps = [
+  { title: 'Choose Path', desc: 'Select your target exam', icon: GraduationCap },
+  { title: 'AI Generate', desc: 'Custom paper in seconds', icon: Zap },
+  { title: 'Practice', desc: 'Simulated environment', icon: Play },
+  { title: 'Master', desc: 'Analyze & Improve', icon: Star }
+];
+
 const quickActions = [
   { icon: Plus, label: 'Generate New Paper', color: 'bg-blue-600', action: 'generate' },
   { icon: FileText, label: 'My Test History', color: 'bg-gray-600', action: 'history' },
@@ -116,4 +159,4 @@ const getDate = (startTimeString)=>{
   return date
 }
 
-export {gate_exams, ssc_exams, allExams, featuredExams, examDetails, quickActions, timeDifference, getDate}
+export {gate_exams, ssc_exams, allExams, featuredExams, examDetails, quickActions, timeDifference, getDate, exams, features, steps}

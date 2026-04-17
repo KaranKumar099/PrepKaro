@@ -27,19 +27,19 @@ const uploadOnCloudinary = async (localFilePath) => {
 
 export {uploadOnCloudinary}
 
-const folderPath = "assets";
-async function uploadAllFiles() {
-  try {
-    const files = fs.readdirSync(folderPath);
-    for (const file of files) {
-      const fullPath = path.join(folderPath, file);
-      console.log(`Uploading ${file}...`);
-      await uploadOnCloudinary(fullPath);
-    }
-    console.log("✅ All files uploaded!");
-  } catch (err) {
-    console.error("Error reading folder or uploading:", err);
-  }
-}
+// const folderPath = "assets";
+// async function uploadAllFiles() {
+//   try {
+//     const files = fs.readdirSync(folderPath);
+//     for (const file of files) {
+//       const fullPath = path.join(folderPath, file);
+//       console.log(`Uploading ${file}...`);
+//       await uploadOnCloudinary(fullPath);
+//     }
+//     console.log("✅ All files uploaded!");
+//   } catch (err) {
+//     console.error("Error reading folder or uploading:", err);
+//   }
+// }
 
-uploadAllFiles();
+// uploadAllFiles();

@@ -1,0 +1,1218 @@
+[
+  {
+    "questionText": "If ‘→’ denotes increasing order of intensity, then the meaning of the words [walk → jog → sprint] is analogous to [bothered → ________ → daunted]. Which one of the given options is appropriate to fill the blank?",
+    "picture": null,
+    "options": [
+      "A) phased",
+      "B) phrased",
+      "C) fazed",
+      "D) fused"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": "Analogies",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Two wizards try to create a spell using all the four elements, water, air, fire, and earth. For this, they decide to mix all these elements in all possible orders. They also decide to work independently. After trying all possible combination of elements, they conclude that the spell does not work. How many attempts does each wizard make before coming to this conclusion, independently?",
+    "picture": null,
+    "options": [
+      "A) 24",
+      "B) 48",
+      "C) 16",
+      "D) 12"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": "Permutations and Combinations",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "In an engineering college of 10,000 students, 1,500 like neither their core branches nor other branches. The number of students who like their core branches is 1/4th of the number of students who like other branches. The number of students who like both their core and other branches is 500. The number of students who like their core branches is",
+    "picture": null,
+    "options": [
+      "A) 1,800",
+      "B) 3,500",
+      "C) 1,600",
+      "D) 1,500"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": "Set Theory",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "For positive non-zero real variables 𝑥 and 𝑦, if ln ((𝑥 + 𝑦)/2) = 1/2 [ln (𝑥) + ln (𝑦)] then, the value of 𝑥/𝑦 + 𝑦/𝑥 is",
+    "picture": null,
+    "options": [
+      "A) 1",
+      "B) 1/2",
+      "C) 2",
+      "D) 4"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": "Logarithms",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "In the sequence 6, 9, 14, x, 30, 41, a possible value of 𝑥 is",
+    "picture": null,
+    "options": [
+      "A) 25",
+      "B) 21",
+      "C) 18",
+      "D) 20"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": "Number Series",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Sequence the following sentences in a coherent passage. P: This fortuitous geological event generated a colossal amount of energy and heat that resulted in the rocks rising to an average height of 4 km across the contact zone. Q: Thus, the geophysicists tend to think of the Himalayas as an active geological event rather than as a static geological feature. R: The natural process of the cooling of this massive edifice absorbed large quantities of atmospheric carbon dioxide, altering the earth’s atmosphere and making it better suited for life. S: Many millennia ago, a breakaway chunk of bedrock from the Antarctic Plate collided with the massive Eurasian Plate.",
+    "picture": null,
+    "options": [
+      "A) QPSR",
+      "B) QSPR",
+      "C) SPRQ",
+      "D) SRPQ"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": "Logical Sequencing",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A person sold two different items at the same price. He made 10% profit in one item, and 10% loss in the other item. In selling these two items, the person made a total of",
+    "picture": null,
+    "options": [
+      "A) 1% profit",
+      "B) 2% profit",
+      "C) 1% loss",
+      "D) 2% loss"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": "Profit and Loss",
+    "difficultyLvl": "Medium"
+  },
+
+  {
+    "questionText": "A cube is to be cut into 8 pieces of equal size and shape. Here, each cut should be straight and it should not stop till it reaches the other end of the cube. The minimum number of such cuts required is",
+    "picture": null,
+    "options": [
+      "A) 3",
+      "B) 4",
+      "C) 7",
+      "D) 8"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "General Aptitude",
+    "topic": "Geometry",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider the following C program. Assume parameters to a function are evaluated from right to left.\n#include <stdio.h>\nint g(int p) { printf(\"%d\", p); return p; }\nint h(int q) { printf(\"%d\", q); return q; }\nvoid f(int x, int y) {\ng(x);\nh(y);\n}\nint main() {\nf(g(10),h(20));\n}\nWhich one of the following options is the CORRECT output of the above C program?",
+    "picture": null,
+    "options": [
+      "A) 20101020",
+      "B) 10202010",
+      "C) 20102010",
+      "D) 10201020"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝑇(𝑛) be the recurrence relation defined as follows:\n𝑇(0) = 1,\n𝑇(1) = 2, and\n𝑇(𝑛) = 5𝑇(𝑛 − 1) − 6𝑇(𝑛 − 2) for 𝑛 ≥ 2\nWhich one of the following statements is TRUE?",
+    "picture": null,
+    "options": [
+      "A) 𝑇(𝑛) = Θ(2^𝑛)",
+      "B) 𝑇(𝑛) = Θ(𝑛2^𝑛)",
+      "C) 𝑇(𝑛) = Θ(3^𝑛)",
+      "D) 𝑇(𝑛) = Θ(𝑛3^𝑛)"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Recurrence relations",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝑓(𝑥) be a continuous function from ℝ to ℝ such that\n𝑓(𝑥) = 1 − 𝑓(2 − 𝑥)\nWhich one of the following options is the CORRECT value of ∫ 𝑓(𝑥)𝑑𝑥 from 0 to 2?",
+    "picture": null,
+    "options": [
+      "A) 0",
+      "B) 1",
+      "C) 2",
+      "D) −1"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Calculus",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝐴 be the adjacency matrix of a simple undirected graph 𝐺. Suppose 𝐴 is its own inverse. Which one of the following statements is always TRUE?",
+    "picture": null,
+    "options": [
+      "A) 𝐺 is a cycle",
+      "B) 𝐺 is a perfect matching",
+      "C) 𝐺 is a complete graph",
+      "D) There is no such graph 𝐺"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Graphs: connectivity, matching, colouring",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "When six unbiased dice are rolled simultaneously, the probability of getting all distinct numbers (i.e., 1, 2, 3, 4, 5, and 6) is",
+    "picture": null,
+    "options": [
+      "A) 1/324",
+      "B) 5/324",
+      "C) 7/324",
+      "D) 11/324"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Probability and Statistics",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Once the DBMS informs the user that a transaction has been successfully completed, its effect should persist even if the system crashes before all its changes are reflected on disk. This property is called",
+    "picture": null,
+    "options": [
+      "A) durability",
+      "B) atomicity",
+      "C) consistency",
+      "D) isolation"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "Transactions and concurrency control",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "In the context of owner and weak entity sets in the ER (Entity-Relationship) data model, which one of the following statements is TRUE?",
+    "picture": null,
+    "options": [
+      "A) The weak entity set MUST have total participation in the identifying relationship",
+      "B) The owner entity set MUST have total participation in the identifying relationship",
+      "C) Both weak and owner entity sets MUST have total participation in the identifying relationship",
+      "D) Neither weak entity set nor owner entity set MUST have total participation in the identifying relationship"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "ER-model",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a process P running on a CPU. Which one or more of the following events will always trigger a context switch by the OS that results in process P moving to a non-running state (e.g., ready, blocked)?",
+    "picture": null,
+    "options": [
+      "A) P makes a blocking system call to read a block of data from the disk",
+      "B) P tries to access a page that is in the swap space, triggering a page fault",
+      "C) An interrupt is raised by the disk to deliver data requested by some other process",
+      "D) A timer interrupt is raised by the hardware"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "Processes and Context Switching",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following file organizations is/are I/O efficient for the scan operation in DBMS?",
+    "picture": null,
+    "options": [
+      "A) Sorted",
+      "B) Heap",
+      "C) Unclustered tree index",
+      "D) Unclustered hash index"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "File Organization",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following statements about the Two Phase Locking (2PL) protocol is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) 2PL permits only serializable schedules",
+      "B) With 2PL, a transaction always locks the data item being read or written just before every operation and always releases the lock just after the operation",
+      "C) With 2PL, once a lock is released on any data item inside a transaction, no more locks on any data item can be obtained inside that transaction",
+      "D) A deadlock is possible with 2PL"
+    ],
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "Transactions and Concurrency Control",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following statements about IPv4 fragmentation is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) The fragmentation of an IP datagram is performed only at the source of the datagram",
+      "B) The fragmentation of an IP datagram is performed at any IP router which finds that the size of the datagram to be transmitted exceeds the MTU",
+      "C) The reassembly of fragments is performed only at the destination of the datagram",
+      "D) The reassembly of fragments is performed at all intermediate routers along the path from the source to the destination"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "IPv4 and Fragmentation",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following statements is/are FALSE?",
+    "picture": null,
+    "options": [
+      "A) An attribute grammar is a syntax-directed definition (SDD) in which the functions in the semantic rules have no side effects",
+      "B) The attributes in a L-attributed definition cannot always be evaluated in a depth-first order",
+      "C) Synthesized attributes can be evaluated by a bottom-up parser as the input is parsed",
+      "D) All L-attributed definitions based on LR(1) grammar can be evaluated using a bottom-up parsing strategy"
+    ],
+    "answer": [
+      "B",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Compiler Design",
+    "topic": "Syntax-Directed Translation",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "For a Boolean variable 𝑥, which of the following statements is/are FALSE?",
+    "picture": null,
+    "options": [
+      "A) 𝑥. 1 = 𝑥",
+      "B) 𝑥 + 1 = 𝑥",
+      "C) 𝑥. 𝑥 = 0",
+      "D) 𝑥 + 𝑥̅ = 1"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Digital Logic",
+    "topic": "Boolean Algebra",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "An instruction format has the following structure: Instruction Number: Opcode destination reg, source reg-1, source reg-2. Consider the following sequence of instructions to be executed in a pipelined processor: \nI1: DIV R3, R1, R2 \nI2: SUB R5, R3, R4 \nI3: ADD R3, R5, R6 \nI4: MUL R7, R3, R8. \nWhich of the following statements is/are TRUE?",  
+    "picture": null,
+    "options": [
+      "A) There is a RAW dependency on R3 between I1 and I2",
+      "B) There is a WAR dependency on R3 between I1 and I3",
+      "C) There is a RAW dependency on R3 between I2 and I3",
+      "D) There is a WAW dependency on R3 between I3 and I4"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Instruction Pipelining",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Which of the following fields of an IP header is/are always modified by any router before it forwards the IP packet?",
+    "picture": null,
+    "options": [
+      "A) Source IP Address",
+      "B) Protocol",
+      "C) Time to Live (TTL)",
+      "D) Header Checksum"
+    ],
+    "answer": [
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "IPv4 and Header Fields",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider the following C function definition. int fX(char *a){ char *b = a; while(*b) b++; return b - a;} Which of the following statements is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) The function call fX(”abcd”) will always return a value",
+      "B) Assuming a character array c is declared as char c[] = ”abcd” in main(), the function call fX(c)will always return a value",
+      "C) The code of the function will not compile",
+      "D) Assuming a character pointer c is declared as char *c = ”abcd” in main(), the function call fX(c)will always return a value"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "C Programming",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝑃 be the partial order defined on the set {1,2,3,4} as follows 𝑃 = {(𝑥, 𝑥) | 𝑥 ∈ {1,2,3,4}} ∪ {(1,2), (3,2), (3,4)}. The number of total orders on {1,2,3,4} that contain 𝑃 is __________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "5"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Discrete Mathematics",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Let 𝐴 be an array containing integer values. The distance of 𝐴 is defined as the minimum number of elements in 𝐴 that must be replaced with another integer so that the resulting array is sorted in non-decreasing order. The distance of the array [2, 5, 3, 1, 4, 2, 6] is ___________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "3"
+    ],
+    "score": 1,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Algorithms",
+    "topic": "Sorting",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "What is the output of the following C program? #include <stdio.h> int main() { double a[2]={20.0, 25.0}, *p, *q; p = a; q = p + 1; printf(”%d,%d”, (int)(q – p), (int)(*q – *p)); return 0;}",
+    "picture": null,
+    "options": [
+      "A) 4,8",
+      "B) 1,5",
+      "C) 8,5",
+      "D) 1,8"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "C Programming",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a single processor system with four processes A, B, C, and D, represented as given below, where for each process the first value is its arrival time, and the second value is its CPU burst time. A (0, 10), B (2, 6), C (4, 3), and D (6, 7). Which one of the following options gives the average waiting times when preemptive Shortest Remaining Time First (SRTF) and Non-Preemptive Shortest Job First (NP-SJF) CPU scheduling algorithms are applied to the processes?",
+    "picture": null,
+    "options": [
+      "A) SRTF = 6, NP-SJF = 7",
+      "B) SRTF = 6, NP-SJF = 7.5",
+      "C) SRTF = 7, NP-SJF = 7.5",
+      "D) SRTF = 7, NP-SJF = 8.5"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "CPU Scheduling",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which one of the following CIDR prefixes exactly represents the range of IP addresses 10.12.2.0 to 10.12.3.255?",
+    "picture": null,
+    "options": [
+      "A) 10.12.2.0/23",
+      "B) 10.12.2.0/24",
+      "C) 10.12.0.0/22",
+      "D) 10.12.2.0/22"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "IP Addressing and CIDR",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "You are given a set 𝑉 of distinct integers. A binary search tree 𝑇 is created by inserting all elements of 𝑉 one by one, starting with an empty tree. The tree 𝑇 follows the convention that, at each node, all values stored in the left subtree of the node are smaller than the value stored at the node. You are not aware of the sequence in which these values were inserted into 𝑇, and you do not have access to 𝑇. Which one of the following statements is TRUE?",
+    "picture": null,
+    "options": [
+      "A) Inorder traversal of 𝑇 can be determined from 𝑉",
+      "B) Root node of 𝑇 can be determined from 𝑉",
+      "C) Preorder traversal of 𝑇 can be determined from 𝑉",
+      "D) Postorder traversal of 𝑇 can be determined from 𝑉"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Binary Search Trees",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider an array X that contains n positive integers. A subarray of X is defined to be a sequence of array locations with consecutive indices. The C code snippet given below has been written to compute the length of the longest subarray of X that contains at most two distinct integers. The code has two missing expressions labelled (𝑃) and (𝑄). \n int first=0, second=0, len1=0, len2=0, maxlen=0; for (int i=0; i < n; i++) { if (X[i] == first) { len2++; len1++; } else if (X[i] == second) { len2++; len1 = (𝑃) ; second = first; } else { len2 = (𝑄) ; len1 = 1; second = first; } if (len2 > maxlen) { maxlen = len2; } first = X[i]; } \n Which one of the following options gives the CORRECT missing expressions? (Hint: At the end of the i-th iteration, the value of len1 is the length of the longest subarray ending with X[i] that contains all equal values, and len2 is the length of the longest subarray ending with X[i] that contains at most two distinct values.)",
+    "picture": null,
+    "options": [
+      "A) (𝑃) len1+1 (𝑄) len2+1",
+      "B) (𝑃) 1 (𝑄) len1+1",
+      "C) (𝑃) 1 (𝑄) len2+1",
+      "D) (𝑃) len2+1 (𝑄) len1+1"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Arrays and Subarrays",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Let 𝑥 and 𝑦 be random variables, not necessarily independent, that take real values in the interval [0,1]. Let 𝑧 = 𝑥𝑦 and let the mean values of 𝑥, 𝑦, 𝑧 be 𝑥̅ , 𝑦̅ , 𝑧̅ , respectively. Which one of the following statements is TRUE?",
+    "picture": null,
+    "options": [
+      "A) 𝑧̅ = 𝑥̅ 𝑦̅",
+      "B) 𝑧̅ ≤ 𝑥̅ 𝑦̅",
+      "C) 𝑧̅ ≥ 𝑥̅ 𝑦̅",
+      "D) 𝑧̅ ≤ 𝑥̅"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Probability and Statistics",
+    "topic": "Random variables and mean values",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "The relation schema, Person(pid,city), describes the city of residence for every person uniquely identified by pid. The following relational algebra operators are available: selection, projection, cross product, and rename. To find the list of cities where at least 3 persons reside, using the above operators, the minimum number of cross product operations that must be used is",
+    "picture": null,
+    "options": [
+      "A) 1",
+      "B) 2",
+      "C) 3",
+      "D) 4"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "Relational algebra",
+    "difficultyLvl": "Medium"
+  },
+
+  {
+    "questionText": "Let 𝐴 be an 𝑛 × 𝑛 matrix over the set of all real numbers ℝ. Let 𝐵 be a matrix obtained from 𝐴 by swapping two rows. Which of the following statements is/are TRUE?",
+    "picture": null,
+    "options": [
+      "A) The determinant of 𝐵 is the negative of the determinant of 𝐴",
+      "B) If 𝐴 is invertible, then 𝐵 is also invertible",
+      "C) If 𝐴 is symmetric, then 𝐵 is also symmetric",
+      "D) If the trace of 𝐴 is zero, then the trace of 𝐵 is also zero"
+    ],
+    "answer": [
+      "A",
+      "B"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Linear Algebra",
+    "topic": "Matrices and determinants",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following is/are EQUAL to 224 in radix-5 (i.e., base-5) notation?",
+    "picture": null,
+    "options": [
+      "A) 64 in radix-10",
+      "B) 100 in radix-8",
+      "C) 50 in radix-16",
+      "D) 121 in radix-7"
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Digital Logic",
+    "topic": "Number representations",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider a disk with the following specifications: rotation speed of 6000 RPM, average seek time of 5 milliseconds, 500 sectors/track, 512-byte sectors. A file has content stored in 3000 sectors located randomly on the disk. Assuming average rotational latency, the total time (in seconds, rounded off to 2 decimal places) to read the entire file from the disk is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "29.50 to 30.50"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Memory hierarchy: cache, main memory and secondary storage",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a TCP connection operating at a point of time with the congestion window of size 12 MSS (Maximum Segment Size), when a timeout occurs due to packet loss. Assuming that all the segments transmitted in the next two RTTs (Round Trip Time) are acknowledged correctly, the congestion window size (in MSS) during the third RTT will be _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "4"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Transport layer: flow control and congestion control",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider an Ethernet segment with a transmission speed of 10^8 bits/sec and a maximum segment length of 500 meters. If the speed of propagation of the signal in the medium is 2×10^8 meters/sec, then the minimum frame size (in bits) required for collision detection is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "500"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Data link layer: framing, error detection, Medium Access Control",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A functional dependency 𝐹: 𝑋 → 𝑌 is termed as a useful functional dependency if and only if it satisfies all the following three conditions: • 𝑋 is not the empty set. • 𝑌 is not the empty set. • Intersection of 𝑋 and 𝑌 is the empty set. For a relation 𝑅 with 4 attributes, the total number of possible useful functional dependencies is ________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "50"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Databases",
+    "topic": "Relational model: relational algebra, tuple calculus",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "A processor with 16 general purpose registers uses a 32-bit instruction format. The instruction format consists of an opcode field, an addressing mode field, two register operand fields, and a 16-bit scalar field. If 8 addressing modes are to be supported, the maximum number of unique opcodes possible for every addressing mode is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "32"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Machine instructions and addressing modes",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "A non-pipelined instruction execution unit operating at 2 GHz takes an average of 6 cycles to execute an instruction of a program P. The unit is then redesigned to operate on a 5-stage pipeline at 2 GHz. Assume that the ideal throughput of the pipelined unit is 1 instruction per cycle. In the execution of program P, 20% instructions incur an average of 2 cycles stall due to data hazards and 20% instructions incur an average of 3 cycles stall due to control hazards. The speedup (rounded off to one decimal place) obtained by the pipelined design over the non-pipelined design is _________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "2.9 to 3.1"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Instruction pipelining, pipeline hazards",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "A processor uses a 32-bit instruction format and supports byte-addressable memory access. The ISA of the processor has 150 distinct instructions. The instructions are equally divided into two types, namely R-type and I-type, whose formats are shown below. R-type Instruction Format: OPCODE UNUSED DST Register SRC Register1 SRC Register 2 I-type Instruction Format: OPCODE DST Register SRC Register # Immediate value/address In the OPCODE, 1 bit is used to distinguish between I-type and R-type instructions and the remaining bits indicate the operation. The processor has 50 architectural registers, and all register fields in the instructions are of equal size. Let 𝑋 be the number of bits used to encode the UNUSED field, 𝑌 be the number of bits used to encode the OPCODE field, and 𝑍 be the number of bits used to encode the immediate value/address field. The value of 𝑋 + 2𝑌 + 𝑍 is ________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "34"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "Machine instructions and addressing modes",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Let 𝐿1 be the language represented by the regular expression 𝑏∗𝑎𝑏∗(𝑎𝑏∗𝑎𝑏∗)∗ and 𝐿2 = { 𝑤 ∈ (𝑎 + 𝑏)∗ | |𝑤| ≤ 4}, where |𝑤| denotes the length of string 𝑤. The number of strings in 𝐿2 which are also in 𝐿1 is ___________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "15"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Regular expressions and finite automata",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Let 𝑍𝑛 be the group of integers {0, 1, 2, … , 𝑛 − 1} with addition modulo 𝑛 as the group operation. The number of elements in the group 𝑍2 × 𝑍3 × 𝑍4 that are their own inverses is ________",
+    "picture": null,
+    "options": [],
+    "answer": [
+      "4"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Monoids, Groups",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a computer with a 4 MHz processor. Its DMA controller can transfer 8 bytes in 1 cycle from a device to main memory through cycle stealing at regular intervals. Which one of the following is the data transfer rate (in bits per second) of the DMA controller if 1% of the processor cycles are used for DMA?",
+    "options": [
+      "A) 2,56,000",
+      "B) 3,200",
+      "C) 25,60,000",
+      "D) 32,000"
+    ],
+    "answer": [
+      "C"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Organization and Architecture",
+    "topic": "I/O interface (interrupt and DMA mode)",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝑝 and 𝑞 be the following propositions: 𝑝: Fail grade can be given. 𝑞: Student scores more than 50% marks. Consider the statement: “Fail grade cannot be given when student scores more than 50% marks.” Which one of the following is the CORRECT representation of the above statement in propositional logic?",
+    "options": [
+      "A) 𝑞 → ¬ 𝑝",
+      "B) 𝑞 → 𝑝",
+      "C) 𝑝 → 𝑞",
+      "D) ¬ 𝑝 → 𝑞"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Engineering Mathematics",
+    "topic": "Propositional and first order logic",
+    "difficultyLvl": "Easy"
+  },
+  {
+    "questionText": "Consider the following C program. Assume parameters to a function are evaluated from right to left.\n#include <stdio.h>\nint g(int p) { printf(\"%d\", p); return p; }\nint h(int q) { printf(\"%d\", q); return q; }\nvoid f(int x, int y) {\ng(x);\nh(y);\n}\nint main() {\nf(g(10),h(20));\n}\nWhich one of the following options is the CORRECT output of the above C program?",
+    "options": [
+      "A) 20101020",
+      "B) 10202010",
+      "C) 20102010",
+      "D) 10201020"
+    ],
+    "answer": [
+      "A"
+    ],
+    "score": 1,
+    "questionType": "MCQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Programming and Data Structures",
+    "topic": "Programming in C",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Node X has a TCP connection open to node Y. The packets from X to Y go through an intermediate IP router R. Ethernet switch S is the first switch on the network path between X and R. Consider a packet sent from X to Y over this connection. Which of the following statements is/are TRUE about the destination IP and MAC addresses on this packet at the time it leaves X?",
+    "options": [
+      "A) The destination IP address is the IP address of R",
+      "B) The destination IP address is the IP address of Y",
+      "C) The destination MAC address is the MAC address of S",
+      "D) The destination MAC address is the MAC address of Y"
+    ],
+    "answer": [
+      "B"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Computer Networks",
+    "topic": "Transport layer: flow control and congestion control, UDP, TCP, sockets",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Which of the following tasks is/are the responsibility/responsibilities of the memory management unit (MMU) in a system with paging-based memory management?",
+    "options": [
+      "A) Allocate a new page table for a newly created process",
+      "B) Translate a virtual address to a physical address using the page table",
+      "C) Raise a trap when a virtual address is not found in the page table",
+      "D) Raise a trap when a process tries to write to a page marked with read-only permission in the page table"
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "score": 1,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "Memory management and virtual memory",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Let 𝐺 be an undirected connected graph in which every edge has a positive integer weight. Suppose that every spanning tree in 𝐺 has even weight. Which of the following statements is/are TRUE for every such graph 𝐺?",
+    "options": [
+      "A) All edges in 𝐺 have even weight",
+      "B) All edges in 𝐺 have even weight OR all edges in 𝐺 have odd weight",
+      "C) In each cycle 𝐶 in 𝐺, all edges in 𝐶 have even weight",
+      "D) In each cycle 𝐶 in 𝐺, either all edges in 𝐶 have even weight OR all edges in 𝐶 have odd weight"
+    ],
+    "answer": [
+      "D"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Graphs",
+    "topic": "Connectivity",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a context-free grammar 𝐺 with the following 3 rules. 𝑆 → 𝑎𝑆, 𝑆 → 𝑎𝑆𝑏𝑆, 𝑆 → 𝑐. Let 𝑤 ∈ 𝐿(𝐺). Let 𝑛𝑎(𝑤), 𝑛𝑏(𝑤), 𝑛𝑐(𝑤) denote the number of times 𝑎, 𝑏, 𝑐 occur in 𝑤, respectively. Which of the following statements is/are TRUE?",
+    "options": [
+      "A) 𝑛𝑎(𝑤) > 𝑛𝑏(𝑤)",
+      "B) 𝑛𝑎(𝑤) > 𝑛𝑐(𝑤) − 2",
+      "C) 𝑛𝑐(𝑤) = 𝑛𝑏(𝑤) + 1",
+      "D) 𝑛𝑐(𝑤) = 𝑛𝑏(𝑤) ∗ 2"
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "score": 2,
+    "questionType": "MSQ",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Theory of Computation",
+    "topic": "Context-Free Grammars",
+    "difficultyLvl": "Medium"
+  },
+  {
+    "questionText": "Consider a 32-bit system with 4 KB page size and page table entries of size 4 bytes each. Assume 1 KB = 2^10 bytes. The OS uses a 2-level page table for memory management, with the page table containing an outer page directory and an inner page table. The OS allocates a page for the outer page directory upon process creation. The OS uses demand paging when allocating memory for the inner page table, i.e., a page of the inner page table is allocated only if it contains at least one valid page table entry. An active process in this system accesses 2000 unique pages during its execution, and none of the pages are swapped out to disk. After it completes the page accesses, let X denote the minimum and Y denote the maximum number of pages across the two levels of the page table of the process. The value of X+Y is ________",
+    "options": [],
+    "answer": [
+      "1028"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Operating System",
+    "topic": "Memory Management and Virtual Memory",
+    "difficultyLvl": "Hard"
+  },
+  {
+    "questionText": "Consider the following augmented grammar, which is to be parsed with a SLR parser. The set of terminals is {𝑎,𝑏,𝑐,𝑑,#,@}. 𝑆′ → 𝑆, 𝑆 → 𝑆𝑆 | 𝐴𝑎 | 𝑏𝐴𝑐 | 𝐵𝑐 | 𝑏𝐵𝑎, 𝐴 → 𝑑#, 𝐵 → @. Let 𝐼0 = 𝐶𝐿𝑂𝑆𝑈𝑅𝐸({𝑆′ → • 𝑆}). The number of items in the set 𝐺𝑂𝑇𝑂(𝐼0, 𝑆) is ___________",
+    "options": [],
+    "answer": [
+      "9"
+    ],
+    "score": 2,
+    "questionType": "NAT",
+    "exam": {
+      "category": "Gate",
+      "branch": "Computer Science and Information Technology",
+      "code": "CS",
+      "year": 2024
+    },
+    "chapter": "Compiler Design",
+    "topic": "Parsing",
+    "difficultyLvl": "Hard"
+  }
+]

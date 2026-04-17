@@ -17,7 +17,7 @@ const createAttempt= asyncHandler (async (req, res) => {
 
     const exam = await Exam.findById(examId);
     if (!exam) {
-        throw new ApiError(404, "Exam not found");
+        throw new apiError(404, "Exam not found");
     }
 
     const answers = exam.questions.map((q) => ({
@@ -47,39 +47,81 @@ const createAttempt= asyncHandler (async (req, res) => {
 })
 
 const saveAnswer = asyncHandler(async (req, res) => {
-    const {attemptId} = req.params
-    const {questionId, userAnswer, markedForReview} = req.body
+    const { attemptId } = req.params;
+    const { questionId, userAnswer, markedForReview } = req.body;
 
-    const attempt = await Attempt.findById(attemptId)
-    if(!attempt){
-        throw new apiError(400, "Error in finding attempt of the given attemptId")
+    const attempt = await Attempt.findById(attemptId);
+    if (!attempt) {
+        throw new apiError(404, "Attempt not found");
     }
 
-    let status;
-    const question = await Question.findById(questionId)
-    console.log("question answered: ", question)
-    console.log("user answer : ", userAnswer)
+    const question = await Question.findById(questionId);
+    if (!question) {
+        throw new apiError(404, "Question not found");
+    }
+
+    let status = "unattempted";
+
+    // Determine correctness based on question type
+    if (userAnswer !== undefined && userAnswer !== null && userAnswer !== "") {
+        const type = question.questionType?.toUpperCase();
+
+        if (type === "MCQ") {
+            // question.answer is like ["A"], userAnswer is an index (0, 1, 2, 3)
+            const correctIdx = question.answer[0].charCodeAt(0) - 65;
+            status = (parseInt(userAnswer) === correctIdx) ? "correct" : "incorrect";
+        } 
+        else if (type === "MSQ") {
+            // userAnswer is expected to be an array of indices (e.g., [0, 2]) or a comma-separated string
+            const userArr = (Array.isArray(userAnswer) ? userAnswer : userAnswer.toString().split(','))
+                .map(val => parseInt(val))
+                .filter(val => !isNaN(val))
+                .sort((a, b) => a - b);
+                
+            const correctArr = question.answer
+                .map(ans => ans.charCodeAt(0) - 65)
+                .sort((a, b) => a - b);
+
+            if (userArr.length === correctArr.length && userArr.every((val, idx) => val === correctArr[idx])) {
+                status = "correct";
+            } else {
+                status = "incorrect";
+            }
+        } 
+        else if (type === "NAT") {
+            // Numerical Answer Type: Compare floating point values
+            const userVal = parseFloat(userAnswer);
+            const correctVal = parseFloat(question.answer[0]);
+            status = (!isNaN(userVal) && userVal === correctVal) ? "correct" : "incorrect";
+        }
+    }
+
+    const existingAnswer = attempt.answers.find(item => item.question.toString() === questionId);
     
-    if(question.answer[0].charCodeAt(0)-65 === userAnswer){
-        status = "correct"
-    }else{
-        status= "incorrect"
+    // Format userAnswer for storage (stored as String in schema)
+    const storedAnswer = Array.isArray(userAnswer) ? userAnswer.join(',') : (userAnswer !== undefined && userAnswer !== null ? String(userAnswer) : "");
+
+    if (existingAnswer) {
+        existingAnswer.userAnswer = storedAnswer;
+        existingAnswer.status = status;
+        if (markedForReview !== undefined) {
+            existingAnswer.markedForReview = markedForReview;
+        }
+    } else {
+        attempt.answers.push({
+            question: questionId,
+            userAnswer: storedAnswer,
+            status,
+            markedForReview: markedForReview || false
+        });
     }
 
-    const existing = attempt.answers.find(item => item.question.toString() === questionId)
-    if(existing){
-        existing.userAnswer = userAnswer;
-        existing.markedForReview = markedForReview ;
-        existing.status = status ;
-    }else{
-        attempt.answers.push({question: questionId, userAnswer, status, markedForReview})
-    }
-    
     await attempt.save();
+
     return res.status(200).json(
         new apiResponse(200, attempt, "saved answer successfully")
-    )
-})
+    );
+});
 
 const saveTimeSpent = asyncHandler(async (req, res) => {
     const { attemptId } = req.params;
@@ -118,17 +160,20 @@ const submitAttempt = asyncHandler(async (req, res) => {
     const {attemptId} = req.params
     const attempt = await Attempt.findById(attemptId).populate("answers.question")
     if (!attempt) {
-        throw apiError(400, "Error in fetching attempt")
+        throw new apiError(400, "Error in fetching attempt")
     }
     console.log("fetched attempt", attempt)
 
     let score = 0;
     attempt.answers.forEach((ques) => {
-      if (ques.status === "correct"){
+      if (ques.status === "correct") {
         score += ques.question.score;
       }
-      else if(ques.status === "incorrect"){
-        score -= ques.question.score/4;
+      else if (ques.status === "incorrect") {
+        // Only MCQ questions have negative marking
+        if (ques.question.questionType === "MCQ") {
+          score -= ques.question.score / 4;
+        }
       }
     });
 
