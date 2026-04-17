@@ -3,41 +3,88 @@ import {apiResponse} from "../utils/apiResponse.js"
 import {Question} from "../models/question.model.js"
 
 const getQuestions = asyncHandler(async (req, res) => {
-  const {exam, difficulty, questionCount}=req.body
-  console.log(questionCount)
-
+  const { exam, difficulty, questionCount } = req.body
+  console.log(exam, difficulty, questionCount);
   const temp = exam.split(" ")
   const examCategory = temp[0]
   const examBranch = temp.slice(1).join(" ")
-  console.log(`examCategory : ${examCategory}, examBranch : ${examBranch}`)
+  
+  const usedIds = [];
 
-  async function fetch(type, marks, count) {
-    const pipeline = [
-        {
-          $match: {
-            "exam.category": examCategory,
-            "exam.branch": examBranch,
-            questionType: type,
-            score: marks
+  /**
+   * Helper to fetch specific questions while ensuring variety and avoiding duplicates
+   */
+  async function fetchQuestions(type, marks, count, branch, chapter, except) {
+    if (count <= 0) return [];
+    
+    // Dynamically build match criteria
+    const matchCriteria = {
+      "exam.category": examCategory,
+      "exam.branch": branch,
+      questionType: type,
+      score: marks,
+      _id: { $nin: usedIds }
+    };
+
+    if (chapter) {
+      matchCriteria.chapter = chapter;
+    }
+    
+    if (except) {
+      // If chapter already exists in matchCriteria (from if(chapter)), 
+      // we ensure it's also NOT 'except' (though usually they wouldn't both be provided)
+      if (matchCriteria.chapter) {
+        if (typeof matchCriteria.chapter === 'string') {
+          if (matchCriteria.chapter === except) {
+             // Logic error in call: wanting chapter X but not chapter X. 
+             // Result will be empty.
+             matchCriteria.chapter = { $eq: matchCriteria.chapter, $ne: except };
           }
-        },
-        { $sample: { size: count } }
-      ]
-    return await Question.aggregate(pipeline);
+        }
+      } else {
+        matchCriteria.chapter = { $ne: except };
+      }
+    }
+
+    const pipeline = [
+      { $match: matchCriteria },
+      // To ensure diversity, we can group by chapter or topic if needed
+      // but simple sample is often sufficient for randomness
+      { $sample: { size: count } }
+    ];
+
+    const result = await Question.aggregate(pipeline);
+    result.forEach(q => usedIds.push(q._id));
+    return result;
   }
 
+  // 1. General Aptitude (GA) - Questions 1 to 10
+  const ga1Marks = await fetchQuestions("MCQ", 1, 5, examBranch, "General Aptitude");
+  const ga2Marks = await fetchQuestions("MCQ", 2, 5, examBranch, "General Aptitude");
+
+  // 2. CS Subjects - Questions 11 to 35 (1 Mark each)
+  const cs1MarkMCQ = await fetchQuestions("MCQ", 1, 10, examBranch, null, "General Aptitude"); // Q11-20
+  const cs1MarkMSQ = await fetchQuestions("MSQ", 1, 8, examBranch); // Q21-28
+  const cs1MarkNAT = await fetchQuestions("NAT", 1, 7, examBranch);  // Q29-35
+
+  // 3. CS Subjects - Questions 36 to 65 (2 Marks each)
+  const cs2MarkMCQ = await fetchQuestions("MCQ", 2, 10, examBranch, null, "General Aptitude"); // Q36-45
+  const cs2MarkMSQ = await fetchQuestions("MSQ", 2, 7, examBranch);  // Q46-52
+  const cs2MarkNAT = await fetchQuestions("NAT", 2, 13, examBranch); // Q53-65
+
+  // Combine in exact order
   const questionsArr = [
-    ...(await fetch("MCQ", 1, 5)),
-    ...(await fetch("MCQ", 2, 5)),
-
-    ...(await fetch("MCQ", 1, 11)),
-    ...(await fetch("MSQ", 1, 10)),
-    ...(await fetch("NAT", 1, 4)),
-
-    ...(await fetch("MCQ", 2, 8)),
-    ...(await fetch("MSQ", 2, 10)),
-    ...(await fetch("NAT", 2, 12))
+    ...ga1Marks,
+    ...ga2Marks,
+    ...cs1MarkMCQ,
+    ...cs1MarkMSQ,
+    ...cs1MarkNAT,
+    ...cs2MarkMCQ,
+    ...cs2MarkMSQ,
+    ...cs2MarkNAT
   ];
+
+  // console.log(`Fetched ${questionsArr.length} questions for ${examCategory} ${examBranch}`);
 
   return res.status(200).json(
     new apiResponse(200, questionsArr, "successfully fetched questions from database")
