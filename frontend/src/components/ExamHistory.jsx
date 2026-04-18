@@ -4,8 +4,12 @@ import SideBar from './SideBar';
 import axios from 'axios';
 import { useSidebarStore } from '../store/UseSideBarStore';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router';
+import { timeDifference } from '../constants';
+import { generateExamPDF } from '../utils/pdfGenerator';
 
 export default function ExamHistory() {
+  const navigate = useNavigate();
   const [filterExam, setFilterExam] = useState('all');
   const [filterDifficulty, setFilterDifficulty] = useState('all');
   const [filterStatus, setFilterStatus] = useState('all');
@@ -44,6 +48,7 @@ export default function ExamHistory() {
   }, []);
 
   const filteredexams = allExams.filter(exam => {
+    if (!exam.answers) return false;
     if (filterExam !== 'all' && exam.title !== filterExam) return false;
     if (filterDifficulty !== 'all' && (exam.answers ? exam.exam.difficulty : exam.difficulty) !== filterDifficulty) return false;
     if (filterStatus !== 'all') {
@@ -64,7 +69,7 @@ export default function ExamHistory() {
   });
 
   const stats = {
-    totalExams: allExams.length,
+    totalExams: filteredexams.length,
     avgScore: allExams.length > 0 ? Math.round(allExams.reduce((acc, exam) => {
       if (exam.answers && exam.exam) {
         return acc + (exam.score / exam.exam.totalMarks * 100);
@@ -73,10 +78,8 @@ export default function ExamHistory() {
     }, 0) / (allExams.filter(exam => exam.answers).length || 1)) : 0,
     bestScore: allExams.length > 0 ? Math.max(...allExams.filter(exam => exam.answers && exam.exam).map(exam => Math.round(exam.score / exam.exam.totalMarks * 100)), 0) : 0,
     totalTime: allExams.reduce((acc, exam) => {
-      if (exam.answers && exam.exam) {
-        return acc + parseInt(exam.exam.duration || 0);
-      }
-      return acc;
+      const { hours, minutes } = timeDifference(exam?.endTime, exam?.startTime)
+      return acc + (hours || 0) * 60 + (minutes || 0);
     }, 0),
   };
 
@@ -100,7 +103,7 @@ export default function ExamHistory() {
               </button>
               <div>
                 <h1 className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
-                  Performance History 📊
+                  Performance History
                 </h1>
                 <p className="text-slate-500 text-sm font-medium">Analyze your journey and identify strengths</p>
               </div>
@@ -121,7 +124,7 @@ export default function ExamHistory() {
               { label: 'Total Tests', val: stats.totalExams, icon: FileText, color: 'blue', sub: 'Completed & Pending' },
               { label: 'Average Score', val: `${stats.avgScore}%`, icon: Activity, color: 'indigo', sub: 'Performance across all' },
               { label: 'Personal Best', val: `${stats.bestScore}%`, icon: Trophy, color: 'orange', sub: 'High watermark' },
-              { label: 'Learning Time', val: `${Math.round(stats.totalTime / 60)}h`, icon: Clock, color: 'violet', sub: 'Focus hours spent' },
+              { label: 'Learning Time', val: stats.totalTime < 60 ? `${stats.totalTime} mins` : `${(stats.totalTime / 60).toFixed(1)}h`, icon: Clock, color: 'violet', sub: 'Focus time spent' },
             ].map((stat, i) => (
               <motion.div 
                 key={i}
@@ -188,7 +191,7 @@ export default function ExamHistory() {
                   {[
                     { label: 'Exam Category', val: filterExam, set: setFilterExam, opts: ['all', 'JEE Main', 'JEE Advanced', 'NEET', 'SSC CGL'] },
                     { label: 'Complexity', val: filterDifficulty, set: setFilterDifficulty, opts: ['all', 'easy', 'medium', 'hard'] },
-                    { label: 'Status', val: filterStatus, set: setFilterStatus, opts: ['all', 'completed', 'pending'] },
+                    { label: 'Status', val: filterStatus, set: setFilterStatus, opts: ['all', 'completed'] },
                   ].map((field, idx) => (
                     <div key={idx} className="space-y-2">
                       <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">{field.label}</label>
@@ -224,6 +227,7 @@ export default function ExamHistory() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
+                  onClick={() => navigate(`/attempt/${exam._id}`)}
                   className="p-6 sm:p-8 hover:bg-slate-50 transition-all flex flex-col md:flex-row items-center gap-8 group"
                 >
                   {/* Visual Token */}
@@ -254,7 +258,7 @@ export default function ExamHistory() {
                         {exam.answers && (
                           <div className="text-right">
                             <div className="text-2xl font-black text-slate-900 leading-none">
-                              {Math.round((exam.score / exam.exam.totalMarks) * 100)}%
+                              {Math.round(((exam.score>0 ? exam.score : 0) / (exam.exam.totalMarks || 1)) * 100)}%
                             </div>
                             <div className="text-[10px] font-black text-slate-400 uppercase tracking-tighter mt-1">
                               {exam.score} / {exam.exam.totalMarks} Marks
@@ -274,7 +278,20 @@ export default function ExamHistory() {
                           <button className="p-2.5 bg-slate-100 text-slate-500 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all shadow-sm">
                             <BarChart3 className="w-4 h-4" />
                           </button>
-                          <button className="p-2.5 bg-slate-100 text-slate-500 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all shadow-sm">
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              generateExamPDF({
+                                title: exam.exam.title,
+                                questions: exam.exam.questions,
+                                difficulty: exam.exam.difficulty,
+                                totalMarks: exam.exam.totalMarks,
+                                duration: exam.exam.duration,
+                                examId: exam.exam._id
+                              });
+                            }}
+                            className="p-2.5 bg-slate-100 text-slate-500 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all shadow-sm"
+                          >
                             <Download className="w-4 h-4" />
                           </button>
                         </>

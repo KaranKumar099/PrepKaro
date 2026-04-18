@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Download, Clock, Target, CheckCircle, Sparkles, TrendingUp, RefreshCw, Menu, Bell, BookOpen, ChevronRight, AlertCircle, Layout, Activity, GraduationCap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router";
+import { jsPDF } from "jspdf";
 import { useQuestionStore } from "../store/UseQuestionStore"; 
 import axios from "axios"
 import { useSidebarStore } from "../store/UseSideBarStore";
 import SideBar from "./SideBar";
 import { allExams, featuredExams } from "../constants"
+import { generateExamPDF } from "../utils/pdfGenerator";
 
 export default function Tool() {
   const navigate = useNavigate();
@@ -22,7 +24,7 @@ export default function Tool() {
 
   const { openSidebar, closeSidebar, isSidebarOpen } = useSidebarStore();
   const setActiveTab = useSidebarStore((s) => s.setActiveTab);
-  const { setQuestions, setAttemptID } = useQuestionStore();
+  const { setQuestions, setAttemptID, questions } = useQuestionStore();
 
   useEffect(() => {
     setActiveTab("generate");
@@ -96,6 +98,18 @@ export default function Tool() {
   };
 
   const selectedExamData = allExams.find((e) => e.id === selectedExam);
+
+  const handleDownloadPDF = async () => {
+    if (!generatedPaper || !questions) return;
+    await generateExamPDF({
+      title: generatedPaper.examName,
+      questions: questions,
+      difficulty: difficulty,
+      totalMarks: totalMarks,
+      duration: duration,
+      examId: examId || "Examination_Paper"
+    });
+  };
 
   return (
     <div className="min-h-screen flex overflow-hidden bg-[#F8FAFC] font-inter text-slate-800">
@@ -319,7 +333,7 @@ export default function Tool() {
                       <Clock className="w-5 h-5" /> Start Live Attempt
                     </button>
                     <button
-                      onClick={() => alert("Downloading PDF...")}
+                      onClick={handleDownloadPDF}
                       className="w-full py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                     >
                       <Download className="w-5 h-5" /> Export as PDF
