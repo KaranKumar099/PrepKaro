@@ -16,6 +16,7 @@ import Dashboard from './components/Dashboard.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 import ExamHistory from './components/ExamHistory.jsx'
 import ExamEvaluation from './components/EvaluationPage.jsx'
+import Downloads from './components/Downloads.jsx'
 import { useEffect } from 'react'
 
 const AppRoutes = ()=>{
@@ -43,6 +44,7 @@ const AppRoutes = ()=>{
         {  path: "/tool",  element: (<ProtectedRoute><Tool/></ProtectedRoute>),},
         {  path: "/exam",  element: (<Exam/>),},
         {  path: "/attempt/:attemptId/",  element: (<ExamEvaluation/>),},
+        {  path: "/downloads",  element: (<ProtectedRoute><Downloads/></ProtectedRoute>),},
         {  path: "/contact",  element: <Contact/>,},
       ]
     }

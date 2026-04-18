@@ -1,4 +1,4 @@
-import { X, Settings, LogOut, Activity, Plus, FileText, BarChart3, Calendar, Trophy, User, GraduationCap, ChevronRight, LayoutDashboard } from "lucide-react"
+import { X, Settings, LogOut, Activity, Plus, FileText, BarChart3, Calendar, Trophy, User, GraduationCap, ChevronRight, LayoutDashboard, Download, DownloadIcon } from "lucide-react"
 import { useUserStore } from "../store/UseUserStore"; 
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -16,6 +16,7 @@ function SideBar() {
         { id: 'overview', icon: LayoutDashboard, label: 'Dashboard' },
         { id: 'generate', icon: Plus, label: 'New Mock Test' },
         { id: 'history', icon: FileText, label: 'Test History' },
+        { id: 'downloads', icon: DownloadIcon, label: 'Downloads' },
         { id: 'analytics', icon: BarChart3, label: 'Performance' },
         { id: 'schedule', icon: Calendar, label: 'Study Plan' },
         { id: 'achievements', icon: Trophy, label: 'Achievements' },
@@ -27,6 +28,7 @@ function SideBar() {
             case 'overview': navigate("/"); break;
             case 'generate': navigate("/tool"); break;
             case 'history': navigate("/history"); break;
+            case 'downloads': navigate("/downloads"); break;
             default: console.log("Navigating to:", actionType);
         }
         if (window.innerWidth < 1024) closeSidebar();
@@ -171,4 +173,4 @@ function SideBar() {
     );
 }
 
-export default SideBar;
+export default SideBar;
