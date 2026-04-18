@@ -109,7 +109,7 @@ export default function ExamEvaluation() {
     }));
   }, [questions]);
 
-  const percentage = Math.round((examData.score / (examData.totalMarks || 1)) * 100);
+  const percentage = Math.round(((examData.score>0 ? examData.score : 0) / (examData.totalMarks || 1)) * 100);
   const accuracy = Math.round((examData.correctQues.length / ((examData.correctQues.length + examData.incorrectQues.length) || 1)) * 100);
 
   const toggleQuestion = (id) => {
@@ -503,4 +503,4 @@ export default function ExamEvaluation() {
       </div>
     </div>
   );
-}
+}

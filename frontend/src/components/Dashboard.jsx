@@ -49,12 +49,11 @@ export default function Dashboard() {
     avgScore = totalScore / allExams.length;
   }
 
-  let totalPracticeTime = 0;
+  let totalPracticeTimeMins = 0;
   if (allExams.length > 0) {
-    totalPracticeTime = allExams.reduce((sum, exam) => {
-      const { hours } = timeDifference(exam?.endTime, exam?.startTime)
-      if (hours) sum += hours;
-      return sum
+    totalPracticeTimeMins = allExams.reduce((sum, exam) => {
+      const { hours, minutes } = timeDifference(exam?.endTime, exam?.startTime)
+      return sum + (hours || 0) * 60 + (minutes || 0);
     }, 0)
   }
 
@@ -124,13 +123,18 @@ export default function Dashboard() {
                   <Bell className="w-5 h-5" />
                   <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-blue-600 rounded-full border-2 border-white"></span>
                 </button>
-                <div className="w-10 h-10 bg-blue-600 flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200 rounded-full overflow-hidden cursor-pointer">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => navigate('/user')}
+                  className="w-10 h-10 bg-blue-600 flex items-center justify-center text-white font-bold shadow-lg shadow-blue-200 rounded-full overflow-hidden cursor-pointer border-2 border-white"
+                >
                   {user?.avatar ? (
                     <img src={user?.avatar} className="w-full h-full object-cover" alt="" />
                   ) : (
                     user?.name?.[0] || 'U'
                   )}
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -143,7 +147,7 @@ export default function Dashboard() {
               { label: 'Total Tests', val: allExams?.length, icon: FileText, sub: '+2 this week', bg: 'bg-blue-50', text: 'text-blue-600' },
               { label: 'Current Streak', val: `${user.streak || 5} Days`, icon: Flame, sub: 'Leveling up!', bg: 'bg-orange-50', text: 'text-orange-600' },
               { label: 'Average Score', val: `${avgScore.toFixed(1)}%`, icon: TrendingUp, sub: 'Improving consistently', bg: 'bg-green-50', text: 'text-green-600' },
-              { label: 'Practice Time', val: `${totalPracticeTime} hrs`, icon: Clock, sub: 'Time well spent', bg: 'bg-violet-50', text: 'text-violet-600' },
+              { label: 'Practice Time', val: totalPracticeTimeMins < 60 ? `${totalPracticeTimeMins} mins` : `${(totalPracticeTimeMins / 60).toFixed(1)} hrs`, icon: Clock, sub: 'Time well spent', bg: 'bg-violet-50', text: 'text-violet-600' },
             ].map((stat, i) => (
               <motion.div 
                 key={i}
@@ -221,7 +225,7 @@ export default function Dashboard() {
                           {test.score}<span className="text-slate-300 font-medium text-sm">/{test.exam?.totalMarks}</span>
                         </div>
                         <div className="text-xs font-bold text-blue-600">
-                          {Math.round((test.score / test.exam?.totalMarks) * 100)}% Match
+                          {Math.round((test.score / test.exam?.totalMarks) * 100)}%
                         </div>
                       </div>
                     </div>
