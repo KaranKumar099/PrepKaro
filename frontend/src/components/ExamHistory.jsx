@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FileText, Download, Clock, Target, Calendar, BarChart3, Search, Bell, Trophy, Menu, SlidersHorizontal, Eye, ChevronDown, Activity, Plus, Layout } from 'lucide-react';
 import SideBar from './SideBar';
 import axios from 'axios';
-import { useSidebarStore } from '../store/UseSideBarStore';
+import { useSidebarStore } from '../store/UseSidebarStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router';
 import { timeDifference } from '../constants';
@@ -129,10 +129,10 @@ export default function ExamHistory() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -4 }}
-                className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm transition-all"
+                className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm transition-all"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className={`p-3 rounded-2xl bg-${stat.color}-50`}>
+                  <div className={`p-3 rounded-xl bg-${stat.color}-50`}>
                     <stat.icon className={`w-6 h-6 text-${stat.color}-600`} />
                   </div>
                   <span className="text-[10px] font-black text-slate-400 uppercase tracking-[1.5px]">{stat.label}</span>
@@ -144,7 +144,7 @@ export default function ExamHistory() {
           </div>
 
           {/* Filtering Header */}
-          <section className="bg-white rounded-[32px] p-6 border border-slate-100 shadow-sm space-y-6">
+          <section className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm space-y-6">
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Search */}
               <div className="relative flex-1">
@@ -152,7 +152,7 @@ export default function ExamHistory() {
                 <input
                   type="text"
                   placeholder="Search specific exams by name..."
-                  className="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-medium text-sm"
+                  className="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-medium text-sm"
                 />
               </div>
 
@@ -160,7 +160,7 @@ export default function ExamHistory() {
               <div className="flex gap-3">
                 <button 
                   onClick={() => setShowFilters(!showFilters)}
-                  className={`flex items-center gap-2 px-5 py-3.5 rounded-2xl font-bold text-sm border-2 transition-all ${
+                  className={`flex items-center gap-2 px-5 py-3.5 rounded-xl font-bold text-sm border-2 transition-all ${
                     showFilters ? 'bg-blue-600 border-blue-600 text-white shadow-lg' : 'bg-white border-slate-50 text-slate-600'
                   }`}
                 >
@@ -170,7 +170,7 @@ export default function ExamHistory() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
-                    className="pl-5 pr-10 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl font-bold text-sm text-slate-600 appearance-none focus:outline-none focus:ring-4 focus:ring-blue-500/10 transition-all cursor-pointer"
+                    className="pl-5 pr-10 py-3.5 bg-slate-50 border border-slate-100 rounded-xl font-bold text-sm text-slate-600 appearance-none focus:outline-none focus:ring-4 focus:ring-blue-500/10 transition-all cursor-pointer"
                   >
                     <option value="date">Sort by Date</option>
                     <option value="score">Sort by Score</option>
@@ -210,12 +210,12 @@ export default function ExamHistory() {
           </section>
 
           {/* Test List Container */}
-          <div className="bg-white rounded-[32px] border border-slate-100 shadow-sm overflow-hidden">
+          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
             <div className="p-8 border-b border-slate-50 flex items-center justify-between">
               <h2 className="text-xl font-bold flex items-center gap-3">
                 Recent Sessions <span className="px-2.5 py-0.5 bg-slate-100 text-slate-500 rounded-full text-xs font-black">{sortedExams.length}</span>
               </h2>
-              <button className="p-3 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all">
+              <button className="p-3 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
                 <Download className="w-5 h-5" />
               </button>
             </div>
@@ -231,7 +231,7 @@ export default function ExamHistory() {
                   className="p-6 sm:p-8 hover:bg-slate-50 transition-all flex flex-col md:flex-row items-center gap-8 group"
                 >
                   {/* Visual Token */}
-                  <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                     <Layout className={`w-8 h-8 ${exam.answers ? 'text-blue-600' : 'text-slate-400'}`} />
                   </div>
                   
@@ -272,10 +272,10 @@ export default function ExamHistory() {
                     <div className="flex gap-3 mt-6">
                       {exam.answers ? (
                         <>
-                          <button className="flex-1 sm:flex-none px-6 py-2.5 bg-blue-600 text-white rounded-xl text-xs font-black shadow-lg shadow-blue-100 flex items-center justify-center gap-2 hover:bg-blue-700 transition-all">
+                          <button className="flex-1 sm:flex-none px-6 py-2.5 bg-blue-600 text-white rounded-lg text-xs font-black shadow-lg shadow-blue-100 flex items-center justify-center gap-2 hover:bg-blue-700 transition-all">
                             <Eye className="w-4 h-4" /> Preview
                           </button>
-                          <button className="p-2.5 bg-slate-100 text-slate-500 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all shadow-sm">
+                          <button className="p-2.5 bg-slate-100 text-slate-500 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-all shadow-sm">
                             <BarChart3 className="w-4 h-4" />
                           </button>
                           <button 
@@ -290,14 +290,14 @@ export default function ExamHistory() {
                                 examId: exam.exam._id
                               });
                             }}
-                            className="p-2.5 bg-slate-100 text-slate-500 rounded-xl hover:bg-blue-50 hover:text-blue-600 transition-all shadow-sm"
+                            className="p-2.5 bg-slate-100 text-slate-500 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-all shadow-sm"
                           >
                             <Download className="w-4 h-4" />
                           </button>
                         </>
                       ) : (
                         <>
-                          <button className="flex-1 sm:flex-none px-6 py-2.5 bg-amber-500 text-white rounded-xl text-xs font-black shadow-lg shadow-amber-100 flex items-center justify-center gap-2 hover:bg-amber-600 transition-all">
+                          <button className="flex-1 sm:flex-none px-6 py-2.5 bg-amber-500 text-white rounded-lg text-xs font-black shadow-lg shadow-amber-100 flex items-center justify-center gap-2 hover:bg-amber-600 transition-all">
                             <Plus className="w-4 h-4" /> Resume Test
                           </button>
                         </>

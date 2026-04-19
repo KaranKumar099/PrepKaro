@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Download, FileText, Calendar, Clock, Search, FolderDown, ArrowRight, Layout, Filter, Trash2, HardDrive, Share2 } from 'lucide-react';
 import SideBar from './SideBar';
 import axios from 'axios';
-import { useSidebarStore } from '../store/UseSideBarStore';
+import { useSidebarStore } from '../store/UseSidebarStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { generateExamPDF } from '../utils/pdfGenerator';
 
@@ -80,7 +80,7 @@ export default function Downloads() {
             </div>
 
             <div className="flex items-center gap-4">
-               <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-xl border border-slate-100">
+               <div className="hidden md:flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">
                   <HardDrive className="w-4 h-4 text-slate-400" />
                   <span className="text-xs font-black text-slate-600">{filteredExams.length} Available Papers</span>
                </div>
@@ -99,11 +99,11 @@ export default function Downloads() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search resources by exam name or description..."
-                className="w-full pl-12 pr-4 py-4 bg-white border border-slate-100 rounded-[24px] shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-medium"
+                className="w-full pl-12 pr-4 py-4 bg-white border border-slate-100 rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-medium"
               />
             </div>
             
-            <button className="flex items-center justify-center gap-2 px-8 py-4 bg-white border border-slate-100 rounded-[24px] font-bold text-slate-600 hover:bg-slate-50 transition-all shadow-sm">
+            <button className="flex items-center justify-center gap-2 px-8 py-4 bg-white border border-slate-100 rounded-xl font-bold text-slate-600 hover:bg-slate-50 transition-all shadow-sm">
               <Filter className="w-4 h-4" /> Filters
             </button>
           </div>
@@ -122,11 +122,11 @@ export default function Downloads() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="group bg-white rounded-[32px] border border-slate-100 p-1 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all cursor-default overflow-hidden"
+                    className="group bg-white rounded-2xl border border-slate-100 p-1 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all cursor-default overflow-hidden"
                   >
                     <div className="p-6">
                       <div className="flex justify-between items-start mb-6">
-                        <div className="w-14 h-14 bg-slate-50 rounded-[20px] flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-50 transition-all duration-500">
+                        <div className="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-50 transition-all duration-500">
                           <FileText className={`w-7 h-7 ${isAttempted ? 'text-blue-600' : 'text-slate-400'}`} />
                         </div>
                         <div className="flex flex-col items-end gap-2">
@@ -167,11 +167,11 @@ export default function Downloads() {
                     <div className="p-4 bg-slate-50/50 flex gap-2">
                         <button 
                             onClick={() => handleDownload(exam)}
-                            className="flex-1 py-3.5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-100 transition-all group/btn"
+                            className="flex-1 py-3.5 bg-blue-600 text-white rounded-xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-100 transition-all group/btn"
                         >
                             <Download className="w-4 h-4 group-hover/btn:-translate-y-0.5 transition-transform" /> Download PDF
                         </button>
-                        <button className="p-3.5 bg-white border border-slate-200 text-slate-400 rounded-2xl hover:text-blue-600 hover:border-blue-200 transition-all">
+                        <button className="p-3.5 bg-white border border-slate-200 text-slate-400 rounded-xl hover:text-blue-600 hover:border-blue-200 transition-all">
                             <Share2 className="w-4 h-4" />
                         </button>
                     </div>
@@ -190,7 +190,7 @@ export default function Downloads() {
               <p className="text-slate-500 font-medium max-w-sm mx-auto">Generate your first mock test to see it here for offline download.</p>
               <button 
                 onClick={() => navigate('/tool')}
-                className="mt-8 px-8 py-4 bg-slate-900 text-white rounded-[24px] font-black text-xs uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl"
+                className="mt-8 px-8 py-4 bg-slate-900 text-white rounded-xl font-black text-xs uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl"
               >
                 Go Create Now <ArrowRight className="w-4 h-4 inline-block ml-2" />
               </button>

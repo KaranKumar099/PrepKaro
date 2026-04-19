@@ -2,7 +2,7 @@ import { X, Settings, LogOut, Activity, Plus, FileText, BarChart3, Calendar, Tro
 import { useUserStore } from "../store/UseUserStore"; 
 import axios from "axios";
 import { useNavigate } from "react-router";
-import { useSidebarStore } from "../store/UseSideBarStore";
+import { useSidebarStore } from "../store/UseSidebarStore";
 import { motion, AnimatePresence } from "framer-motion";
 
 function SideBar() {
@@ -53,12 +53,12 @@ function SideBar() {
     const Skeleton = () => (
         <aside className="fixed lg:static h-full w-72 bg-white border-r border-slate-100 flex flex-col p-6 animate-pulse">
             <div className="flex items-center gap-3 mb-10">
-                <div className="w-10 h-10 bg-slate-100 rounded-xl"></div>
+                <div className="w-10 h-10 bg-slate-100 rounded-lg"></div>
                 <div className="h-6 w-24 bg-slate-100 rounded-md"></div>
             </div>
             <div className="flex-1 space-y-4">
                 {[1, 2, 3, 4, 5, 6].map(i => (
-                    <div key={i} className="h-12 bg-slate-50 rounded-2xl w-full"></div>
+                    <div key={i} className="h-12 bg-slate-50 rounded-xl w-full"></div>
                 ))}
             </div>
         </aside>
@@ -92,7 +92,7 @@ function SideBar() {
                                 className="flex items-center gap-3 cursor-pointer group" 
                                 onClick={() => { navigate("/"); closeSidebar(); }}
                             >
-                                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-100 group-hover:scale-110 transition-transform">
+                                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-100 group-hover:scale-110 transition-transform">
                                     <GraduationCap className="text-white w-6 h-6" />
                                 </div>
                                 <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
@@ -114,7 +114,7 @@ function SideBar() {
                                 <button
                                     key={item.id}
                                     onClick={() => handleNavAction(item.id)}
-                                    className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-200 group relative ${
+                                    className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-200 group relative ${
                                         isActive 
                                             ? 'bg-blue-600 text-white shadow-lg shadow-blue-100' 
                                             : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
@@ -135,12 +135,12 @@ function SideBar() {
 
                     {/* Footer / User Profile */}
                     <div className="p-4 mt-auto">
-                        <div className="bg-slate-50 rounded-[32px] p-4 border border-slate-100/50">
+                        <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100/50">
                             <div 
-                                className="flex items-center gap-3 p-2 rounded-2xl hover:bg-white transition-all cursor-pointer group shadow-transparent hover:shadow-sm"
+                                className="flex items-center gap-3 p-2 rounded-xl hover:bg-white transition-all cursor-pointer group shadow-transparent hover:shadow-sm"
                                 onClick={() => { navigate("/user"); closeSidebar(); }}
                             >
-                                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold ring-2 ring-white shadow-sm overflow-hidden">
+                                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold ring-2 ring-white shadow-sm overflow-hidden">
                                     {user?.avatar ? (
                                         <img src={user.avatar} className="w-full h-full object-cover" alt="" />
                                     ) : (
@@ -155,12 +155,12 @@ function SideBar() {
                             </div>
 
                             <div className="flex gap-2 mt-4 px-1">
-                                <button className="flex-1 py-2.5 flex items-center justify-center bg-white border border-slate-100 rounded-xl text-slate-500 hover:text-blue-600 hover:border-blue-100 transition-all shadow-sm">
+                                <button className="flex-1 py-2.5 flex items-center justify-center bg-white border border-slate-100 rounded-lg text-slate-500 hover:text-blue-600 hover:border-blue-100 transition-all shadow-sm">
                                     <Settings className="w-4 h-4" />
                                 </button>
                                 <button 
                                     onClick={handleLogout}
-                                    className="flex-1 py-2.5 flex items-center justify-center bg-white border border-slate-100 rounded-xl text-slate-500 hover:text-red-600 hover:border-red-100 transition-all shadow-sm"
+                                    className="flex-1 py-2.5 flex items-center justify-center bg-white border border-slate-100 rounded-lg text-slate-500 hover:text-red-600 hover:border-red-100 transition-all shadow-sm"
                                 >
                                     <LogOut className="w-4 h-4" />
                                 </button>

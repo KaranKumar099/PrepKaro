@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import { jsPDF } from "jspdf";
 import { useQuestionStore } from "../store/UseQuestionStore"; 
 import axios from "axios"
-import { useSidebarStore } from "../store/UseSideBarStore";
+import { useSidebarStore } from "../store/UseSidebarStore";
 import SideBar from "./SideBar";
 import { allExams, featuredExams } from "../constants"
 import { generateExamPDF } from "../utils/pdfGenerator";
@@ -145,9 +145,9 @@ export default function Tool() {
             <div className="lg:col-span-2 space-y-10">
               
               {/* Exam Selection */}
-              <section className="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm">
+              <section className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="p-3 bg-blue-50 rounded-2xl">
+                  <div className="p-3 bg-blue-50 rounded-xl">
                     <Target className="w-6 h-6 text-blue-600" />
                   </div>
                   <h2 className="text-xl font-bold">Select Targeted Exam</h2>
@@ -157,7 +157,7 @@ export default function Tool() {
                   <select
                     value={selectedExam}
                     onChange={(e) => handleExamSelect(e.target.value)}
-                    className="w-full pl-6 pr-12 py-4 bg-slate-50 border border-slate-100 rounded-[20px] focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-slate-700 appearance-none cursor-pointer"
+                    className="w-full pl-6 pr-12 py-4 bg-slate-50 border border-slate-100 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-bold text-slate-700 appearance-none cursor-pointer"
                   >
                     <option value="">Search or select from list...</option>
                     {allExams.map((exam) => (
@@ -175,7 +175,7 @@ export default function Tool() {
                         key={exam.id}
                         whileHover={{ y: -4 }}
                         onClick={() => handleExamSelect(exam.id)}
-                        className={`p-4 rounded-2xl flex flex-col items-center gap-2 border-2 transition-all ${
+                        className={`p-4 rounded-xl flex flex-col items-center gap-2 border-2 transition-all ${
                           selectedExam === exam.id
                             ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-200"
                             : "bg-white border-slate-50 hover:border-blue-200 text-slate-600"
@@ -195,10 +195,10 @@ export default function Tool() {
                   <motion.section
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm"
+                    className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm"
                   >
                     <div className="flex items-center gap-3 mb-8">
-                      <div className="p-3 bg-indigo-50 rounded-2xl">
+                      <div className="p-3 bg-indigo-50 rounded-xl">
                         <TrendingUp className="w-6 h-6 text-indigo-600" />
                       </div>
                       <h2 className="text-xl font-bold">Adjust Difficulty</h2>
@@ -214,7 +214,7 @@ export default function Tool() {
                           key={level.id}
                           whileHover={{ scale: 1.02 }}
                           onClick={() => setDifficulty(level.id)}
-                          className={`p-5 rounded-3xl text-left border-2 transition-all flex flex-col justify-between h-40 ${
+                          className={`p-5 rounded-xl text-left border-2 transition-all flex flex-col justify-between h-40 ${
                             difficulty === level.id
                               ? `bg-blue-50/50 border-blue-600 border-2`
                               : "bg-slate-50/50 border-transparent hover:border-slate-200"
@@ -243,7 +243,7 @@ export default function Tool() {
             <div className="space-y-8">
               {!generatedPaper ? (
                 <div className="sticky top-24 space-y-6">
-                  <div className="bg-white rounded-[32px] p-8 border border-slate-100 shadow-sm relative overflow-hidden">
+                  <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-full -mr-12 -mt-12 blur-2xl"></div>
                     <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
                       <Layout className="w-5 h-5 text-blue-600" /> Preview Configuration
@@ -259,7 +259,7 @@ export default function Tool() {
                             { label: "Total Scope", value: `${totalMarks} Marks`, icon: Target },
                             { label: "Question Density", value: `${questionCount} Qs`, icon: Activity },
                           ].map((item, idx) => (
-                            <div key={idx} className="flex items-center justify-between p-3 rounded-2xl bg-slate-50/50">
+                            <div key={idx} className="flex items-center justify-between p-3 rounded-xl bg-slate-50/50">
                               <div className="flex items-center gap-2 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
                                 <item.icon className="w-3.5 h-3.5" /> {item.label}
                               </div>
@@ -273,7 +273,7 @@ export default function Tool() {
                         <button
                           onClick={handleGenerate}
                           disabled={isGenerating}
-                          className={`w-full py-5 rounded-[20px] font-bold text-lg shadow-xl transition-all flex items-center justify-center gap-3 ${
+                          className={`w-full py-5 rounded-xl font-bold text-lg shadow-xl transition-all flex items-center justify-center gap-3 ${
                             isGenerating
                               ? "bg-slate-100 text-slate-400 cursor-not-allowed"
                               : "bg-blue-600 text-white hover:bg-blue-700 shadow-blue-100"
@@ -302,10 +302,10 @@ export default function Tool() {
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="sticky top-24 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[32px] p-8 text-white shadow-2xl shadow-blue-200"
+                  className="sticky top-24 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 text-white shadow-2xl shadow-blue-200"
                 >
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-md">
+                    <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-md">
                       <CheckCircle className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-xl font-bold">Paper Ready! ✅</h3>
@@ -328,13 +328,13 @@ export default function Tool() {
                   <div className="space-y-4">
                     <button
                       onClick={() => setShowAlert(true)}
-                      className="w-full py-4 bg-white text-blue-600 rounded-2xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-lg"
+                      className="w-full py-4 bg-white text-blue-600 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-lg"
                     >
                       <Clock className="w-5 h-5" /> Start Live Attempt
                     </button>
                     <button
                       onClick={handleDownloadPDF}
-                      className="w-full py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+                      className="w-full py-4 bg-white/10 text-white border border-white/20 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                     >
                       <Download className="w-5 h-5" /> Export as PDF
                     </button>
@@ -358,9 +358,9 @@ export default function Tool() {
             <motion.div 
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
-              className="bg-white rounded-[40px] p-10 w-full max-w-md shadow-2xl"
+              className="bg-white rounded-[24px] p-10 w-full max-w-md shadow-2xl"
             >
-              <div className="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-8">
+              <div className="w-16 h-16 bg-amber-50 rounded-xl flex items-center justify-center mb-8">
                 <AlertCircle className="w-8 h-8 text-amber-500" />
               </div>
               <h2 className="text-2xl font-black text-slate-900 mb-2">Ready to Start?</h2>
@@ -370,13 +370,13 @@ export default function Tool() {
               <div className="flex gap-4">
                 <button
                   onClick={() => setShowAlert(false)}
-                  className="flex-1 py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition-all"
+                  className="flex-1 py-4 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-all"
                 >
                   Go Back
                 </button>
                 <button
                   onClick={handleProceed}
-                  className="flex-1 py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-100 transition-all"
+                  className="flex-1 py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-100 transition-all"
                 >
                   Proceed
                 </button>

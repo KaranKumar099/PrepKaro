@@ -90,9 +90,9 @@ const UserProfile = () => {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white rounded-[40px] shadow-2xl shadow-blue-100 p-12 text-center max-w-md w-full border border-slate-100"
+          className="bg-white rounded-2xl shadow-2xl shadow-blue-100 p-12 text-center max-w-md w-full border border-slate-100"
         >
-          <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-8">
+          <div className="w-20 h-20 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-8">
             <Shield className="w-10 h-10 text-blue-600" />
           </div>
           <h2 className="text-3xl font-black text-slate-900 mb-4">Identity Required</h2>
@@ -101,7 +101,7 @@ const UserProfile = () => {
           </p>
           <button
             onClick={() => navigate("/auth")}
-            className="w-full py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all flex items-center justify-center gap-2"
+            className="w-full py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all flex items-center justify-center gap-2"
           >
             Authenticate Now <ArrowLeft className="w-4 h-4 rotate-180" />
           </button>
@@ -121,15 +121,15 @@ const UserProfile = () => {
         <div className="flex items-center justify-between mb-12">
           <button 
             onClick={() => navigate("/")}
-            className="p-3 bg-white border border-slate-100 rounded-2xl text-slate-400 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm"
+            className="p-3 bg-white border border-slate-100 rounded-xl text-slate-400 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
           <div className="flex gap-4">
-             <button className="p-3 bg-white border border-slate-100 rounded-2xl text-slate-400 hover:text-blue-600 transition-all shadow-sm">
+             <button className="p-3 bg-white border border-slate-100 rounded-xl text-slate-400 hover:text-blue-600 transition-all shadow-sm">
                 <Bell className="w-5 h-5" />
              </button>
-             <button className="p-3 bg-white border border-slate-100 rounded-2xl text-slate-400 hover:text-blue-600 transition-all shadow-sm">
+             <button className="p-3 bg-white border border-slate-100 rounded-xl text-slate-400 hover:text-blue-600 transition-all shadow-sm">
                 <Settings className="w-5 h-5" />
              </button>
           </div>
@@ -142,7 +142,7 @@ const UserProfile = () => {
             animate={{ opacity: 1, x: 0 }}
             className="lg:col-span-12"
           >
-            <div className="bg-white rounded-[40px] p-8 lg:p-12 shadow-sm border border-slate-100 relative overflow-hidden">
+            <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm border border-slate-100 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 rounded-bl-[80px]"></div>
               
               <AnimatePresence mode="wait">
@@ -156,11 +156,11 @@ const UserProfile = () => {
                   >
                     {/* Avatar Section */}
                     <div className="relative group">
-                      <div className="w-32 h-32 lg:w-44 lg:h-44 rounded-[48px] p-1.5 bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-xl shadow-blue-100 transition-transform group-hover:scale-105">
+                      <div className="w-32 h-32 lg:w-44 lg:h-44 rounded-xl p-1.5 bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-xl shadow-blue-100 transition-transform group-hover:scale-105">
                         <img
                           src={user.avatar}
                           alt="profile"
-                          className="w-full h-full rounded-[42px] object-cover border-4 border-white"
+                          className="w-full h-full rounded-lg object-cover border-4 border-white"
                         />
                       </div>
                       <input 
@@ -193,13 +193,13 @@ const UserProfile = () => {
                       <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                         <button 
                           onClick={() => setIsEditing(true)}
-                          className="px-6 py-3.5 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-100 transition-all flex items-center gap-2"
+                          className="px-6 py-3.5 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-100 transition-all flex items-center gap-2"
                         >
                           <Edit3 className="w-4 h-4" /> Edit Profile
                         </button>
                         <button 
                           onClick={logout}
-                          className="px-6 py-3.5 bg-white border border-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-50 transition-all flex items-center gap-2 shadow-sm"
+                          className="px-6 py-3.5 bg-white border border-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center gap-2 shadow-sm"
                         >
                           <LogOut className="w-4 h-4" /> Sign Out
                         </button>
@@ -222,7 +222,7 @@ const UserProfile = () => {
                            name="name"
                            value={formData.name}
                            onChange={handleInputChange}
-                           className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold focus:border-blue-200 outline-none transition-all"
+                           className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold focus:border-blue-200 outline-none transition-all"
                            placeholder="Enter your name"
                          />
                        </div>
@@ -232,7 +232,7 @@ const UserProfile = () => {
                            name="email"
                            value={formData.email}
                            onChange={handleInputChange}
-                           className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold focus:border-blue-200 outline-none transition-all"
+                           className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold focus:border-blue-200 outline-none transition-all"
                            placeholder="your@email.com"
                          />
                        </div>
@@ -244,7 +244,7 @@ const UserProfile = () => {
                               name="username"
                               value={formData.username}
                               onChange={handleInputChange}
-                              className="w-full pl-10 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold focus:border-blue-200 outline-none transition-all"
+                              className="w-full pl-10 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold focus:border-blue-200 outline-none transition-all"
                               placeholder="johndoe"
                             />
                          </div>
@@ -255,7 +255,7 @@ const UserProfile = () => {
                            name="targetExam"
                            value={formData?.targetExam}
                            onChange={handleInputChange}
-                           className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl font-bold focus:border-blue-200 outline-none transition-all appearance-none"
+                           className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold focus:border-blue-200 outline-none transition-all appearance-none"
                          >
                            <option value="GATE">GATE (Engineering)</option>
                            <option value="JEE">JEE (Main/Advanced)</option>
@@ -270,14 +270,14 @@ const UserProfile = () => {
                       <button 
                         type="submit"
                         disabled={loading}
-                        className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 shadow-xl shadow-blue-100 transition-all flex items-center gap-2"
+                        className="px-8 py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 shadow-xl shadow-blue-100 transition-all flex items-center gap-2"
                       >
                         {loading ? "Saving Changes..." : "Secure Save"}
                       </button>
                       <button 
                         type="button"
                         onClick={() => setIsEditing(false)}
-                        className="px-8 py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition-all"
+                        className="px-8 py-4 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-all"
                       >
                         Discard
                       </button>
@@ -294,7 +294,7 @@ const UserProfile = () => {
                   { label: "Academic Journey Since", val: joinedOn, icon: Calendar, color: "violet" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-5">
-                    <div className={`p-4 bg-${item.color}-50 rounded-2xl`}>
+                    <div className={`p-4 bg-${item.color}-50 rounded-xl`}>
                       <item.icon className={`w-6 h-6 text-${item.color}-600`} />
                     </div>
                     <div>

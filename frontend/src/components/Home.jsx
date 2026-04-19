@@ -81,7 +81,7 @@ export default function Home() {
       }`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 cursor-pointer group" onClick={() => handleNav('/')}>
-            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform">
               <GraduationCap className="text-white w-6 h-6" />
             </div>
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-600">
@@ -182,12 +182,12 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button 
                 onClick={() => handleNav('/tool')}
-                className="group px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-blue-200 hover:bg-blue-700 hover:shadow-blue-300 transition-all flex items-center justify-center gap-3"
+                className="group px-8 py-4 bg-blue-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-blue-200 hover:bg-blue-700 hover:shadow-blue-300 transition-all flex items-center justify-center gap-3"
               >
                 Start Practicing
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 bg-white text-slate-700 rounded-2xl font-bold text-lg border-2 border-slate-100 hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+              <button className="px-8 py-4 bg-white text-slate-700 rounded-xl font-bold text-lg border-2 border-slate-100 hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                 <Play className="w-5 h-5 text-blue-600" />
                 See How It Works
               </button>
@@ -216,7 +216,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-blue-200/50">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-blue-200/50">
               <img src={heroImg} alt="AI Exam Prep" className="w-full h-auto object-cover" />
             </div>
             
@@ -224,7 +224,7 @@ export default function Home() {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 z-20 bg-white p-4 rounded-2xl shadow-xl border border-slate-50"
+              className="absolute -top-6 -right-6 z-20 bg-white p-4 rounded-xl shadow-xl border border-slate-50"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center text-green-600">
@@ -240,7 +240,7 @@ export default function Home() {
             <motion.div 
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-8 -left-8 z-20 bg-white p-5 rounded-2xl shadow-xl border border-slate-50"
+              className="absolute -bottom-8 -left-8 z-20 bg-white p-5 rounded-xl shadow-xl border border-slate-50"
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
@@ -259,7 +259,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white p-10 rounded-[40px] shadow-sm border border-slate-100">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white p-10 rounded-2xl shadow-sm border border-slate-100">
             <div className="text-center md:border-r border-slate-100 px-4">
               <p className="text-4xl font-extrabold text-slate-900 mb-2">{statsCounter.students.toLocaleString()}+</p>
               <p className="text-slate-500 font-medium">Global Learners</p>
@@ -294,9 +294,9 @@ export default function Home() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -10 }}
-                className="group p-8 bg-white rounded-[32px] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-100/50 transition-all"
+                className="group p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-100/50 transition-all"
               >
-                <div className={`w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <div className={`w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                   <f.icon className={`w-7 h-7 text-blue-600`} />
                 </div>
                 <h4 className="text-xl font-bold mb-4">{f.title}</h4>
@@ -308,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-24 px-6 bg-slate-900 text-white rounded-[60px] mx-6">
+      <section id="how-it-works" className="py-24 px-6 bg-slate-900 text-white rounded-2xl mx-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-4">The Process</h2>
@@ -358,9 +358,9 @@ export default function Home() {
               <motion.div 
                 key={i}
                 whileHover={{ scale: 1.03 }}
-                className="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-all text-center group cursor-pointer"
+                className="p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all text-center group cursor-pointer"
               >
-                <div className="text-4xl mb-6 bg-slate-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto group-hover:rotate-12 transition-transform">
+                <div className="text-4xl mb-6 bg-slate-50 w-16 h-16 rounded-xl flex items-center justify-center mx-auto group-hover:rotate-12 transition-transform">
                   {exam.logo}
                 </div>
                 <h4 className="text-lg font-bold mb-2">{exam.name}</h4>
