@@ -1,6 +1,6 @@
 import { ArrowRight, FileText, Target, TrendingUp, Flame, Calendar, Plus, Search, Bell, Trophy, Menu, Layout, BookOpen, Clock, ChevronRight, Activity, Eye, BarChart3, Download } from 'lucide-react';
 import { useNavigate } from 'react-router';
-import { useUserStore } from '../store/UseUserStore'; 
+import { useUserStore } from '../store/UseUserStore';
 import axios from 'axios';
 import SideBar from './SideBar';
 import { useSidebarStore } from '../store/UseSidebarStore';
@@ -67,12 +67,64 @@ export default function Dashboard() {
     return dateObj.toLocaleDateString("en-IN", { day: 'numeric', month: 'short', year: 'numeric' });
   };
 
-  const performanceData = [
-    { subject: 'Physics', score: 85, color: 'blue' },
-    { subject: 'Chemistry', score: 72, color: 'indigo' },
-    { subject: 'Mathematics', score: 68, color: 'violet' },
-    { subject: 'Biology', score: 90, color: 'sky' },
-  ];
+  const [topicStats, setTopicStats] = useState([]);
+
+  useEffect(() => {
+    if (!allExams || allExams.length === 0) {
+      // Provide default chapters based on targetExam for an empty state
+      const defaultChapters = user.targetExam === 'GATE' ? [
+        { subject: 'Operating Systems', score: 0, color: 'blue' },
+        { subject: 'Algorithms', score: 0, color: 'indigo' },
+        { subject: 'Databases', score: 0, color: 'violet' },
+        { subject: 'Networks', score: 0, color: 'emerald' },
+      ] : [
+        { subject: 'Quantitative', score: 0, color: 'blue' },
+        { subject: 'Reasoning', score: 0, color: 'indigo' },
+        { subject: 'English', score: 0, color: 'violet' },
+        { subject: 'General Awareness', score: 0, color: 'emerald' },
+      ];
+      setTopicStats(defaultChapters);
+      return;
+    }
+
+    const chapterMap = {};
+    const COLORS = ['blue', 'indigo', 'violet', 'emerald', 'amber', 'rose', 'cyan', 'fuchsia'];
+
+    allExams.forEach(exam => {
+      if (exam.answers && Array.isArray(exam.answers)) {
+        exam.answers.forEach(ans => {
+          if (ans.question) {
+            const chap = ans.question.chapter || 'General';
+            if (!chapterMap[chap]) {
+              chapterMap[chap] = { correct: 0, total: 0 };
+            }
+            chapterMap[chap].total++;
+            if (ans.status === 'correct') {
+              chapterMap[chap].correct++;
+            }
+          }
+        });
+      }
+    });
+
+    const stats = Object.keys(chapterMap).map((chap, index) => ({
+      subject: chap,
+      score: Math.round((chapterMap[chap].correct / chapterMap[chap].total) * 100),
+      color: COLORS[index % COLORS.length]
+    })).sort((a, b) => b.score - a.score).slice(0, 5); // Show top 5 or all? Let's do top 5.
+
+    if (stats.length > 0) {
+      setTopicStats(stats);
+    } else {
+      // Fallback if no valid question data found
+      setTopicStats([
+        { subject: 'Foundational Knowledge', score: 0, color: 'blue' },
+        { subject: 'Problem Solving', score: 0, color: 'indigo' },
+        { subject: 'Analytical Skills', score: 0, color: 'violet' },
+        { subject: 'Domain Expertise', score: 0, color: 'emerald' },
+      ]);
+    }
+  }, [allExams, user.targetExam]);
 
   const handleQuickAction = (actionType) => {
     setActiveTab(actionType);
@@ -83,17 +135,10 @@ export default function Dashboard() {
     }
   };
 
-  // const achievements = [
-  //   { icon: '🔥', title: '7 Day Streak', desc: 'Consistency is key!', unlocked: true },
-  //   { icon: '🎯', title: 'Perfect Score', desc: 'Ace performance', unlocked: true },
-  //   { icon: '⚡', title: 'Speed Master', desc: '<60% time used', unlocked: false },
-  //   { icon: '🏆', title: 'Top 100', desc: 'Ranking high', unlocked: false },
-  // ];
-
   return (
     <div className="h-screen flex overflow-hidden bg-[#F8FAFC] font-inter text-slate-800">
       <SideBar />
-      
+
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto relative custom-scrollbar">
         {/* Header Section */}
@@ -113,7 +158,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-3 sm:gap-5">
               <div className="relative hidden md:block">
                 <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
@@ -128,7 +173,7 @@ export default function Dashboard() {
                   <Bell className="w-5 h-5" />
                   <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-blue-600 rounded-full border-2 border-white"></span>
                 </button>
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => navigate('/user')}
@@ -154,7 +199,7 @@ export default function Dashboard() {
               { label: 'Average Score', val: `${avgScore.toFixed(1)}%`, icon: TrendingUp, sub: 'Improving consistently', bg: 'bg-green-50', text: 'text-green-600' },
               { label: 'Practice Time', val: totalPracticeTimeMins < 60 ? `${totalPracticeTimeMins} mins` : `${(totalPracticeTimeMins / 60).toFixed(1)} hrs`, icon: Clock, sub: 'Time well spent', bg: 'bg-violet-50', text: 'text-violet-600' },
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 whileHover={{ y: -4 }}
                 className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all"
@@ -221,7 +266,7 @@ export default function Dashboard() {
                         <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-blue-50 transition-all duration-300">
                           <Layout className={`w-6 h-6 ${exam.answers ? 'text-blue-600' : 'text-amber-500'}`} />
                         </div>
-                        
+
                         {/* Details & Actions Container */}
                         <div className="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-4 min-w-0">
                           {/* Title & Meta */}
@@ -234,18 +279,17 @@ export default function Dashboard() {
                               <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {(exam.answers ? exam.exam.duration : exam.duration || 'N/A')} min</span>
                             </div>
                           </div>
-                          
+
                           {/* Stats & Actions */}
                           <div className="flex items-center justify-between md:justify-end gap-6 flex-shrink-0">
                             <div className="flex items-center gap-4">
-                              <span className={`hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider border ${
-                                (exam.answers ? exam.exam.difficulty : exam.difficulty) === 'easy' ? 'bg-green-50 text-green-600 border-green-100' :
-                                (exam.answers ? exam.exam.difficulty : exam.difficulty) === 'medium' ? 'bg-yellow-50 text-yellow-600 border-yellow-100' : 
-                                'bg-red-50 text-red-600 border-red-100'
-                              }`}>
+                              <span className={`hidden sm:inline-block px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider border ${(exam.answers ? exam.exam.difficulty : exam.difficulty) === 'easy' ? 'bg-green-50 text-green-600 border-green-100' :
+                                  (exam.answers ? exam.exam.difficulty : exam.difficulty) === 'medium' ? 'bg-yellow-50 text-yellow-600 border-yellow-100' :
+                                    'bg-red-50 text-red-600 border-red-100'
+                                }`}>
                                 {exam.answers ? exam.exam.difficulty : exam.difficulty}
                               </span>
-                              
+
                               {exam.answers && (
                                 <div className="text-right">
                                   <div className="text-xl font-black text-slate-900 leading-none">
@@ -268,7 +312,7 @@ export default function Dashboard() {
                                   <button className="p-2 bg-white text-slate-500 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 transition-all border border-slate-100 shadow-sm">
                                     <BarChart3 className="w-3.5 h-3.5" />
                                   </button>
-                                  <button 
+                                  <button
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       generateExamPDF({
@@ -302,11 +346,11 @@ export default function Dashboard() {
                       </div>
                       <h4 className="text-lg font-black text-slate-900 mb-2">Adventure Awaits!</h4>
                       <p className="text-slate-500 font-medium px-8">You haven't taken any exams yet. Ready to test your knowledge?</p>
-                      <button 
-                         onClick={() => navigate("/tool")}
-                         className="mt-6 px-8 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
+                      <button
+                        onClick={() => navigate("/tool")}
+                        className="mt-6 px-8 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-100"
                       >
-                         Take First Test
+                        Take First Test
                       </button>
                     </div>
                   )}
@@ -321,23 +365,68 @@ export default function Dashboard() {
                 <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
                   <TrendingUp className="w-5 h-5 text-indigo-500" /> Topic Analysis
                 </h3>
+
+                {/* Accuracy Visualization */}
+                <div className="relative h-48 w-48 mx-auto mb-10 flex items-center justify-center">
+                  <svg className="w-full h-full -rotate-90 transform" viewBox="0 0 100 100">
+                    {/* Background track */}
+                    <circle
+                      cx="50" cy="50" r="40"
+                      stroke="currentColor" strokeWidth="8"
+                      fill="transparent" className="text-slate-50"
+                    />
+                    {/* Foreground progress */}
+                    <motion.circle
+                      cx="50" cy="50" r="40"
+                      stroke="currentColor" strokeWidth="8"
+                      strokeDasharray="251.2"
+                      initial={{ strokeDashoffset: 251.2 }}
+                      animate={{ strokeDashoffset: 251.2 - (251.2 * (topicStats.reduce((acc, curr) => acc + curr.score, 0) / (topicStats.length || 1))) / 100 }}
+                      transition={{ duration: 2, ease: "easeOut" }}
+                      strokeLinecap="round"
+                      fill="transparent" className="text-blue-600"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-3xl font-black text-slate-900">
+                      {Math.round(topicStats.reduce((acc, curr) => acc + curr.score, 0) / (topicStats.length || 1))}%
+                    </span>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Avg Accuracy</span>
+                  </div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute -top-2 -right-2 w-12 h-12 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-slate-50 animate-bounce-slow">
+                    <Trophy className="w-5 h-5 text-amber-500" />
+                  </div>
+                </div>
+
                 <div className="space-y-6">
-                  {performanceData.map((subject, index) => (
-                    <div key={index}>
+                  {topicStats.map((subject, index) => (
+                    <div key={index} className="group cursor-default">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-sm font-bold text-slate-700">{subject.subject}</span>
-                        <span className="text-sm font-black text-slate-900">{subject.score}%</span>
+                        <div className="flex items-center gap-2">
+                          <div className={`w-2 h-2 rounded-full bg-${subject.color}-500 shadow-sm shadow-${subject.color}-200`}></div>
+                          <span className="text-sm font-bold text-slate-700 group-hover:text-slate-900 transition-colors uppercase tracking-tight">{subject.subject}</span>
+                        </div>
+                        <span className={`text-sm font-black text-${subject.color}-600`}>{subject.score}%</span>
                       </div>
-                      <div className="h-2.5 w-full bg-slate-50 rounded-full overflow-hidden">
-                        <motion.div 
+                      <div className="h-2 w-full bg-slate-50 rounded-full overflow-hidden border border-slate-100/50">
+                        <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${subject.score}%` }}
-                          transition={{ duration: 1, delay: index * 0.1 }}
-                          className={`h-full bg-${subject.color}-500 rounded-full`}
+                          transition={{ duration: 1.5, ease: "easeOut", delay: index * 0.1 }}
+                          className={`h-full bg-${subject.color}-500 rounded-full transition-all group-hover:brightness-110 shadow-[0_0_8px_rgba(var(--${subject.color}-rgb),0.3)]`}
                         ></motion.div>
                       </div>
                     </div>
                   ))}
+                  {topicStats.length === 0 && !loading && (
+                    <div className="text-center py-10">
+                      <p className="text-slate-400 text-xs font-bold uppercase tracking-widest leading-loose">
+                        Initialize your journey to<br/>unlock deep analytics
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -349,7 +438,7 @@ export default function Dashboard() {
                   <p className="text-blue-100 text-sm mb-6 leading-relaxed">
                     You're 2 tests away from hitting your weekly productivity target!
                   </p>
-                  <button 
+                  <button
                     onClick={() => navigate("/tool")}
                     className="w-full py-4 bg-white text-blue-600 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2 group shadow-lg"
                   >

@@ -46,7 +46,7 @@ const getAllExams = asyncHandler (async (req, res) => {
 
     let history = [];
     for (const exam of allExams) {
-        const attempts = await Attempt.find({ exam: exam._id }).populate("exam");
+        const attempts = await Attempt.find({ exam: exam._id }).populate("exam").populate("answers.question");
         if (attempts.length > 0) {
             history.push(...attempts);
         }else{

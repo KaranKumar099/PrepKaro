@@ -113,6 +113,13 @@ const quickActions = [
   { icon: Download, label: 'Download Reports', color: 'bg-gray-600', action: 'reports' },
 ];
 
+const achievements = [
+  { icon: '🔥', title: '7 Day Streak', desc: 'Consistency is key!', unlocked: true },
+  { icon: '🎯', title: 'Perfect Score', desc: 'Ace performance', unlocked: true },
+  { icon: '⚡', title: 'Speed Master', desc: '<60% time used', unlocked: false },
+  { icon: '🏆', title: 'Top 100', desc: 'Ranking high', unlocked: false },
+];
+
 const timeDifference = (endTimeString, startTimeString)=>{
   const endTime = new Date(endTimeString);
   const startTime = new Date(startTimeString);
