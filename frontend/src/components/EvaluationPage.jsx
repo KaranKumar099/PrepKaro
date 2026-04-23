@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function ExamEvaluation() {
   const [expandedQuestion, setExpandedQuestion] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
+  const [questionFilter, setQuestionFilter] = useState('All');
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState([]);
   const [examData, setExamData] = useState({
@@ -348,8 +349,12 @@ export default function ExamEvaluation() {
                 <div className="flex items-center justify-between mb-8">
                     <h3 className="text-xl font-bold text-slate-900">Per-Question Trace</h3>
                     <div className="flex p-1 bg-slate-50 rounded-2xl gap-1">
-                        {['All', 'Correct', 'Incorrect'].map((filter) => (
-                            <button key={filter} className={`px-5 py-2 rounded-xl text-xs font-black transition-all ${filter === 'All' ? 'bg-white shadow-sm text-blue-600' : 'text-slate-400'}`}>
+                        {['All', 'Correct', 'Incorrect', 'Skipped'].map((filter) => (
+                            <button 
+                                key={filter} 
+                                onClick={() => setQuestionFilter(filter)}
+                                className={`px-5 py-2 rounded-xl text-xs font-black transition-all ${questionFilter === filter ? 'bg-white shadow-sm text-blue-600' : 'text-slate-400 hover:text-slate-600'}`}
+                            >
                                 {filter}
                             </button>
                         ))}
@@ -357,8 +362,16 @@ export default function ExamEvaluation() {
                 </div>
 
                 <div className="space-y-4">
-                  {questions.map((question, index) => (
-                    <div key={question._id} className="group border border-slate-100 rounded-3xl overflow-hidden hover:border-blue-200 transition-all bg-slate-50/30">
+                  {questions
+                    .filter(q => {
+                      if (questionFilter === 'All') return true;
+                      if (questionFilter === 'Correct') return q.status === 'correct';
+                      if (questionFilter === 'Incorrect') return q.status === 'incorrect';
+                      if (questionFilter === 'Skipped') return q.status === 'unattempted';
+                      return true;
+                    })
+                    .map((question, index) => (
+                      <div key={question._id} className="group border border-slate-100 rounded-3xl overflow-hidden hover:border-blue-200 transition-all bg-slate-50/30">
                       <div 
                         className="p-5 flex flex-col lg:flex-row items-center justify-between cursor-pointer group-hover:bg-white transition-all gap-6"
                         onClick={() => toggleQuestion(question._id)}
@@ -375,7 +388,7 @@ export default function ExamEvaluation() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-3 mb-1">
-                              <span className="font-black text-slate-900">Q. {index + 1}</span>
+                              <span className="font-black text-slate-900">Q. {questions.indexOf(question) + 1}</span>
                               <span className="px-2 py-0.5 bg-slate-100 text-slate-500 rounded-full text-[10px] font-black uppercase tracking-wider">{question.question.chapter || question.question.topic}</span>
                             </div>
                             <div className="text-sm font-medium text-slate-500 line-clamp-1">{question.question.questionText}</div>
