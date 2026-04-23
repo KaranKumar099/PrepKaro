@@ -304,8 +304,7 @@ const Exam = () => {
           </div>
 
           <div className="flex items-center gap-4">
-             <div className="flex items-center gap-3 px-6 py-2.5 bg-blue-50 border border-blue-100 rounded-2xl">
-                <Clock className="w-5 h-5 text-blue-600" />
+             <div className="flex items-center gap-3 px-6 py-2.5 rounded-2xl">
                 <ExamTimer durationInMinutes={180} onTimeUp={handleSubmit} />
              </div>
           </div>
