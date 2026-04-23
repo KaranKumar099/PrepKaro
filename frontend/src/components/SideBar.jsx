@@ -18,8 +18,7 @@ function SideBar() {
         { id: 'history', icon: FileText, label: 'Test History' },
         { id: 'downloads', icon: DownloadIcon, label: 'Downloads' },
         { id: 'analytics', icon: BarChart3, label: 'Performance' },
-        { id: 'schedule', icon: Calendar, label: 'Study Plan' },
-        { id: 'achievements', icon: Trophy, label: 'Achievements' },
+        { id: 'schedule', icon: Calendar, label: 'Study Plan' }
     ];
 
     const handleNavAction = (actionType) => {
