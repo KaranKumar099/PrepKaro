@@ -62,6 +62,34 @@ export default function Dashboard() {
     }, 0)
   }
 
+  const currentStreak = (() => {
+    if (!allExams || allExams.length === 0) return 0;
+
+    const dates = [...new Set(allExams.map(exam => {
+      const d = new Date(exam.createdAt);
+      return new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+    }))].sort((a, b) => b - a);
+
+    if (dates.length === 0) return 0;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayTime = today.getTime();
+    const yesterdayTime = todayTime - 86400000;
+
+    if (dates[0] < yesterdayTime) return 0;
+
+    let count = 1;
+    for (let i = 0; i < dates.length - 1; i++) {
+      if (dates[i] - dates[i + 1] === 86400000) {
+        count++;
+      } else {
+        break;
+      }
+    }
+    return count;
+  })();
+
   const dateTimeExtract = (isoString) => {
     const dateObj = new Date(isoString);
     return dateObj.toLocaleDateString("en-IN", { day: 'numeric', month: 'short', year: 'numeric' });
@@ -195,7 +223,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {[
               { label: 'Total Tests', val: allExams?.length, icon: FileText, sub: '+2 this week', bg: 'bg-blue-50', text: 'text-blue-600' },
-              { label: 'Current Streak', val: `${user.streak || 5} Days`, icon: Flame, sub: 'Leveling up!', bg: 'bg-orange-50', text: 'text-orange-600' },
+              { label: 'Current Streak', val: `${currentStreak || 1} Day${(currentStreak || 1) > 1 ? 's' : ''}`, icon: Flame, sub: currentStreak > 0 ? 'Keep it up!' : 'Start your streak!', bg: 'bg-orange-50', text: 'text-orange-600' },
               { label: 'Average Score', val: `${avgScore.toFixed(1)}%`, icon: TrendingUp, sub: 'Improving consistently', bg: 'bg-green-50', text: 'text-green-600' },
               { label: 'Practice Time', val: totalPracticeTimeMins < 60 ? `${totalPracticeTimeMins} mins` : `${(totalPracticeTimeMins / 60).toFixed(1)} hrs`, icon: Clock, sub: 'Time well spent', bg: 'bg-violet-50', text: 'text-violet-600' },
             ].map((stat, i) => (
