@@ -187,4 +187,82 @@ const submitAttempt = asyncHandler(async (req, res) => {
     )
 })
 
-export {createAttempt, saveAnswer, getAttempt, submitAttempt, saveTimeSpent}
+const getPerformanceAnalysis = asyncHandler(async (req, res) => {
+    const { attemptId } = req.params;
+    const attempt = await Attempt.findById(attemptId)
+        .populate('answers.question')
+        .populate('exam');
+
+    if (!attempt) {
+        throw new apiError(404, 'Attempt not found');
+    }
+
+    const topicMap = {};
+    const chapterMap = {};
+
+    attempt.answers.forEach((ans) => {
+        const q = ans.question;
+        if (!q) return;
+
+        const topic = q.topic || q.chapter || 'General';
+        const chapter = q.chapter || 'General';
+
+        const updateMap = (map, key) => {
+            if (!map[key]) {
+                map[key] = { correct: 0, incorrect: 0, unattempted: 0, total: 0, totalTime: 0, marksLost: 0 };
+            }
+            map[key].total++;
+            map[key].totalTime += (ans.timespent || 0);
+            if (ans.status === 'correct') {
+                map[key].correct++;
+            } else if (ans.status === 'incorrect') {
+                map[key].incorrect++;
+                if (q.questionType?.toUpperCase() === 'MCQ') {
+                    map[key].marksLost += (q.score || 0) / 4;
+                }
+            } else {
+                map[key].unattempted++;
+            }
+        };
+
+        updateMap(topicMap, topic);
+        updateMap(chapterMap, chapter);
+    });
+
+    const buildStats = (map) =>
+        Object.entries(map).map(([name, d]) => ({
+            name,
+            total: d.total,
+            correct: d.correct,
+            incorrect: d.incorrect,
+            skipped: d.unattempted,
+            attempted: d.correct + d.incorrect,
+            accuracy: Math.round((d.correct / (d.total || 1)) * 100),
+            avgTime: Math.round(d.totalTime / (d.total || 1)),
+            totalTime: d.totalTime,
+            marksLost: Math.round(d.marksLost * 100) / 100,
+        }));
+
+    const topicStats = buildStats(topicMap);
+    const chapterStats = buildStats(chapterMap);
+
+    const strongTopics = topicStats.filter((t) => t.accuracy >= 70);
+    const weakTopics = topicStats.filter((t) => t.accuracy < 40);
+
+    const sortedByTime = [...topicStats].sort((a, b) => a.avgTime - b.avgTime);
+    const fastestTopics = sortedByTime.slice(0, 3);
+    const slowestTopics = [...sortedByTime].reverse().slice(0, 3);
+
+    return res.status(200).json(
+        new apiResponse(200, {
+            topicStats,
+            chapterStats,
+            strongTopics,
+            weakTopics,
+            fastestTopics,
+            slowestTopics,
+        }, 'Performance analysis fetched successfully')
+    );
+});
+
+export { createAttempt, saveAnswer, getAttempt, submitAttempt, saveTimeSpent, getPerformanceAnalysis };

@@ -222,7 +222,9 @@ const Dashboard = () => {
 
           <div className="grid xl:grid-cols-3 gap-8">
             <div className="xl:col-span-2 space-y-8">
+            <div className="lg:hidden">
               <QuickActionsGrid onAction={onHandleQuickAction} />
+            </div>
 
               <RecentExamsList
                 exams={stats.recentTests}
@@ -232,11 +234,12 @@ const Dashboard = () => {
                 onDownloadPDF={onHandleDownloadPDF}
                 onNavigateTool={() => navigate('/tool')}
               />
+              
+              <WeeklyGoalCard onAction={() => navigate('/tool')} />
             </div>
 
             <div className="space-y-8">
               <TopicAnalysis topicStats={topicStats} isLoading={loading} />
-              <WeeklyGoalCard onAction={() => navigate('/tool')} />
             </div>
           </div>
         </div>

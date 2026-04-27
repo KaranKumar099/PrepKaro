@@ -55,10 +55,10 @@ const allExams = [
 ];
 
 const featuredExams = [
-  { id: "jee-main", name: "JEE Mains", icon: "🎯" },
-  { id: "jee-advanced", name: "JEE Advanced", icon: "🚀" },
-  { id: "neet", name: "NEET", icon: "⚕️" },
-  { id: "gate-CS-1", name: "GATE CSE", icon: "💻" },
+  { id: "jee-main", name: "JEE Mains"},
+  { id: "jee-advanced", name: "JEE Advanced"},
+  { id: "neet", name: "NEET"},
+  { id: "gate-CS-1", name: "GATE CSE"},
 ];
 
 

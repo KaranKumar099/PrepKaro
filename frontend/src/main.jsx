@@ -44,7 +44,6 @@ const AppRoutes = () => {
       children: [
         { path: '', element: user ? <Dashboard /> : <Home /> },
         { path: '/auth', element: <AuthPage /> },
-        { path: '/login', element: <AuthPage /> }, // Redirecting /login to /auth
         { path: '/user', element: <UserProfile /> },
         { path: '/history', element: <ExamHistory /> },
         {

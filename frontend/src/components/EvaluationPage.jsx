@@ -2,20 +2,13 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  CheckCircle,
-  XCircle,
-  Clock,
-  AlertCircle,
-  Home,
-  GraduationCap,
-} from 'lucide-react';
+import { CheckCircle, XCircle, Clock, AlertCircle, Home, GraduationCap } from 'lucide-react';
 
 import StatCard from './shared/StatCard.jsx';
 import HeroScoreBanner from './evaluation/HeroScoreBanner.jsx';
 import OverviewTab from './evaluation/OverviewTab.jsx';
 import QuestionsTab from './evaluation/QuestionsTab.jsx';
-import AnalysisTab from './evaluation/AnalysisTab.jsx';
+import PerformanceTab from './evaluation/PerformanceTab.jsx';
 
 import { formatShortDate, getTimeDifference } from '../utils/dateUtils';
 
@@ -26,6 +19,8 @@ export default function ExamEvaluation() {
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState([]);
   const [activeTab, setActiveTab] = useState('overview');
+  const [performanceData, setPerformanceData] = useState(null);
+  const [performanceLoading, setPerformanceLoading] = useState(false);
   const [examData, setExamData] = useState({
     examName: '',
     date: '',
@@ -45,6 +40,7 @@ export default function ExamEvaluation() {
     difficulty: 'medium',
   });
 
+  // Fetch attempt details
   useEffect(() => {
     if (!attemptId) return;
     const fetchAttempt = async () => {
@@ -56,11 +52,9 @@ export default function ExamEvaluation() {
           withCredentials: true,
         });
         const attemptData = response.data.data;
-
         const { minutes, seconds } = getTimeDifference(attemptData.endTime, attemptData.startTime);
         const timeSpent = `${minutes} min ${seconds} sec`;
         const date = formatShortDate(attemptData.startTime);
-
         setQuestions(attemptData.answers);
         setExamData((prev) => ({
           ...prev,
@@ -82,16 +76,36 @@ export default function ExamEvaluation() {
     fetchAttempt();
   }, [attemptId]);
 
+  // Fetch backend performance analysis
+  useEffect(() => {
+    if (!attemptId) return;
+    const fetchPerformanceAnalysis = async () => {
+      setPerformanceLoading(true);
+      try {
+        const token = localStorage.getItem('accessToken');
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/attempt/${attemptId}/analysis`,
+          { headers: { Authorization: `Bearer ${token}` }, withCredentials: true },
+        );
+        setPerformanceData(response.data.data);
+      } catch (error) {
+        console.error('Error fetching performance analysis:', error);
+      } finally {
+        setPerformanceLoading(false);
+      }
+    };
+    fetchPerformanceAnalysis();
+  }, [attemptId]);
+
+  // Derive score breakdown from questions array
   useEffect(() => {
     if (!questions || questions.length === 0) return;
-
     const correctQues = [];
     const incorrectQues = [];
     const unattemptedQues = [];
     let positive = 0;
     let negative = 0;
     let totalTimeSpent = 0;
-
     questions.forEach((ques) => {
       totalTimeSpent += ques.timespent;
       if (ques.status === 'unattempted') {
@@ -106,7 +120,6 @@ export default function ExamEvaluation() {
         }
       }
     });
-
     setExamData((prev) => ({
       ...prev,
       correctQues,
@@ -119,13 +132,10 @@ export default function ExamEvaluation() {
     }));
   }, [questions]);
 
+  // Derive chapter analysis for existing AnalysisTab
   const detailedAnalysis = useMemo(() => {
     if (!questions || questions.length === 0)
-      return {
-        chapters: [],
-        focusAreas: [],
-        recommendations: [],
-      };
+      return { chapters: [], focusAreas: [], recommendations: [] };
 
     const chapterMap = {};
     questions.forEach((q) => {
@@ -150,36 +160,15 @@ export default function ExamEvaluation() {
       .slice(0, 3);
 
     const accuracyVal = Math.round((examData.correctQues.length / (questions.length || 1)) * 100);
-
     const recs = [];
-    if (accuracyVal < 70)
-      recs.push({
-        title: 'Accuracy Focus',
-        text: 'Priority should be reducing silly mistakes. Slow down on individual questions.',
-      });
-    if (examData.avgTimeSpent > 90)
-      recs.push({
-        title: 'Time Optimization',
-        text: "You're spending too long per question. Practice with a timer on specific chapters.",
-      });
-    if (examData.unattemptedQues.length > questions.length * 0.2)
-      recs.push({
-        title: 'Attempt Management',
-        text: 'Too many unattempted questions. Improve your scanning technique.',
-      });
+    if (accuracyVal < 70) recs.push({ title: 'Accuracy Focus', text: 'Priority should be reducing silly mistakes. Slow down on individual questions.' });
+    if (examData.avgTimeSpent > 90) recs.push({ title: 'Time Optimization', text: "You're spending too long per question. Practice with a timer on specific chapters." });
+    if (examData.unattemptedQues.length > questions.length * 0.2) recs.push({ title: 'Attempt Management', text: 'Too many unattempted questions. Improve your scanning technique.' });
 
     return {
       chapters: chaptersArr,
       focusAreas,
-      recommendations:
-        recs.length > 0
-          ? recs
-          : [
-              {
-                title: 'Maintain Momentum',
-                text: 'Your strategy is solid. Continue practicing varied difficulty levels.',
-              },
-            ],
+      recommendations: recs.length > 0 ? recs : [{ title: 'Maintain Momentum', text: 'Your strategy is solid. Continue practicing varied difficulty levels.' }],
     };
   }, [questions, examData.avgTimeSpent, examData.correctQues.length, examData.unattemptedQues.length]);
 
@@ -191,48 +180,20 @@ export default function ExamEvaluation() {
       <div className="min-h-screen bg-[#F8FAFC] flex items-center justify-center">
         <div className="text-center space-y-4">
           <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
-          <p className="text-slate-500 font-bold uppercase tracking-widest text-[10px]">
-            Processing Results...
-          </p>
+          <p className="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Processing Results...</p>
         </div>
       </div>
     );
   }
 
   const metricCards = [
-    {
-      label: 'CORRECT ATTEMPTS',
-      val: examData.correctQues?.length || 0,
-      icon: CheckCircle,
-      color: 'text-green-500',
-      bg: 'bg-green-50',
-      sub: `+${examData.positiveMarks} marks gained`,
-    },
-    {
-      label: 'CRITICAL ERRORS',
-      val: examData.incorrectQues?.length || 0,
-      icon: XCircle,
-      color: 'text-red-500',
-      bg: 'bg-red-50',
-      sub: `-${examData.negativeMarks} penalty applied`,
-    },
-    {
-      label: 'SKIPPED ITEMS',
-      val: examData.unattemptedQues?.length || 0,
-      icon: AlertCircle,
-      color: 'text-amber-500',
-      bg: 'bg-amber-50',
-      sub: 'Zero impact on score',
-    },
-    {
-      label: 'AVG VELOCITY',
-      val: `${Math.round(examData.avgTimeSpent)}s`,
-      icon: Clock,
-      color: 'text-blue-500',
-      bg: 'bg-blue-50',
-      sub: 'Per question duration',
-    },
+    { label: 'CORRECT ATTEMPTS', val: examData.correctQues?.length || 0, icon: CheckCircle, color: 'text-green-500', bg: 'bg-green-50', sub: `+${examData.positiveMarks} marks gained` },
+    { label: 'CRITICAL ERRORS', val: examData.incorrectQues?.length || 0, icon: XCircle, color: 'text-red-500', bg: 'bg-red-50', sub: `-${examData.negativeMarks} penalty applied` },
+    { label: 'SKIPPED ITEMS', val: examData.unattemptedQues?.length || 0, icon: AlertCircle, color: 'text-amber-500', bg: 'bg-amber-50', sub: 'Zero impact on score' },
+    { label: 'AVG VELOCITY', val: `${Math.round(examData.avgTimeSpent)}s`, icon: Clock, color: 'text-blue-500', bg: 'bg-blue-50', sub: 'Per question duration' },
   ];
+
+  const tabs = ['overview', 'questions', 'performance'];
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] font-inter text-slate-800">
@@ -245,9 +206,7 @@ export default function ExamEvaluation() {
             </div>
             <div>
               <h1 className="text-xl font-black text-slate-900 leading-none mb-1">Results Analytics</h1>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                PrepKaro Engine ⚡
-              </p>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">PrepKaro Engine ⚡</p>
             </div>
           </div>
           <button
@@ -263,36 +222,28 @@ export default function ExamEvaluation() {
       <div className="max-w-[1200px] mx-auto px-6 py-10 space-y-10">
         <HeroScoreBanner examData={examData} percentage={percentage} accuracy={accuracy} />
 
-        {/* Detailed Metrics Grid */}
+        {/* Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {metricCards.map((card, i) => (
-            <StatCard
-              key={i}
-              label={card.label}
-              value={card.val}
-              subText={card.sub}
-              icon={card.icon}
-              bgColor={card.bg}
-              textColor={card.color}
-            />
+            <StatCard key={i} label={card.label} value={card.val} subText={card.sub} icon={card.icon} bgColor={card.bg} textColor={card.color} />
           ))}
         </div>
 
-        {/* Navigation Tabs */}
+        {/* Tabs */}
         <div className="bg-white rounded-[40px] border border-slate-100 shadow-sm overflow-hidden">
           <div className="border-b border-slate-50 px-8 bg-slate-50/30">
-            <div className="flex gap-10">
-              {['overview', 'questions', 'analysis'].map((tab) => (
+            <div className="flex gap-6 overflow-x-auto">
+              {tabs.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`py-6 border-b-4 transition-all capitalize font-black text-sm tracking-widest ${
+                  className={`py-6 border-b-4 transition-all capitalize font-black text-sm tracking-widest whitespace-nowrap ${
                     activeTab === tab
                       ? 'border-blue-600 text-blue-600'
                       : 'border-transparent text-slate-400 hover:text-slate-600'
                   }`}
                 >
-                  {tab}
+                  {tab === 'performance' ? 'Performance' : tab}
                 </button>
               ))}
             </div>
@@ -301,8 +252,20 @@ export default function ExamEvaluation() {
           <AnimatePresence mode="wait">
             {activeTab === 'overview' && <OverviewTab key="overview" examData={examData} />}
             {activeTab === 'questions' && <QuestionsTab key="questions" questions={questions} />}
-            {activeTab === 'analysis' && (
-              <AnalysisTab key="analysis" detailedAnalysis={detailedAnalysis} />
+            {activeTab === 'performance' && (
+              performanceLoading ? (
+                <motion.div
+                  key="perf-loading"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="flex flex-col items-center justify-center py-24 gap-4"
+                >
+                  <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
+                  <p className="text-slate-400 font-bold text-xs uppercase tracking-widest">Loading analysis...</p>
+                </motion.div>
+              ) : (
+                <PerformanceTab key="performance" performanceData={performanceData} examData={examData} />
+              )
             )}
           </AnimatePresence>
         </div>
