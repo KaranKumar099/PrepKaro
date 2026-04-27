@@ -148,7 +148,7 @@ export const generateExamPDF = async (examData) => {
         doc.setPage(i);
         doc.setFontSize(8);
         doc.setTextColor(150, 150, 150);
-        doc.text(`Page ${i} of ${pageCount} | Generated via PrepKaro ⚡`, 105, 290, { align: 'center' });
+        doc.text(`Page ${i} of ${pageCount} | Generated via PrepKaro`, 105, 290, { align: 'center' });
     }
 
     doc.save(`${examId || "Examination_Paper"}.pdf`);

@@ -58,8 +58,6 @@ const featuredExams = [
   { id: "jee-main", name: "JEE Mains", icon: "🎯" },
   { id: "jee-advanced", name: "JEE Advanced", icon: "🚀" },
   { id: "neet", name: "NEET", icon: "⚕️" },
-  { id: "ssc", name: "SSC CGL", icon: "📚" },
-  { id: "upsc", name: "UPSC Prelims", icon: "🏛️" },
   { id: "gate-CS-1", name: "GATE CSE", icon: "💻" },
 ];
 
@@ -113,31 +111,4 @@ const quickActions = [
   { icon: Download, label: 'Download Reports', color: 'bg-gray-600', action: 'reports' },
 ];
 
-const achievements = [
-  { icon: '🔥', title: '7 Day Streak', desc: 'Consistency is key!', unlocked: true },
-  { icon: '🎯', title: 'Perfect Score', desc: 'Ace performance', unlocked: true },
-  { icon: '⚡', title: 'Speed Master', desc: '<60% time used', unlocked: false },
-  { icon: '🏆', title: 'Top 100', desc: 'Ranking high', unlocked: false },
-];
-
-const timeDifference = (endTimeString, startTimeString)=>{
-  const endTime = new Date(endTimeString);
-  const startTime = new Date(startTimeString);
-  const diffMs = endTime - startTime;
-  const hours = Math.floor(diffMs / (1000 * 60 * 60));
-  const minutes = Math.floor(diffMs / (1000 * 60)) % 60;
-  const seconds = Math.floor(diffMs / 1000) % 60;
-  return { hours, minutes, seconds};
-}
-
-const getDate = (startTimeString)=>{
-  const dateObj = new Date(startTimeString);
-  const dayNumber = String(dateObj.getUTCDate()).padStart(2, "0");
-  const month = String(dateObj.getUTCMonth() + 1).padStart(2, "0");
-  const year = dateObj.getUTCFullYear();
-  const weekday = dateObj.toLocaleDateString("en-US", { weekday: "long", timeZone: "UTC" });
-  const date = `${dayNumber}-${month}-${year}, ${weekday}`
-  return date
-}
-
-export {gate_exams, ssc_exams, allExams, featuredExams, examDetails, quickActions, timeDifference, getDate, exams, features, steps}
+export { gate_exams, ssc_exams, allExams, featuredExams, examDetails, quickActions, exams, features, steps };
