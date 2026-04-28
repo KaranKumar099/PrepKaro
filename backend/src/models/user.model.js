@@ -31,7 +31,10 @@ const userSchema = new Schema({
     targetExam: {
         type: String,
         default: "GATE"
-    }
+    },
+    forgotPasswordToken: String,
+    forgotPasswordTokenExpiry: Date,
+
 },{timestamps: true})
 
 userSchema.pre("save", async function (next) {

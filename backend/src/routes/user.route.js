@@ -1,4 +1,4 @@
-import { loginUser, registerUser, getUserProfile, logoutUser, updateAvatar, updateUserProfile, getUserPerformance, getAIInsight } from "../controllers/user.controller.js";
+import { loginUser, registerUser, getUserProfile, logoutUser, updateAvatar, updateUserProfile, getUserPerformance, getAIInsight, forgotPassword, resetPassword } from "../controllers/user.controller.js";
 import { Router } from "express"
 import { upload } from "../middlewares/multer.middleware.js";
 import { jwtVerification } from "../middlewares/auth.middleware.js";
@@ -24,5 +24,8 @@ router.route("/update-avatar").patch(
 router.route("/update-profile").patch(jwtVerification, updateUserProfile)
 router.route("/performance").get(jwtVerification, getUserPerformance)
 router.route("/ai-insight").post(jwtVerification, getAIInsight)
+router.route("/forgot-password").post(forgotPassword)
+router.route("/reset-password").post(resetPassword)
+
 
 export default router

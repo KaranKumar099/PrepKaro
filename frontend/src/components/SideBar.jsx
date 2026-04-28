@@ -11,6 +11,7 @@ import {
   GraduationCap,
   LayoutDashboard,
   DownloadIcon,
+  Book,
 } from 'lucide-react';
 
 import SidebarNavItem from './sidebar/SidebarNavItem';
@@ -33,6 +34,7 @@ const SideBar = () => {
     { id: 'downloads', icon: DownloadIcon, label: 'Downloads' },
     { id: 'analytics', icon: BarChart3, label: 'Performance' },
     { id: 'schedule', icon: Calendar, label: 'Study Plan' },
+    { id: 'questionBank', icon: Book, label: 'Question Bank' },
   ];
 
   const onHandleNavAction = (id) => {

@@ -5,8 +5,6 @@ import cookieParser from "cookie-parser";
 const app = express();
 const allowedOrigin= ["http://localhost:5173", process.env.CORS_ORIGIN]
 
-
-
 app.use(
     cors({
         origin: function(origin, callback){
@@ -53,7 +51,7 @@ app.use((err, req, res, next) => {
         });
     }
     
-    res.status(err.status || 500).json({ error: err.message });
+    res.status(err.statusCode || err.status || 500).json({ error: err.message });
 });
 
 export { app };

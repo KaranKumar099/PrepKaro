@@ -20,8 +20,7 @@ const registerUser = asyncHandler(async (req, res) => {
     })
 
     if(existedUser){
-        alert("User already exist")
-        return
+        throw new apiError(409, "User with this email already exists")
     }
 
     const createdUser=await User.create({name, email, username: null, password})
@@ -61,14 +60,12 @@ const loginUser = asyncHandler(async (req, res) => {
 
     // console.log("User: ", user)
     if(!user){
-        alert("User does not exists")
-        return
+        throw new apiError(404, "User does not exist")
     }
 
     const validCredentials = await user.isPasswordCorrect(password)
     if(!validCredentials){
-        console.log("Invalid Credentials", validCredentials)
-        return
+        throw new apiError(401, "Invalid credentials")
     }
 
     const {accessToken, refreshToken} = await generateAccessAndRefreshToken(user._id)
@@ -367,8 +364,46 @@ const getAllAttempts = asyncHandler(async (req, res) => {
     return res.status(200).json(new apiResponse(200, attempts, 'all attempts of user fetched successfully'));
 });
 
-const sayHii = asyncHandler(async (req, res) => {
-    return res.status(200).json(new apiResponse(200, {}, 'hii'));
+const forgotPassword = asyncHandler(async (req, res) => {
+    const { email } = req.body;
+    if (!email) throw new apiError(400, "Email is required");
+
+    const user = await User.findOne({ email });
+    if (!user) throw new apiError(404, "User not found");
+
+    // Generate a simple 6-digit OTP for this demo
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    user.forgotPasswordToken = otp;
+    user.forgotPasswordTokenExpiry = Date.now() + 15 * 60 * 1000; // 15 mins
+    await user.save({ validateBeforeSave: false });
+
+    // In a real app, send this via email. For now, log it.
+    console.log(`\n[AUTH] Password Reset OTP for ${email}: ${otp}\n`);
+
+    return res.status(200).json(new apiResponse(200, {}, "Reset OTP sent to email"));
 });
 
-export { registerUser, loginUser, logoutUser, getUserProfile, updateUserProfile, updateAvatar, getAllAttempts, sayHii, getUserPerformance, getAIInsight };
+const resetPassword = asyncHandler(async (req, res) => {
+    const { email, otp, newPassword } = req.body;
+    if (!email || !otp || !newPassword) {
+        throw new apiError(400, "All fields (email, otp, newPassword) are required");
+    }
+
+    const user = await User.findOne({
+        email,
+        forgotPasswordToken: otp,
+        forgotPasswordTokenExpiry: { $gt: Date.now() }
+    });
+
+    if (!user) throw new apiError(400, "Invalid or expired OTP");
+
+    user.password = newPassword;
+    user.forgotPasswordToken = undefined;
+    user.forgotPasswordTokenExpiry = undefined;
+    await user.save();
+
+    return res.status(200).json(new apiResponse(200, {}, "Password reset successful"));
+});
+
+export { registerUser, loginUser, logoutUser, getUserProfile, updateUserProfile, updateAvatar, getAllAttempts, getUserPerformance, getAIInsight, forgotPassword, resetPassword };
+

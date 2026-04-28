@@ -134,7 +134,7 @@ export default function Performance() {
 
     const summaryCards = [
       { label: 'Total Exams', value: summary.totalExams, icon: BookOpen, color: 'text-blue-600', bg: 'bg-blue-50', sub: 'attempts completed' },
-      { label: 'Avg Accuracy', value: `${summary.avgAccuracy}%`, icon: Target, color: summary.avgAccuracy >= 70 ? 'text-emerald-600' : 'text-amber-600', bg: summary.avgAccuracy >= 70 ? 'bg-emerald-50' : 'bg-amber-50', sub: 'across all attempts' },
+      { label: 'Avg Accuracy', value: `${summary.avgAccuracy}%`, icon: Target, color: 'text-emerald-600', bg: 'bg-emerald-50', sub: 'across all attempts' },
       { label: 'Best Score', value: `${summary.bestScorePercent}%`, icon: Trophy, color: 'text-amber-600', bg: 'bg-amber-50', sub: `${summary.bestScore}/${summary.bestScoreMax} marks` },
       { label: 'Study Time', value: `${summary.totalTimeHours}h`, icon: Clock, color: 'text-violet-600', bg: 'bg-violet-50', sub: 'total on platform' },
     ];
