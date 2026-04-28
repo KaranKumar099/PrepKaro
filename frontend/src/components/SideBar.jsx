@@ -50,11 +50,15 @@ const SideBar = () => {
       case 'downloads':
         navigate('/downloads');
         break;
+      case 'analytics':
+        navigate('/performance');
+        break;
       default:
         console.log('Navigating to:', id);
     }
     if (window.innerWidth < 1024) closeSidebar();
   };
+
 
   const onHandleLogout = async () => {
     try {

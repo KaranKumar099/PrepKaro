@@ -13,6 +13,7 @@ import ProtectedRoute from './components/ProtectedRoute.jsx';
 import ExamHistory from './components/ExamHistory.jsx';
 import ExamEvaluation from './components/EvaluationPage.jsx';
 import Downloads from './components/Downloads.jsx';
+import Performance from './components/Performance.jsx';
 import { useUserStore } from './store/UseUserStore.jsx';
 
 import './index.css';
@@ -61,6 +62,14 @@ const AppRoutes = () => {
           element: (
             <ProtectedRoute>
               <Downloads />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: '/performance',
+          element: (
+            <ProtectedRoute>
+              <Performance />
             </ProtectedRoute>
           ),
         },

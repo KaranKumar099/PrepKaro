@@ -1,11 +1,10 @@
-import { loginUser, registerUser, getUserProfile, logoutUser, updateAvatar, updateUserProfile, sayHii, getAllAttempts } from "../controllers/user.controller.js";
+import { loginUser, registerUser, getUserProfile, logoutUser, updateAvatar, updateUserProfile, getUserPerformance, getAIInsight } from "../controllers/user.controller.js";
 import { Router } from "express"
 import { upload } from "../middlewares/multer.middleware.js";
 import { jwtVerification } from "../middlewares/auth.middleware.js";
 
 const router = Router()
 
-router.route("/").get(sayHii)
 router.route("/register").post(
     upload.fields([
         {name: "avatar", maxCount: 1}
@@ -23,6 +22,7 @@ router.route("/update-avatar").patch(
     updateAvatar
 )
 router.route("/update-profile").patch(jwtVerification, updateUserProfile)
-router.route("/all-attempts").patch(jwtVerification, getAllAttempts)
+router.route("/performance").get(jwtVerification, getUserPerformance)
+router.route("/ai-insight").post(jwtVerification, getAIInsight)
 
 export default router
