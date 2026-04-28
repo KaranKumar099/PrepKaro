@@ -8,7 +8,7 @@ import StatCard from './shared/StatCard.jsx';
 import HeroScoreBanner from './evaluation/HeroScoreBanner.jsx';
 import OverviewTab from './evaluation/OverviewTab.jsx';
 import QuestionsTab from './evaluation/QuestionsTab.jsx';
-import PerformanceTab from './evaluation/PerformanceTab.jsx';
+import AnalysisTab from './evaluation/AnalysisTab.jsx';
 
 import { formatShortDate, getTimeDifference } from '../utils/dateUtils';
 
@@ -132,46 +132,6 @@ export default function ExamEvaluation() {
     }));
   }, [questions]);
 
-  // Derive chapter analysis for existing AnalysisTab
-  const detailedAnalysis = useMemo(() => {
-    if (!questions || questions.length === 0)
-      return { chapters: [], focusAreas: [], recommendations: [] };
-
-    const chapterMap = {};
-    questions.forEach((q) => {
-      const chapter = q.question.chapter || q.question.topic || 'General';
-      if (!chapterMap[chapter]) chapterMap[chapter] = { correct: 0, total: 0, time: 0, unattempted: 0 };
-      chapterMap[chapter].total++;
-      chapterMap[chapter].time += q.timespent;
-      if (q.status === 'correct') chapterMap[chapter].correct++;
-      else if (q.status === 'unattempted') chapterMap[chapter].unattempted++;
-    });
-
-    const chaptersArr = Object.keys(chapterMap).map((name) => {
-      const stats = chapterMap[name];
-      const accuracy = Math.round((stats.correct / (stats.total || 1)) * 100);
-      const avgTime = Math.round(stats.time / stats.total);
-      return { name, accuracy, avgTime, total: stats.total, time: stats.time };
-    });
-
-    const focusAreas = chaptersArr
-      .filter((t) => t.accuracy < 60)
-      .sort((a, b) => a.accuracy - b.accuracy)
-      .slice(0, 3);
-
-    const accuracyVal = Math.round((examData.correctQues.length / (questions.length || 1)) * 100);
-    const recs = [];
-    if (accuracyVal < 70) recs.push({ title: 'Accuracy Focus', text: 'Priority should be reducing silly mistakes. Slow down on individual questions.' });
-    if (examData.avgTimeSpent > 90) recs.push({ title: 'Time Optimization', text: "You're spending too long per question. Practice with a timer on specific chapters." });
-    if (examData.unattemptedQues.length > questions.length * 0.2) recs.push({ title: 'Attempt Management', text: 'Too many unattempted questions. Improve your scanning technique.' });
-
-    return {
-      chapters: chaptersArr,
-      focusAreas,
-      recommendations: recs.length > 0 ? recs : [{ title: 'Maintain Momentum', text: 'Your strategy is solid. Continue practicing varied difficulty levels.' }],
-    };
-  }, [questions, examData.avgTimeSpent, examData.correctQues.length, examData.unattemptedQues.length]);
-
   const percentage = Math.round((Math.max(examData.score, 0) / (examData.totalMarks || 1)) * 100);
   const accuracy = Math.round((examData.correctQues.length / (questions.length || 1)) * 100);
 
@@ -264,7 +224,7 @@ export default function ExamEvaluation() {
                   <p className="text-slate-400 font-bold text-xs uppercase tracking-widest">Loading analysis...</p>
                 </motion.div>
               ) : (
-                <PerformanceTab key="performance" performanceData={performanceData} examData={examData} />
+                <AnalysisTab key="performance" performanceData={performanceData} examData={examData} />
               )
             )}
           </AnimatePresence>
