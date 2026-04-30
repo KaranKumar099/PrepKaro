@@ -5,10 +5,10 @@ import heroImg from '../../assets/hero.png';
 
 const AuthBranding = ({ onNavigateHome }) => {
   return (
-    <div className="hidden lg:flex w-1/2 relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 p-12 flex-col justify-between">
+    <div className="hidden lg:flex w-1/2 relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-slate-900 dark:to-blue-950 p-12 flex-col justify-between">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[20%] left-[-10%] w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-white/10 dark:bg-blue-400/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[20%] left-[-10%] w-72 h-72 bg-blue-400/20 dark:bg-blue-400/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10">

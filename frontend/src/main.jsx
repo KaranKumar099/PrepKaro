@@ -1,4 +1,4 @@
-import { StrictMode, useEffect } from 'react';
+import { StrictMode, useEffect, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 
@@ -15,30 +15,27 @@ import ExamEvaluation from './components/EvaluationPage.jsx';
 import Downloads from './components/Downloads.jsx';
 import Performance from './components/Performance.jsx';
 import { useUserStore } from './store/UseUserStore.jsx';
+import { useThemeStore } from './store/UseThemeStore.jsx';
 
 import './index.css';
 
-const AppRoutes = () => {
+const App = () => {
   const { user, loading, fetchUser } = useUserStore();
+  const { isDarkMode } = useThemeStore();
 
   useEffect(() => {
     fetchUser();
   }, [fetchUser]);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-[#F8FAFC]">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-slate-500 font-bold text-xs uppercase tracking-widest">
-            PrepKaro Loading...
-          </p>
-        </div>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
 
-  const router = createBrowserRouter([
+  const router = useMemo(() => createBrowserRouter([
     {
       path: '/',
       element: <Layout />,
@@ -75,7 +72,20 @@ const AppRoutes = () => {
         },
       ],
     },
-  ]);
+  ]), [user]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-[#F8FAFC] dark:bg-slate-950 transition-colors duration-300">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-slate-500 font-bold text-xs uppercase tracking-widest">
+            PrepKaro Loading...
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return <RouterProvider router={router} />;
 };
@@ -84,7 +94,7 @@ const rootElement = document.getElementById('root');
 if (rootElement) {
   createRoot(rootElement).render(
     <StrictMode>
-      <AppRoutes />
+      <App />
     </StrictMode>,
   );
 }

@@ -8,8 +8,8 @@ const TopicAnalysis = ({ topicStats, isLoading }) => {
   );
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm">
-      <h3 className="text-xl font-bold mb-8 flex items-center gap-2">
+    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-8 shadow-sm">
+      <h3 className="text-xl font-bold mb-8 flex items-center gap-2 text-slate-900 dark:text-white">
         <TrendingUp className="w-5 h-5 text-indigo-500" /> Topic Analysis
       </h3>
 
@@ -22,7 +22,7 @@ const TopicAnalysis = ({ topicStats, isLoading }) => {
             stroke="currentColor"
             strokeWidth="8"
             fill="transparent"
-            className="text-slate-50"
+            className="text-slate-50 dark:text-slate-800"
           />
           <motion.circle
             cx="50"
@@ -40,13 +40,13 @@ const TopicAnalysis = ({ topicStats, isLoading }) => {
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-3xl font-black text-slate-900">{avgAccuracy}%</span>
-          <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+          <span className="text-3xl font-black text-slate-900 dark:text-white">{avgAccuracy}%</span>
+          <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">
             Avg Accuracy
           </span>
         </div>
 
-        <div className="absolute -top-2 -right-2 w-12 h-12 bg-white rounded-2xl shadow-xl flex items-center justify-center border border-slate-50 animate-bounce-slow">
+        <div className="absolute -top-2 -right-2 w-12 h-12 bg-white dark:bg-slate-800 rounded-2xl shadow-xl flex items-center justify-center border border-slate-50 dark:border-slate-700 animate-bounce-slow">
           <Trophy className="w-5 h-5 text-amber-500" />
         </div>
       </div>
@@ -59,7 +59,7 @@ const TopicAnalysis = ({ topicStats, isLoading }) => {
                 <div
                   className={`w-2 h-2 rounded-full bg-${subject.color}-500 shadow-sm shadow-${subject.color}-200`}
                 ></div>
-                <span className="text-sm font-bold text-slate-700 group-hover:text-slate-900 transition-colors uppercase tracking-tight">
+                <span className="text-sm font-bold text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors uppercase tracking-tight">
                   {subject.subject}
                 </span>
               </div>
@@ -67,7 +67,7 @@ const TopicAnalysis = ({ topicStats, isLoading }) => {
                 {subject.score}%
               </span>
             </div>
-            <div className="h-2 w-full bg-slate-50 rounded-full overflow-hidden border border-slate-100/50">
+            <div className="h-2 w-full bg-slate-50 dark:bg-slate-800 rounded-full overflow-hidden border border-slate-100/50 dark:border-slate-700/50">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${subject.score}%` }}

@@ -12,6 +12,8 @@ import {
   LayoutDashboard,
   DownloadIcon,
   Book,
+  Moon,
+  Sun,
 } from 'lucide-react';
 
 import SidebarNavItem from './sidebar/SidebarNavItem';
@@ -19,11 +21,13 @@ import UserPanel from './sidebar/UserPanel';
 
 import { useUserStore } from '../store/UseUserStore';
 import { useSidebarStore } from '../store/UseSidebarStore';
+import { useThemeStore } from '../store/UseThemeStore';
 
 const SideBar = () => {
   const navigate = useNavigate();
   const { user, loading, setUser } = useUserStore();
   const { isSidebarOpen, activeTab, setActiveTab, closeSidebar } = useSidebarStore();
+  const { isDarkMode, toggleTheme } = useThemeStore();
 
   if (loading && !user) return null;
 
@@ -117,7 +121,7 @@ const SideBar = () => {
       </AnimatePresence>
 
       <aside
-        className={`fixed lg:static top-0 left-0 bottom-0 z-50 w-72 bg-white border-r border-slate-100 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed lg:static top-0 left-0 bottom-0 z-50 w-72 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800 transform transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
@@ -131,21 +135,34 @@ const SideBar = () => {
                   closeSidebar();
                 }}
               >
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-100 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-md shadow-blue-100 group-hover:scale-110 transition-transform">
                   <GraduationCap className="text-white w-6 h-6" />
                 </div>
-                <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
+                <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
                   PrepKaro
                 </span>
               </div>
-              <button onClick={closeSidebar} className="lg:hidden p-2 hover:bg-slate-50 rounded-lg">
-                <X className="w-5 h-5 text-slate-400" />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
+                  aria-label="Toggle Theme"
+                >
+                  {isDarkMode ? (
+                    <Sun className="w-5 h-5 text-yellow-500" />
+                  ) : (
+                    <Moon className="w-5 h-5 text-slate-400" />
+                  )}
+                </button>
+                <button onClick={closeSidebar} className="lg:hidden p-2 hover:bg-slate-50 rounded-lg">
+                  <X className="w-5 h-5 text-slate-400" />
+                </button>
+              </div>
             </div>
           </div>
 
           <nav className="flex-1 px-4 space-y-1.5 overflow-y-auto custom-scrollbar">
-            <p className="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-[2px] mb-4">
+            <p className="px-4 text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[2px] mb-4">
               Main Menu
             </p>
             {sidebarItems.map((item) => (

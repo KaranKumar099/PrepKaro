@@ -62,7 +62,7 @@ const Downloads = () => {
   }, [allExams, searchQuery]);
 
   return (
-    <div className="h-screen flex overflow-hidden bg-[#F8FAFC] font-inter text-slate-800">
+    <div className="h-screen flex overflow-hidden bg-[#F8FAFC] dark:bg-slate-950 font-inter text-slate-800 dark:text-slate-200 transition-colors duration-300">
       <SideBar />
 
       <main className="flex-1 overflow-y-auto relative custom-scrollbar">

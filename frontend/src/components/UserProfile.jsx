@@ -91,17 +91,16 @@ const UserProfile = () => {
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC]">
+      <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] dark:bg-slate-950 transition-colors duration-300">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white rounded-2xl shadow-2xl shadow-blue-100 p-12 text-center max-w-md w-full border border-slate-100"
         >
-          <div className="w-20 h-20 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-8">
-            <Shield className="w-10 h-10 text-blue-600" />
+          <div className="w-20 h-20 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center mx-auto mb-8">
+            <Shield className="w-10 h-10 text-blue-600 dark:text-blue-400" />
           </div>
-          <h2 className="text-3xl font-black text-slate-900 mb-4">Identity Required</h2>
-          <p className="text-slate-500 font-medium mb-10 leading-relaxed">
+          <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4">Identity Required</h2>
+          <p className="text-slate-500 dark:text-slate-400 font-medium mb-10 leading-relaxed">
             Please authenticate your session to access your personal dashboard and academic records.
           </p>
           <button
@@ -120,44 +119,44 @@ const UserProfile = () => {
       label: 'Account Username',
       val: user.username,
       icon: User,
-      bgColor: 'bg-blue-50',
-      textColor: 'text-blue-600',
+      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+      textColor: 'text-blue-600 dark:text-blue-400',
     },
     {
       label: 'Preparation Focus',
       val: user?.targetExam || 'None Set',
       icon: Shield,
-      bgColor: 'bg-indigo-50',
-      textColor: 'text-indigo-600',
+      bgColor: 'bg-indigo-50 dark:bg-indigo-900/20',
+      textColor: 'text-indigo-600 dark:text-indigo-400',
     },
     {
       label: 'Academic Journey Since',
       val: formatShortDate(user.createdAt),
       icon: Calendar,
-      bgColor: 'bg-violet-50',
-      textColor: 'text-violet-600',
+      bgColor: 'bg-violet-50 dark:bg-violet-900/20',
+      textColor: 'text-violet-600 dark:text-violet-400',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] font-inter text-slate-800 p-6 lg:p-12 relative overflow-hidden">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-slate-950 font-inter text-slate-800 dark:text-slate-200 p-6 lg:p-12 relative overflow-hidden transition-colors duration-300">
       {/* Decorative Orbs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full -mr-64 -mt-64 blur-3xl opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50 rounded-full -ml-64 -mb-64 blur-3xl opacity-50"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 dark:bg-blue-900/10 rounded-full -mr-64 -mt-64 blur-3xl opacity-50"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50 dark:bg-indigo-900/10 rounded-full -ml-64 -mb-64 blur-3xl opacity-50"></div>
 
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="flex items-center justify-between mb-12">
           <button
             onClick={() => navigate('/')}
-            className="p-3 bg-white border border-slate-100 rounded-xl text-slate-400 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm"
+            className="p-3 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-200 dark:hover:border-blue-900 transition-all shadow-sm"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
           <div className="flex gap-4">
-            <button className="p-3 bg-white border border-slate-100 rounded-xl text-slate-400 hover:text-blue-600 transition-all shadow-sm">
+            <button className="p-3 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-sm">
               <Bell className="w-5 h-5" />
             </button>
-            <button className="p-3 bg-white border border-slate-100 rounded-xl text-slate-400 hover:text-blue-600 transition-all shadow-sm">
+            <button className="p-3 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all shadow-sm">
               <Settings className="w-5 h-5" />
             </button>
           </div>
@@ -169,8 +168,8 @@ const UserProfile = () => {
             animate={{ opacity: 1, x: 0 }}
             className="lg:col-span-12"
           >
-            <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm border border-slate-100 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 rounded-bl-[80px]"></div>
+            <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 lg:p-12 shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 dark:bg-blue-400/5 rounded-bl-[80px]"></div>
 
               <AnimatePresence mode="wait">
                 {!isEditing ? (
@@ -199,17 +198,17 @@ const UserProfile = () => {
                 onChange={onHandleAvatarChange}
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-10 border-t border-slate-50">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-10 border-t border-slate-50 dark:border-slate-800">
                 {profileStats.map((item, i) => (
                   <div key={i} className="flex items-center gap-5">
-                    <div className={`p-4 ${item.bgColor} rounded-xl`}>
+                    <div className={`p-4 ${item.bgColor} dark:bg-opacity-10 rounded-xl`}>
                       <item.icon className={`w-6 h-6 ${item.textColor}`} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                      <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">
                         {item.label}
                       </p>
-                      <p className="text-base font-bold text-slate-900">{item.val}</p>
+                      <p className="text-base font-bold text-slate-900 dark:text-white">{item.val}</p>
                     </div>
                   </div>
                 ))}

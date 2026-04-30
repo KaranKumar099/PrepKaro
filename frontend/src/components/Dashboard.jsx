@@ -166,24 +166,24 @@ const Dashboard = () => {
       val: allExams.length,
       icon: FileText,
       sub: '+2 this week',
-      bg: 'bg-blue-50',
-      text: 'text-blue-600',
+      bg: 'bg-blue-50 dark:bg-blue-900/20',
+      text: 'text-blue-600 dark:text-blue-400',
     },
     {
       label: 'Current Streak',
       val: `${stats.currentStreak || 1} Day${(stats.currentStreak || 1) > 1 ? 's' : ''}`,
       icon: Flame,
       sub: stats.currentStreak > 0 ? 'Keep it up!' : 'Start your streak!',
-      bg: 'bg-orange-50',
-      text: 'text-orange-600',
+      bg: 'bg-orange-50 dark:bg-orange-950/20',
+      text: 'text-orange-600 dark:text-orange-400',
     },
     {
       label: 'Average Score',
       val: `${stats.avgScore.toFixed(1)}%`,
       icon: TrendingUp,
       sub: 'Improving consistently',
-      bg: 'bg-green-50',
-      text: 'text-green-600',
+      bg: 'bg-green-50 dark:bg-green-950/20',
+      text: 'text-green-600 dark:text-green-400',
     },
     {
       label: 'Practice Time',
@@ -193,13 +193,13 @@ const Dashboard = () => {
           : `${(stats.totalPracticeTimeMins / 60).toFixed(1)} hrs`,
       icon: Clock,
       sub: 'Time well spent',
-      bg: 'bg-violet-50',
-      text: 'text-violet-600',
+      bg: 'bg-violet-50 dark:bg-violet-950/20',
+      text: 'text-violet-600 dark:text-violet-400',
     },
   ];
 
   return (
-    <div className="h-screen flex overflow-hidden bg-[#F8FAFC] font-inter text-slate-800">
+    <div className="h-screen flex overflow-hidden bg-[#F8FAFC] dark:bg-slate-950 font-inter text-slate-800 dark:text-slate-200 transition-colors duration-300">
       <SideBar />
 
       <main className="flex-1 overflow-y-auto relative custom-scrollbar">

@@ -137,10 +137,10 @@ export default function ExamEvaluation() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F8FAFC] flex items-center justify-center">
+      <div className="min-h-screen bg-[#F8FAFC] dark:bg-slate-950 flex items-center justify-center transition-colors duration-300">
         <div className="text-center space-y-4">
           <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
-          <p className="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Processing Results...</p>
+          <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest text-[10px]">Processing Results...</p>
         </div>
       </div>
     );
@@ -156,21 +156,21 @@ export default function ExamEvaluation() {
   const tabs = ['overview', 'questions', 'performance'];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] font-inter text-slate-800">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-slate-950 font-inter text-slate-800 dark:text-slate-200 transition-colors duration-300">
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-slate-100">
+      <header className="sticky top-0 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
         <div className="max-w-[1600px] mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-black text-slate-900 leading-none mb-1">Results Analytics</h1>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">PrepKaro Engine ⚡</p>
+              <h1 className="text-xl font-black text-slate-900 dark:text-white leading-none mb-1">Results Analytics</h1>
+              <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">PrepKaro Engine ⚡</p>
             </div>
           </div>
           <button
-            className="flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-100 text-slate-600 font-bold rounded-2xl hover:bg-slate-50 transition-all shadow-sm"
+            className="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-bold rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-all shadow-sm"
             onClick={() => navigate('/')}
           >
             <Home className="w-4 h-4" />
@@ -190,8 +190,8 @@ export default function ExamEvaluation() {
         </div>
 
         {/* Tabs */}
-        <div className="bg-white rounded-[40px] border border-slate-100 shadow-sm overflow-hidden">
-          <div className="border-b border-slate-50 px-8 bg-slate-50/30">
+        <div className="bg-white dark:bg-slate-900 rounded-[40px] border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+          <div className="border-b border-slate-50 dark:border-slate-800 px-8 bg-slate-50/30 dark:bg-slate-800/30">
             <div className="flex gap-6 overflow-x-auto">
               {tabs.map((tab) => (
                 <button
@@ -199,8 +199,8 @@ export default function ExamEvaluation() {
                   onClick={() => setActiveTab(tab)}
                   className={`py-6 border-b-4 transition-all capitalize font-black text-sm tracking-widest whitespace-nowrap ${
                     activeTab === tab
-                      ? 'border-blue-600 text-blue-600'
-                      : 'border-transparent text-slate-400 hover:text-slate-600'
+                      ? 'border-blue-600 text-blue-600 dark:text-blue-400'
+                      : 'border-transparent text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
                   }`}
                 >
                   {tab === 'performance' ? 'Performance' : tab}
@@ -221,7 +221,7 @@ export default function ExamEvaluation() {
                   className="flex flex-col items-center justify-center py-24 gap-4"
                 >
                   <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
-                  <p className="text-slate-400 font-bold text-xs uppercase tracking-widest">Loading analysis...</p>
+                  <p className="text-slate-400 dark:text-slate-500 font-bold text-xs uppercase tracking-widest">Loading analysis...</p>
                 </motion.div>
               ) : (
                 <AnalysisTab key="performance" performanceData={performanceData} examData={examData} />

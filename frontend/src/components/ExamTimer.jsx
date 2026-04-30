@@ -31,9 +31,9 @@ const ExamTimer = ({ durationInMinutes, onTimeUp }) => {
   const isCritical = timeLeft < 1 * 60 * 1000; // Less than 1 min
 
   const getColorClass = () => {
-    if (isCritical) return "text-red-600 bg-red-50 border-red-200 shadow-red-100";
-    if (isUrgent) return "text-amber-600 bg-amber-50 border-amber-200 shadow-amber-100";
-    return "text-blue-600 bg-blue-50 border-blue-200 shadow-blue-100";
+    if (isCritical) return "text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 border-red-200 dark:border-red-900 shadow-red-100 dark:shadow-none";
+    if (isUrgent) return "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30 border-amber-200 dark:border-amber-900 shadow-amber-100 dark:shadow-none";
+    return "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-900 shadow-blue-100 dark:shadow-none";
   };
 
   const getProgressColor = () => {
@@ -80,7 +80,7 @@ const ExamTimer = ({ durationInMinutes, onTimeUp }) => {
       </motion.div>
 
       {/* Progress Bar */}
-      <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-50 shadow-inner max-w-[140px]">
+      <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden border border-slate-50 dark:border-slate-800 shadow-inner max-w-[140px]">
         <motion.div
           initial={{ width: "100%" }}
           animate={{ width: `${progress}%` }}

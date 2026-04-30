@@ -7,7 +7,7 @@ const HeroScoreBanner = ({ examData, percentage, accuracy }) => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[40px] p-8 lg:p-12 text-white overflow-hidden shadow-2xl shadow-blue-100"
+      className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[40px] p-8 lg:p-12 text-white overflow-hidden shadow-2xl shadow-blue-100 dark:shadow-none transition-colors duration-300"
     >
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl -ml-48 -mb-48"></div>

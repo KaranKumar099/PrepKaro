@@ -69,11 +69,11 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] font-inter text-slate-900">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-slate-950 font-inter text-slate-900 dark:text-slate-100 transition-colors duration-300">
       {/* Background Orbs */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-blue-100/50 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-indigo-100/40 rounded-full blur-[100px]"></div>
+        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-blue-100/50 dark:bg-blue-900/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-indigo-100/40 dark:bg-indigo-900/10 rounded-full blur-[100px]"></div>
       </div>
 
       <HomeNavbar
@@ -91,7 +91,7 @@ const Home = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 100 }}
-            className="fixed inset-0 z-40 bg-white flex flex-col p-8 pt-24 md:hidden"
+            className="fixed inset-0 z-40 bg-white dark:bg-slate-900 flex flex-col p-8 pt-24 md:hidden"
           >
             <div className="flex flex-col gap-6 text-xl">
               <button

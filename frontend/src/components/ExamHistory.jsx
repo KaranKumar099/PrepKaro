@@ -122,42 +122,42 @@ export default function ExamHistory() {
       label: 'Total Tests',
       val: stats.total,
       icon: FileText,
-      bgColor: 'bg-blue-50',
-      textColor: 'text-blue-600',
+      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+      textColor: 'text-blue-600 dark:text-blue-400',
       sub: 'Completed & Pending',
     },
     {
       label: 'Average Score',
       val: `${stats.avgScore}%`,
       icon: Activity,
-      bgColor: 'bg-indigo-50',
-      textColor: 'text-indigo-600',
+      bgColor: 'bg-indigo-50 dark:bg-indigo-900/20',
+      textColor: 'text-indigo-600 dark:text-indigo-400',
       sub: 'Performance across all',
     },
     {
       label: 'Personal Best',
       val: `${stats.bestScore}%`,
       icon: Trophy,
-      bgColor: 'bg-orange-50',
-      textColor: 'text-orange-600',
+      bgColor: 'bg-orange-50 dark:bg-orange-950/20',
+      textColor: 'text-orange-600 dark:text-orange-400',
       sub: 'High watermark',
     },
     {
       label: 'Learning Time',
       val: stats.totalTime < 60 ? `${stats.totalTime} mins` : `${(stats.totalTime / 60).toFixed(1)}h`,
       icon: Clock,
-      bgColor: 'bg-violet-50',
-      textColor: 'text-violet-600',
+      bgColor: 'bg-violet-50 dark:bg-violet-950/20',
+      textColor: 'text-violet-600 dark:text-violet-400',
       sub: 'Focus time spent',
     },
   ];
 
   return (
-    <div className="h-screen flex overflow-hidden bg-[#F8FAFC] font-inter text-slate-800">
+    <div className="h-screen flex overflow-hidden bg-[#F8FAFC] dark:bg-slate-950 font-inter text-slate-800 dark:text-slate-200 transition-colors duration-300">
       <SideBar />
 
       <main className="flex-1 overflow-y-auto relative custom-scrollbar">
-        <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <header className="sticky top-0 z-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
           <div className="max-w-[1600px] mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
@@ -167,18 +167,18 @@ export default function ExamHistory() {
                 <Menu className="w-6 h-6 text-slate-600" />
               </button>
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
+                <h1 className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
                   Performance History
                 </h1>
-                <p className="text-slate-500 text-sm font-medium">
+                <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
                   Analyze your journey and identify strengths
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <button className="relative p-2.5 text-slate-500 hover:bg-slate-50 rounded-xl transition-all border border-transparent hover:border-slate-100">
+              <button className="relative p-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
                 <Bell className="w-5 h-5" />
-                <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-blue-600 rounded-full border-2 border-white"></span>
+                <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-blue-600 rounded-full border-2 border-white dark:border-slate-900"></span>
               </button>
             </div>
           </div>
@@ -210,20 +210,20 @@ export default function ExamHistory() {
             onFilterChange={onHandleFilterChange}
           />
 
-          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-            <div className="p-8 border-b border-slate-50 flex items-center justify-between">
-              <h2 className="text-xl font-bold flex items-center gap-3">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+            <div className="p-8 border-b border-slate-50 dark:border-slate-800 flex items-center justify-between">
+              <h2 className="text-xl font-bold flex items-center gap-3 text-slate-900 dark:text-white">
                 Recent Sessions{' '}
-                <span className="px-2.5 py-0.5 bg-slate-100 text-slate-500 rounded-full text-xs font-black">
+                <span className="px-2.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 rounded-full text-xs font-black">
                   {sortedExams.length}
                 </span>
               </h2>
-              <button className="p-3 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
+              <button className="p-3 text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg transition-all">
                 <Download className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="divide-y divide-slate-50">
+            <div className="divide-y divide-slate-50 dark:divide-slate-800">
               {loading ? (
                 <div className="py-24 text-center">
                   <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -237,13 +237,13 @@ export default function ExamHistory() {
                 ))
               ) : (
                 <div className="py-24 text-center">
-                  <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Search className="w-10 h-10 text-slate-200" />
+                  <div className="w-20 h-20 bg-slate-50 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Search className="w-10 h-10 text-slate-200 dark:text-slate-700" />
                   </div>
-                  <h4 className="text-lg font-black text-slate-900 mb-2">
+                  <h4 className="text-lg font-black text-slate-900 dark:text-white mb-2">
                     No results matching filters
                   </h4>
-                  <p className="text-slate-500 font-medium">
+                  <p className="text-slate-500 dark:text-slate-400 font-medium">
                     Try adjusting your search or category selections
                   </p>
                 </div>

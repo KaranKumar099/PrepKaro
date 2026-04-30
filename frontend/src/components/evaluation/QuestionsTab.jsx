@@ -26,16 +26,16 @@ const QuestionsTab = ({ questions }) => {
       className="p-8"
     >
       <div className="flex items-center justify-between mb-8">
-        <h3 className="text-xl font-bold text-slate-900">Per-Question Trace</h3>
-        <div className="flex p-1 bg-slate-50 rounded-2xl gap-1">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white">Per-Question Trace</h3>
+        <div className="flex p-1 bg-slate-50 dark:bg-slate-800 rounded-2xl gap-1">
           {['All', 'Correct', 'Incorrect', 'Skipped'].map((filter) => (
             <button
               key={filter}
               onClick={() => setQuestionFilter(filter)}
-              className={`px-5 py-2 rounded-xl text-xs font-black transition-all ${
+               className={`px-5 py-2 rounded-xl text-xs font-black transition-all ${
                 questionFilter === filter
-                  ? 'bg-white shadow-sm text-blue-600'
-                  : 'text-slate-400 hover:text-slate-600'
+                  ? 'bg-white dark:bg-slate-700 shadow-sm text-blue-600 dark:text-blue-400'
+                  : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
               }`}
             >
               {filter}

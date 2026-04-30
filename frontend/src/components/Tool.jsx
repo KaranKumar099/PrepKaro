@@ -124,11 +124,11 @@ const Tool = () => {
   );
 
   return (
-    <div className="min-h-screen flex overflow-hidden bg-[#F8FAFC] font-inter text-slate-800">
+    <div className="min-h-screen flex overflow-hidden bg-[#F8FAFC] dark:bg-slate-950 font-inter text-slate-800 dark:text-slate-200 transition-colors duration-300">
       <SideBar />
 
       <div className="flex-1 overflow-y-auto relative custom-scrollbar">
-        <header className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <header className="sticky top-0 z-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
           <div className="max-w-[1600px] mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
@@ -138,18 +138,18 @@ const Tool = () => {
                 <Menu className="w-6 h-6 text-slate-600" />
               </button>
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
+                <h1 className="text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
                   Paper Generator Engine ⚡
                 </h1>
-                <p className="text-slate-500 text-sm font-medium">
+                <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
                   Configure and generate AI-powered mock exams
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <button className="relative p-2.5 text-slate-500 hover:bg-slate-50 rounded-xl transition-all border border-transparent hover:border-slate-100">
+              <button className="relative p-2.5 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
                 <Bell className="w-5 h-5" />
-                <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-blue-600 rounded-full border-2 border-white"></span>
+                <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-blue-600 rounded-full border-2 border-white dark:border-slate-900"></span>
               </button>
             </div>
           </div>

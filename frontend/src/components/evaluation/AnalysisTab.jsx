@@ -28,9 +28,9 @@ import {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 const accuracyColor = (acc) => {
-  if (acc >= 70) return { bg: 'bg-emerald-50', text: 'text-emerald-700', bar: '#10b981', badge: 'bg-emerald-100 text-emerald-700' };
-  if (acc >= 40) return { bg: 'bg-amber-50', text: 'text-amber-700', bar: '#f59e0b', badge: 'bg-amber-100 text-amber-700' };
-  return { bg: 'bg-red-50', text: 'text-red-700', bar: '#ef4444', badge: 'bg-red-100 text-red-700' };
+  if (acc >= 70) return { bg: 'bg-emerald-50 dark:bg-emerald-950/20', text: 'text-emerald-700 dark:text-emerald-400', bar: '#10b981', badge: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400' };
+  if (acc >= 40) return { bg: 'bg-amber-50 dark:bg-amber-950/20', text: 'text-amber-700 dark:text-amber-400', bar: '#f59e0b', badge: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400' };
+  return { bg: 'bg-red-50 dark:bg-red-950/20', text: 'text-red-700 dark:text-red-400', bar: '#ef4444', badge: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400' };
 };
 
 const formatTime = (secs) => {
@@ -44,8 +44,8 @@ const formatTime = (secs) => {
 const CustomTooltip = ({ active, payload, label, unit = '' }) => {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-white border border-slate-100 rounded-xl shadow-xl p-3 text-sm">
-      <p className="font-black text-slate-800 mb-1">{label}</p>
+    <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-xl p-3 text-sm">
+      <p className="font-black text-slate-800 dark:text-white mb-1">{label}</p>
       {payload.map((p, i) => (
         <p key={i} style={{ color: p.color }} className="font-bold">
           {p.name}: {p.value}{unit}
@@ -86,11 +86,11 @@ const TopicPerformanceTable = ({ topicStats }) => {
   ];
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
-      <div className="flex items-center gap-3 p-6 border-b border-slate-50">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden transition-colors duration-300">
+      <div className="flex items-center gap-3 p-6 border-b border-slate-50 dark:border-slate-800">
         <div className="w-1.5 h-6 bg-indigo-600 rounded-full" />
-        <h3 className="text-lg font-black text-slate-900">Topic-wise Performance</h3>
-        <div className="ml-auto flex gap-3 text-[10px] font-black uppercase tracking-widest">
+        <h3 className="text-lg font-black text-slate-900 dark:text-white">Topic-wise Performance</h3>
+        <div className="ml-auto flex gap-3 text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500">
           <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />Strong ≥70%</span>
           <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-amber-400 inline-block" />Fair 40–70%</span>
           <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-500 inline-block" />Weak &lt;40%</span>
@@ -99,7 +99,7 @@ const TopicPerformanceTable = ({ topicStats }) => {
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-slate-50/70 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+            <tr className="bg-slate-50/70 dark:bg-slate-800/50 text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">
               {cols.map((col) => (
                 <th
                   key={col.key}
@@ -123,21 +123,21 @@ const TopicPerformanceTable = ({ topicStats }) => {
                   initial={{ opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.04 }}
-                  className={`border-t border-slate-50 ${colors.bg} hover:brightness-95 transition-all`}
+                  className={`border-t border-slate-50 dark:border-slate-800 ${colors.bg} hover:brightness-95 dark:hover:brightness-110 transition-all`}
                 >
-                  <td className="px-5 py-3.5 font-bold text-slate-800">{t.name}</td>
+                  <td className="px-5 py-3.5 font-bold text-slate-800 dark:text-slate-200">{t.name}</td>
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-2">
-                      <div className="w-20 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                      <div className="w-20 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                         <div className={`h-full rounded-full`} style={{ width: `${t.accuracy}%`, backgroundColor: colors.bar }} />
                       </div>
                       <span className={`font-black text-xs ${colors.text}`}>{t.accuracy}%</span>
                     </div>
                   </td>
-                  <td className="px-5 py-3.5 font-bold text-emerald-600">{t.correct}</td>
-                  <td className="px-5 py-3.5 font-bold text-red-500">{t.incorrect}</td>
-                  <td className="px-5 py-3.5 font-bold text-amber-500">{t.skipped}</td>
-                  <td className="px-5 py-3.5 font-bold text-slate-600">{formatTime(t.avgTime)}</td>
+                  <td className="px-5 py-3.5 font-bold text-emerald-600 dark:text-emerald-400">{t.correct}</td>
+                  <td className="px-5 py-3.5 font-bold text-red-500 dark:text-red-400">{t.incorrect}</td>
+                  <td className="px-5 py-3.5 font-bold text-amber-500 dark:text-amber-400">{t.skipped}</td>
+                  <td className="px-5 py-3.5 font-bold text-slate-600 dark:text-slate-400">{formatTime(t.avgTime)}</td>
                   <td className="px-5 py-3.5 font-bold text-red-500">
                     {t.marksLost > 0 ? `-${t.marksLost}` : '—'}
                   </td>
@@ -164,11 +164,11 @@ const TimeBarChart = ({ topicStats }) => {
   const data = topicStats.map((t) => ({ name: t.name, 'Avg Time (s)': t.avgTime }));
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm p-6 transition-colors duration-300">
       <div className="flex items-center gap-3 mb-6">
-        <Clock className="w-5 h-5 text-violet-600" />
-        <h3 className="text-lg font-black text-slate-900">Average Time per Topic</h3>
-        <span className="ml-auto text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+        <Clock className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+        <h3 className="text-lg font-black text-slate-900 dark:text-white">Average Time per Topic</h3>
+        <span className="ml-auto text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-100 dark:border-slate-800">
           Seconds / Question
         </span>
       </div>
@@ -177,7 +177,7 @@ const TimeBarChart = ({ topicStats }) => {
       ) : (
         <ResponsiveContainer width="100%" height={280}>
           <BarChart data={data} margin={{ top: 5, right: 10, left: -10, bottom: 60 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+            <CartesianGrid strokeDasharray="3 3" stroke={document.documentElement.classList.contains('dark') ? '#1e293b' : '#f1f5f9'} />
             <XAxis
               dataKey="name"
               tick={{ fontSize: 11, fontWeight: 700, fill: '#94a3b8' }}
@@ -217,12 +217,12 @@ const NegativeMarkingChart = ({ topicStats }) => {
   const total = data.reduce((sum, t) => sum + t.marksLost, 0);
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm p-6 transition-colors duration-300">
       <div className="flex items-center gap-3 mb-6">
-        <TrendingDown className="w-5 h-5 text-red-500" />
-        <h3 className="text-lg font-black text-slate-900">Negative Marking Breakdown</h3>
+        <TrendingDown className="w-5 h-5 text-red-500 dark:text-red-400" />
+        <h3 className="text-lg font-black text-slate-900 dark:text-white">Negative Marking Breakdown</h3>
         {total > 0 && (
-          <div className="ml-auto px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-black border border-red-100">
+          <div className="ml-auto px-3 py-1 rounded-full bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-400 text-xs font-black border border-red-100 dark:border-red-900">
             -{total.toFixed(2)} marks total
           </div>
         )}
@@ -237,20 +237,20 @@ const NegativeMarkingChart = ({ topicStats }) => {
         <>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={data} layout="vertical" margin={{ top: 0, right: 20, left: 80, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke={document.documentElement.classList.contains('dark') ? '#1e293b' : '#f1f5f9'} horizontal={false} />
               <XAxis type="number" tick={{ fontSize: 11, fontWeight: 700, fill: '#94a3b8' }} unit=" pts" />
-              <YAxis type="category" dataKey="name" tick={{ fontSize: 11, fontWeight: 700, fill: '#64748b' }} width={75} />
+              <YAxis type="category" dataKey="name" tick={{ fontSize: 11, fontWeight: 700, fill: document.documentElement.classList.contains('dark') ? '#94a3b8' : '#64748b' }} width={75} />
               <Tooltip content={<CustomTooltip unit=" pts" />} />
               <Bar dataKey="marksLost" name="Marks Lost" fill="#ef4444" radius={[0, 6, 6, 0]} />
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4 space-y-2">
             {data.map((t, i) => (
-              <div key={i} className="flex items-center justify-between p-3 bg-red-50/60 rounded-xl border border-red-100/50">
-                <span className="text-sm font-bold text-slate-700">{t.name}</span>
+              <div key={i} className="flex items-center justify-between p-3 bg-red-50/60 dark:bg-red-950/20 rounded-xl border border-red-100/50 dark:border-red-900/50">
+                <span className="text-sm font-bold text-slate-700 dark:text-slate-300">{t.name}</span>
                 <div className="flex items-center gap-3 text-xs font-black">
-                  <span className="text-slate-500">{t.incorrect} wrong answers</span>
-                  <span className="text-red-600 bg-red-100 px-2 py-0.5 rounded-lg">-{t.marksLost} pts</span>
+                  <span className="text-slate-500 dark:text-slate-500">{t.incorrect} wrong answers</span>
+                  <span className="text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/30 px-2 py-0.5 rounded-lg">-{t.marksLost} pts</span>
                 </div>
               </div>
             ))}
@@ -271,17 +271,17 @@ const AttemptedSkippedChart = ({ topicStats }) => {
   }));
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm p-6 transition-colors duration-300">
       <div className="flex items-center gap-3 mb-6">
-        <CheckCircle className="w-5 h-5 text-blue-600" />
-        <h3 className="text-lg font-black text-slate-900">Attempted vs Skipped per Topic</h3>
+        <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+        <h3 className="text-lg font-black text-slate-900 dark:text-white">Attempted vs Skipped per Topic</h3>
       </div>
       {data.length === 0 ? (
         <div className="flex items-center justify-center h-48 text-slate-400 font-bold">No data available</div>
       ) : (
         <ResponsiveContainer width="100%" height={280}>
           <BarChart data={data} margin={{ top: 5, right: 10, left: -10, bottom: 60 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+            <CartesianGrid strokeDasharray="3 3" stroke={document.documentElement.classList.contains('dark') ? '#1e293b' : '#f1f5f9'} />
             <XAxis
               dataKey="name"
               tick={{ fontSize: 11, fontWeight: 700, fill: '#94a3b8' }}
@@ -310,42 +310,42 @@ const StrengthWeaknessPanel = ({ strongTopics, weakTopics, fastestTopics, slowes
     {
       title: 'Strong Topics',
       icon: Trophy,
-      color: 'text-emerald-600',
-      bg: 'bg-emerald-50',
-      border: 'border-emerald-100',
+      color: 'text-emerald-600 dark:text-emerald-400',
+      bg: 'bg-emerald-50 dark:bg-emerald-950/20',
+      border: 'border-emerald-100 dark:border-emerald-900',
       items: strongTopics,
       emptyText: 'No strong topics yet — keep practicing!',
-      badge: (t) => <span className="text-[10px] font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">{t.accuracy}%</span>,
+      badge: (t) => <span className="text-[10px] font-black text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">{t.accuracy}%</span>,
     },
     {
       title: 'Weak Topics',
       icon: AlertTriangle,
-      color: 'text-red-600',
-      bg: 'bg-red-50',
-      border: 'border-red-100',
+      color: 'text-red-600 dark:text-red-400',
+      bg: 'bg-red-50 dark:bg-red-950/20',
+      border: 'border-red-100 dark:border-red-900',
       items: weakTopics,
       emptyText: 'No weak topics — excellent!',
-      badge: (t) => <span className="text-[10px] font-black text-red-700 bg-red-100 px-2 py-0.5 rounded-full">{t.accuracy}%</span>,
+      badge: (t) => <span className="text-[10px] font-black text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-900/30 px-2 py-0.5 rounded-full">{t.accuracy}%</span>,
     },
     {
       title: 'Fastest Topics',
       icon: Zap,
-      color: 'text-blue-600',
-      bg: 'bg-blue-50',
-      border: 'border-blue-100',
+      color: 'text-blue-600 dark:text-blue-400',
+      bg: 'bg-blue-50 dark:bg-blue-950/20',
+      border: 'border-blue-100 dark:border-blue-900',
       items: fastestTopics,
       emptyText: 'No data available',
-      badge: (t) => <span className="text-[10px] font-black text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">{formatTime(t.avgTime)}/q</span>,
+      badge: (t) => <span className="text-[10px] font-black text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 rounded-full">{formatTime(t.avgTime)}/q</span>,
     },
     {
       title: 'Slowest Topics',
       icon: Clock,
-      color: 'text-orange-600',
-      bg: 'bg-orange-50',
-      border: 'border-orange-100',
+      color: 'text-orange-600 dark:text-orange-400',
+      bg: 'bg-orange-50 dark:bg-orange-950/20',
+      border: 'border-orange-100 dark:border-orange-900',
       items: slowestTopics,
       emptyText: 'No data available',
-      badge: (t) => <span className="text-[10px] font-black text-orange-700 bg-orange-100 px-2 py-0.5 rounded-full">{formatTime(t.avgTime)}/q</span>,
+      badge: (t) => <span className="text-[10px] font-black text-orange-700 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30 px-2 py-0.5 rounded-full">{formatTime(t.avgTime)}/q</span>,
     },
   ];
 
@@ -363,7 +363,7 @@ const StrengthWeaknessPanel = ({ strongTopics, weakTopics, fastestTopics, slowes
             <ul className="space-y-2">
               {panel.items.map((t, i) => (
                 <li key={i} className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-700 truncate pr-2">{t.name}</span>
+                  <span className="text-xs font-bold text-slate-700 dark:text-slate-300 truncate pr-2">{t.name}</span>
                   {panel.badge(t)}
                 </li>
               ))}

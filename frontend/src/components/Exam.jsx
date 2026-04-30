@@ -247,13 +247,15 @@ const Exam = () => {
 
   const getButtonColor = (qId, index) => {
     const answered = isAnswered(qId);
+    const isDark = document.documentElement.classList.contains('dark');
+
     if (current === index)
-      return 'ring-4 ring-blue-500/20 border-2 border-blue-600 bg-white text-blue-600';
-    if (answered && marked[qId]) return 'bg-indigo-600 text-white shadow-lg shadow-indigo-100';
-    if (answered) return 'bg-emerald-500 text-white shadow-lg shadow-emerald-100';
-    if (marked[qId]) return 'bg-amber-400 text-white shadow-lg shadow-amber-100';
-    if (visited[qId]) return 'bg-red-50 text-red-500 border border-red-100';
-    return 'bg-slate-50 text-slate-400 border border-slate-100';
+      return 'ring-4 ring-blue-500/20 border-2 border-blue-600 bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400';
+    if (answered && marked[qId]) return 'bg-indigo-600 text-white shadow-lg shadow-indigo-100 dark:shadow-none';
+    if (answered) return 'bg-emerald-500 text-white shadow-lg shadow-emerald-100 dark:shadow-none';
+    if (marked[qId]) return 'bg-amber-400 text-white shadow-lg shadow-amber-100 dark:shadow-none';
+    if (visited[qId]) return 'bg-red-50 dark:bg-red-900/20 text-red-500 dark:text-red-400 border border-red-100 dark:border-red-800';
+    return 'bg-slate-50 dark:bg-slate-800/50 text-slate-400 dark:text-slate-500 border border-slate-100 dark:border-slate-800';
   };
 
   const onHandleViolationClose = () => {
@@ -294,10 +296,10 @@ const Exam = () => {
 
   if (isCheckingStatus) {
     return (
-      <div className="flex items-center justify-center h-screen bg-slate-50">
+      <div className="flex items-center justify-center h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-slate-500 font-bold text-xs uppercase tracking-widest">
+          <p className="text-slate-500 dark:text-slate-400 font-bold text-xs uppercase tracking-widest">
             Validating Session...
           </p>
         </div>
@@ -306,7 +308,7 @@ const Exam = () => {
   }
 
   return (
-    <div className="flex h-screen bg-[#F8FAFC] font-inter overflow-hidden">
+    <div className="flex h-screen bg-[#F8FAFC] dark:bg-slate-950 font-inter overflow-hidden transition-colors duration-300">
       <ExamSidebar
         questions={questions}
         current={current}

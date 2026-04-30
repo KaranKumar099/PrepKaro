@@ -13,22 +13,22 @@ const HeroSection = ({ onHandleNav }) => {
           transition={{ duration: 0.6 }}
           className="z-10 text-center lg:text-left"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-6 mx-auto lg:mx-0">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-900 mb-6 mx-auto lg:mx-0">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+            <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
               New: AI-Enhanced Analytics 2.0
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 tracking-tight text-slate-900 dark:text-white">
             Excel in Exams with <br />
-            <span className="text-blue-600 italic">Precision Practice</span>
+            <span className="text-blue-600 dark:text-blue-500 italic">Precision Practice</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
             Transform your preparation with AI-generated mock papers tailored to your target exam. Get
             real-time feedback and detailed performance tracking.
           </p>
@@ -36,13 +36,13 @@ const HeroSection = ({ onHandleNav }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button
               onClick={() => onHandleNav('/tool')}
-              className="group px-8 py-4 bg-blue-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-blue-200 hover:bg-blue-700 hover:shadow-blue-300 transition-all flex items-center justify-center gap-3"
+              className="group px-8 py-4 bg-blue-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-blue-200 dark:shadow-none hover:bg-blue-700 transition-all flex items-center justify-center gap-3"
             >
               Start Practicing
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 bg-white text-slate-700 rounded-xl font-bold text-lg border-2 border-slate-100 hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
-              <Play className="w-5 h-5 text-blue-600" />
+            <button className="px-8 py-4 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 rounded-xl font-bold text-lg border-2 border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
+              <Play className="w-5 h-5 text-blue-600 dark:text-blue-400" />
               See How It Works
             </button>
           </div>
@@ -64,7 +64,7 @@ const HeroSection = ({ onHandleNav }) => {
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <p className="text-sm text-slate-500 font-medium font-dm-sans">
+              <p className="text-sm text-slate-500 dark:text-slate-400 font-medium font-dm-sans">
                 Loved by 50,000+ Students
               </p>
             </div>
@@ -77,22 +77,22 @@ const HeroSection = ({ onHandleNav }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-blue-200/50">
-            <img src={heroImg} alt="AI Exam Prep" className="w-full h-auto object-cover" />
+          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-blue-200/50 dark:shadow-none">
+            <img src={heroImg} alt="AI Exam Prep" className="w-full h-auto object-cover dark:opacity-90" />
           </div>
 
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -top-6 -right-6 z-20 bg-white p-4 rounded-xl shadow-xl border border-slate-50"
+            className="absolute -top-6 -right-6 z-20 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-xl border border-slate-50 dark:border-slate-800"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center text-green-600">
+              <div className="w-10 h-10 rounded-lg bg-green-50 dark:bg-green-950/20 flex items-center justify-center text-green-600 dark:text-green-400">
                 <BarChart3 className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xs text-slate-500 font-semibold mb-0.5">Mock Accuracy</p>
-                <p className="text-lg font-bold text-slate-800">89.4%</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold mb-0.5">Mock Accuracy</p>
+                <p className="text-lg font-bold text-slate-800 dark:text-white">89.4%</p>
               </div>
             </div>
           </motion.div>
@@ -100,15 +100,15 @@ const HeroSection = ({ onHandleNav }) => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            className="absolute -bottom-8 -left-8 z-20 bg-white p-5 rounded-xl shadow-xl border border-slate-50"
+            className="absolute -bottom-8 -left-8 z-20 bg-white dark:bg-slate-900 p-5 rounded-xl shadow-xl border border-slate-50 dark:border-slate-800"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                <Target className="w-4 h-4 text-blue-600" />
+              <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                <Target className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               </div>
-              <span className="text-sm font-bold">Goal Progress</span>
+              <span className="text-sm font-bold text-slate-800 dark:text-white">Goal Progress</span>
             </div>
-            <div className="w-40 h-2 bg-slate-100 rounded-full overflow-hidden">
+            <div className="w-40 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
               <div className="w-3/4 h-full bg-blue-500 rounded-full"></div>
             </div>
           </motion.div>
